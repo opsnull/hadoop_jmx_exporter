@@ -1,0 +1,6 @@
+{
+    "ShuffleOutputBytes": "Output byte of shuffle",
+    "ShuffleOutputsFailed": "Output failed of shuffle",
+    "ShuffleOutputsOK": "Output ok of shuffle",
+    "ShuffleConnections": "Connection count of shuffle"
+}

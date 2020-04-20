@@ -1,0 +1,218 @@
+{
+  "beans": [
+    {
+      "name": "Hadoop:service=NodeManager,name=ContainerResource_container_e12_1586466344459_0110_01_000029",
+      "modelerType": "ContainerResource_container_e12_1586466344459_0110_01_000029"
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=ContainerResource_container_e12_1586466344459_0110_01_000021",
+      "modelerType": "ContainerResource_container_e12_1586466344459_0110_01_000021"
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=ContainerResource_container_e12_1586466344459_0110_01_000003",
+      "modelerType": "ContainerResource_container_e12_1586466344459_0110_01_000003"
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=ContainerResource_container_e12_1586466344459_0110_01_000050",
+      "modelerType": "ContainerResource_container_e12_1586466344459_0110_01_000050"
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=ContainerResource_container_e14_1586867223681_12177_01_000001",
+      "modelerType": "ContainerResource_container_e14_1586867223681_12177_01_000001"
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=ContainerResource_container_e12_1586466344459_0110_01_000031",
+      "modelerType": "ContainerResource_container_e12_1586466344459_0110_01_000031"
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=NodeManagerMetrics",
+      "modelerType": "NodeManagerMetrics",
+      "tag.Context": "yarn",
+      "tag.Hostname": "yh-shhd-cdh04",
+      "ContainersLaunched": 19285,
+      "ContainersCompleted": 16605,
+      "ContainersFailed": 1032,
+      "ContainersKilled": 1651,
+      "ContainersIniting": 0,
+      "ContainersRunning": 12,
+      "AllocatedGB": -30,
+      "AllocatedContainers": -3,
+      "AvailableGB": 272,
+      "AllocatedVCores": -3,
+      "AvailableVCores": 83,
+      "ContainerLaunchDurationNumOps": 19300,
+      "ContainerLaunchDurationAvgTime": 11,
+      "BadLocalDirs": 0,
+      "BadLogDirs": 0,
+      "GoodLocalDirsDiskUtilizationPerc": 72,
+      "GoodLogDirsDiskUtilizationPerc": 71
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=ContainerResource_container_e12_1586466344459_0110_01_000051",
+      "modelerType": "ContainerResource_container_e12_1586466344459_0110_01_000051"
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=RpcActivityForPort8040",
+      "modelerType": "RpcActivityForPort8040",
+      "tag.port": "8040",
+      "tag.Context": "rpc",
+      "tag.NumOpenConnectionsPerUser": "{\"work\":1}",
+      "tag.Hostname": "yh-shhd-cdh04",
+      "ReceivedBytes": 15997743,
+      "SentBytes": 5431407,
+      "RpcQueueTimeNumOps": 65367,
+      "RpcQueueTimeAvgTime": 0,
+      "RpcProcessingTimeNumOps": 65367,
+      "RpcProcessingTimeAvgTime": 0.6,
+      "RpcAuthenticationFailures": 0,
+      "RpcAuthenticationSuccesses": 0,
+      "RpcAuthorizationFailures": 0,
+      "RpcAuthorizationSuccesses": 16608,
+      "RpcSlowCalls": 0,
+      "RpcClientBackoff": 0,
+      "NumOpenConnections": 1,
+      "CallQueueLength": 0,
+      "NumDroppedConnections": 0
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=RpcDetailedActivityForPort8040",
+      "modelerType": "RpcDetailedActivityForPort8040",
+      "tag.port": "8040",
+      "tag.Context": "rpcdetailed",
+      "tag.Hostname": "yh-shhd-cdh04",
+      "HeartbeatNumOps": 65367,
+      "HeartbeatAvgTime": 0.6
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=ContainerResource_container_e12_1586466344459_0110_01_000030",
+      "modelerType": "ContainerResource_container_e12_1586466344459_0110_01_000030"
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=MetricsSystem,sub=Control",
+      "modelerType": "org.apache.hadoop.metrics2.impl.MetricsSystemImpl"
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=JvmMetrics",
+      "modelerType": "JvmMetrics",
+      "tag.Context": "jvm",
+      "tag.ProcessName": "NodeManager",
+      "tag.SessionId": null,
+      "tag.Hostname": "yh-shhd-cdh04",
+      "MemNonHeapUsedM": 114.80347,
+      "MemNonHeapCommittedM": 117.72266,
+      "MemNonHeapMaxM": -1,
+      "MemHeapUsedM": 83.01589,
+      "MemHeapCommittedM": 989.875,
+      "MemHeapMaxM": 989.875,
+      "MemMaxM": 989.875,
+      "GcCountParNew": 131940,
+      "GcTimeMillisParNew": 1707030,
+      "GcCountConcurrentMarkSweep": 8,
+      "GcTimeMillisConcurrentMarkSweep": 382,
+      "GcCount": 131948,
+      "GcTimeMillis": 1707412,
+      "GcNumWarnThresholdExceeded": 0,
+      "GcNumInfoThresholdExceeded": 0,
+      "GcTotalExtraSleepTime": 22756,
+      "ThreadsNew": 0,
+      "ThreadsRunnable": 180,
+      "ThreadsBlocked": 0,
+      "ThreadsWaiting": 116,
+      "ThreadsTimedWaiting": 62,
+      "ThreadsTerminated": 0,
+      "LogFatal": 0,
+      "LogError": 0,
+      "LogWarn": 0,
+      "LogInfo": 0
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=ContainerResource_container_e12_1586466344459_0110_01_000001",
+      "modelerType": "ContainerResource_container_e12_1586466344459_0110_01_000001"
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=ContainerResource_container_e14_1586867223681_12174_01_000012",
+      "modelerType": "ContainerResource_container_e14_1586867223681_12174_01_000012"
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=ContainerResource_container_e12_1586466344459_0110_01_000006",
+      "modelerType": "ContainerResource_container_e12_1586466344459_0110_01_000006"
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=RpcDetailedActivityForPort8041",
+      "modelerType": "RpcDetailedActivityForPort8041",
+      "tag.port": "8041",
+      "tag.Context": "rpcdetailed",
+      "tag.Hostname": "yh-shhd-cdh04",
+      "StartContainersNumOps": 19285,
+      "StartContainersAvgTime": 0,
+      "StopContainersNumOps": 6017,
+      "StopContainersAvgTime": 0.3333333333333333
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=UgiMetrics",
+      "modelerType": "UgiMetrics",
+      "tag.Context": "ugi",
+      "tag.Hostname": "yh-shhd-cdh04",
+      "LoginSuccessNumOps": 0,
+      "LoginSuccessAvgTime": 0,
+      "LoginFailureNumOps": 0,
+      "LoginFailureAvgTime": 0,
+      "GetGroupsNumOps": 0,
+      "GetGroupsAvgTime": 0,
+      "RenewalFailuresTotal": 0,
+      "RenewalFailures": 0
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=RpcActivityForPort8041",
+      "modelerType": "RpcActivityForPort8041",
+      "tag.port": "8041",
+      "tag.Context": "rpc",
+      "tag.NumOpenConnectionsPerUser": "{\"appattempt_1586867223681_12177_000001\":1}",
+      "tag.Hostname": "yh-shhd-cdh04",
+      "ReceivedBytes": 142931721,
+      "SentBytes": 7815857,
+      "RpcQueueTimeNumOps": 25302,
+      "RpcQueueTimeAvgTime": 0,
+      "RpcProcessingTimeNumOps": 25302,
+      "RpcProcessingTimeAvgTime": 0,
+      "RpcAuthenticationFailures": 0,
+      "RpcAuthenticationSuccesses": 25302,
+      "RpcAuthorizationFailures": 0,
+      "RpcAuthorizationSuccesses": 25302,
+      "RpcSlowCalls": 0,
+      "RpcClientBackoff": 0,
+      "NumOpenConnections": 1,
+      "CallQueueLength": 0,
+      "NumDroppedConnections": 0
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=ShuffleMetrics",
+      "modelerType": "ShuffleMetrics",
+      "tag.Context": "mapred",
+      "tag.Hostname": "yh-shhd-cdh04",
+      "ShuffleOutputBytes": 3738069132,
+      "ShuffleOutputsFailed": 0,
+      "ShuffleOutputsOK": 4272,
+      "ShuffleConnections": 9183
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=MetricsSystem,sub=Stats",
+      "modelerType": "MetricsSystem,sub=Stats",
+      "tag.Context": "metricssystem",
+      "tag.Hostname": "yh-shhd-cdh04",
+      "NumActiveSources": 20,
+      "NumAllSources": 20,
+      "NumActiveSinks": 0,
+      "NumAllSinks": 0,
+      "SnapshotNumOps": 0,
+      "SnapshotAvgTime": 0,
+      "PublishNumOps": 0,
+      "PublishAvgTime": 0,
+      "DroppedPubAll": 0
+    },
+    {
+      "name": "Hadoop:service=NodeManager,name=ContainerResource_container_e12_1586466344459_0110_01_000005",
+      "modelerType": "ContainerResource_container_e12_1586466344459_0110_01_000005"
+    }
+  ]
+}
