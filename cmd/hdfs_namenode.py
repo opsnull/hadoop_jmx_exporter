@@ -23,10 +23,6 @@ class NameNodeMetricCollector(MetricCollector):
             self._hadoop_namenode_metrics.setdefault(self._file_list[i], {})
 
     def collect(self):
-        # Request data from ambari Collect Host API
-        # Request exactly the System level information we need from node
-        # beans returns a type of 'List'
-
         try:
             beans = utils.get_metrics(self._url)
         except:

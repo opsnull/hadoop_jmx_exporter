@@ -236,9 +236,6 @@ def common_metrics_collector(cluster, beans, component, service, _target):
         return common_metrics
 
     def setup_labels(beans):
-        '''
-        预处理，分析各个模块的特点，进行分类，添加label
-        '''
         for i in range(len(beans)):
             if 'name=JvmMetrics' in beans[i]['name']:
                 setup_jvm_labels()

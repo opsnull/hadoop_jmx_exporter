@@ -104,13 +104,6 @@ class JournalNodeMetricCollector(MetricCollector):
 
                     for metric in beans[i]:
                         if metric[0].isupper():
-                            '''
-                            different sync times corresponding to the same percentile
-                            for instance:
-                                sync = 60, percentile can be [50, 75, 95, 99]
-                                sync = 300, percentile still can be [50, 75, 95, 99]
-                            Therefore, here is the method to distinguish these metrics from each sync times.
-                            '''
                             if "Syncs60s" in metric:
                                 if 'NumOps' in metric:
                                     a_60_count = beans[i][metric]
