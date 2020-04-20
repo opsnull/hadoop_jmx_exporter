@@ -1,0 +1,1716 @@
+# HELP python_info Python platform information
+# TYPE python_info gauge
+python_info{implementation="CPython",major="2",minor="7",patchlevel="17",version="2.7.17"} 1.0
+# HELP hadoop_yarn_nodemanager_shuffle_outputs_ok Output ok of shuffle
+# TYPE hadoop_yarn_nodemanager_shuffle_outputs_ok gauge
+hadoop_yarn_nodemanager_shuffle_outputs_ok{cluster="yh-cdh",host="yh-shhd-cdh05",target="yh-shhd-cdh05"} 4881.0
+# HELP hadoop_yarn_nodemanager_shuffle_output_bytes Output byte of shuffle
+# TYPE hadoop_yarn_nodemanager_shuffle_output_bytes gauge
+hadoop_yarn_nodemanager_shuffle_output_bytes{cluster="yh-cdh",host="yh-shhd-cdh05",target="yh-shhd-cdh05"} 4.266967908e+09
+# HELP hadoop_yarn_nodemanager_shuffle_connections Connection count of shuffle
+# TYPE hadoop_yarn_nodemanager_shuffle_connections gauge
+hadoop_yarn_nodemanager_shuffle_connections{cluster="yh-cdh",host="yh-shhd-cdh05",target="yh-shhd-cdh05"} 11047.0
+# HELP hadoop_yarn_nodemanager_shuffle_outputs_failed Output failed of shuffle
+# TYPE hadoop_yarn_nodemanager_shuffle_outputs_failed gauge
+hadoop_yarn_nodemanager_shuffle_outputs_failed{cluster="yh-cdh",host="yh-shhd-cdh05",target="yh-shhd-cdh05"} 0.0
+# HELP hadoop_yarn_nodemanager_available_vcores Count of available VCores
+# TYPE hadoop_yarn_nodemanager_available_vcores gauge
+hadoop_yarn_nodemanager_available_vcores{cluster="yh-cdh",host="yh-shhd-cdh05",target="yh-shhd-cdh05"} 77.0
+# HELP hadoop_yarn_nodemanager_container_launch_duration_num_ops Count of launched container
+# TYPE hadoop_yarn_nodemanager_container_launch_duration_num_ops gauge
+hadoop_yarn_nodemanager_container_launch_duration_num_ops{cluster="yh-cdh",host="yh-shhd-cdh05",target="yh-shhd-cdh05"} 19769.0
+# HELP hadoop_yarn_nodemanager_good_log_dirs_disk_utilization_perc Percent of good local log directory disk utilization
+# TYPE hadoop_yarn_nodemanager_good_log_dirs_disk_utilization_perc gauge
+hadoop_yarn_nodemanager_good_log_dirs_disk_utilization_perc{cluster="yh-cdh",host="yh-shhd-cdh05",target="yh-shhd-cdh05"} 70.0
+# HELP hadoop_yarn_nodemanager_good_local_dirs_disk_utilization_perc Percent of good local directory disk utilization
+# TYPE hadoop_yarn_nodemanager_good_local_dirs_disk_utilization_perc gauge
+hadoop_yarn_nodemanager_good_local_dirs_disk_utilization_perc{cluster="yh-cdh",host="yh-shhd-cdh05",target="yh-shhd-cdh05"} 71.0
+# HELP hadoop_yarn_nodemanager_allocated_vcores Count of allocated VCores
+# TYPE hadoop_yarn_nodemanager_allocated_vcores gauge
+hadoop_yarn_nodemanager_allocated_vcores{cluster="yh-cdh",host="yh-shhd-cdh05",target="yh-shhd-cdh05"} 3.0
+# HELP hadoop_yarn_nodemanager_container_launch_duration_avg_time Average time of launching container (in ms)
+# TYPE hadoop_yarn_nodemanager_container_launch_duration_avg_time gauge
+hadoop_yarn_nodemanager_container_launch_duration_avg_time{cluster="yh-cdh",host="yh-shhd-cdh05",target="yh-shhd-cdh05"} 12.0
+# HELP hadoop_yarn_nodemanager_allocated_gb Memory size of allocated (in GB)
+# TYPE hadoop_yarn_nodemanager_allocated_gb gauge
+hadoop_yarn_nodemanager_allocated_gb{cluster="yh-cdh",host="yh-shhd-cdh05",target="yh-shhd-cdh05"} 0.0
+# HELP hadoop_yarn_nodemanager_bad_local_dirs Count of bad local directory
+# TYPE hadoop_yarn_nodemanager_bad_local_dirs gauge
+hadoop_yarn_nodemanager_bad_local_dirs{cluster="yh-cdh",host="yh-shhd-cdh05",target="yh-shhd-cdh05"} 0.0
+# HELP hadoop_yarn_nodemanager_bad_log_dirs Count of bad log directory
+# TYPE hadoop_yarn_nodemanager_bad_log_dirs gauge
+hadoop_yarn_nodemanager_bad_log_dirs{cluster="yh-cdh",host="yh-shhd-cdh05",target="yh-shhd-cdh05"} 0.0
+# HELP hadoop_yarn_nodemanager_allocated_containers Count of allocated container
+# TYPE hadoop_yarn_nodemanager_allocated_containers gauge
+hadoop_yarn_nodemanager_allocated_containers{cluster="yh-cdh",host="yh-shhd-cdh05",target="yh-shhd-cdh05"} 3.0
+# HELP hadoop_yarn_nodemanager_available_gb Memory size of available (in GB)
+# TYPE hadoop_yarn_nodemanager_available_gb gauge
+hadoop_yarn_nodemanager_available_gb{cluster="yh-cdh",host="yh-shhd-cdh05",target="yh-shhd-cdh05"} 240.0
+# HELP hadoop_yarn_nodemanager_container_count Count of container
+# TYPE hadoop_yarn_nodemanager_container_count gauge
+hadoop_yarn_nodemanager_container_count{cluster="yh-cdh",host="yh-shhd-cdh05",status="Initing",target="yh-shhd-cdh05"} 0.0
+hadoop_yarn_nodemanager_container_count{cluster="yh-cdh",host="yh-shhd-cdh05",status="Running",target="yh-shhd-cdh05"} 7.0
+hadoop_yarn_nodemanager_container_count{cluster="yh-cdh",host="yh-shhd-cdh05",status="Launched",target="yh-shhd-cdh05"} 19765.0
+hadoop_yarn_nodemanager_container_count{cluster="yh-cdh",host="yh-shhd-cdh05",status="Completed",target="yh-shhd-cdh05"} 17031.0
+hadoop_yarn_nodemanager_container_count{cluster="yh-cdh",host="yh-shhd-cdh05",status="Failed",target="yh-shhd-cdh05"} 1309.0
+hadoop_yarn_nodemanager_container_count{cluster="yh-cdh",host="yh-shhd-cdh05",status="Killed",target="yh-shhd-cdh05"} 1422.0
+# HELP hadoop_yarn_nodemanager_rpc_num_open_connections Current number of open connections
+# TYPE hadoop_yarn_nodemanager_rpc_num_open_connections gauge
+hadoop_yarn_nodemanager_rpc_num_open_connections{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8041"} 0.0
+hadoop_yarn_nodemanager_rpc_num_open_connections{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8040"} 0.0
+# HELP hadoop_yarn_nodemanager_rpc_authentication_successes Total number of authentication successes
+# TYPE hadoop_yarn_nodemanager_rpc_authentication_successes gauge
+hadoop_yarn_nodemanager_rpc_authentication_successes{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8041"} 25153.0
+hadoop_yarn_nodemanager_rpc_authentication_successes{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8040"} 0.0
+# HELP hadoop_yarn_nodemanager_rpc_authorization_failures Total number of authorization failures
+# TYPE hadoop_yarn_nodemanager_rpc_authorization_failures gauge
+hadoop_yarn_nodemanager_rpc_authorization_failures{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8041"} 0.0
+hadoop_yarn_nodemanager_rpc_authorization_failures{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8040"} 0.0
+# HELP hadoop_yarn_nodemanager_rpc_slow_calls Total number of RPC slow calls
+# TYPE hadoop_yarn_nodemanager_rpc_slow_calls gauge
+hadoop_yarn_nodemanager_rpc_slow_calls{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8041"} 0.0
+hadoop_yarn_nodemanager_rpc_slow_calls{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8040"} 0.0
+# HELP hadoop_yarn_nodemanager_rpc_method_avg_time_milliseconds Average turn around time of the method in milliseconds.
+# TYPE hadoop_yarn_nodemanager_rpc_method_avg_time_milliseconds gauge
+hadoop_yarn_nodemanager_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh05",cluster="yh-cdh",method="RpcProcessingTime",tag="8041"} 0.0
+hadoop_yarn_nodemanager_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh05",cluster="yh-cdh",method="RpcQueueTime",tag="8041"} 0.0
+hadoop_yarn_nodemanager_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh05",cluster="yh-cdh",method="RpcProcessingTime",tag="8040"} 0.32
+hadoop_yarn_nodemanager_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh05",cluster="yh-cdh",method="RpcQueueTime",tag="8040"} 0.12
+# HELP hadoop_yarn_nodemanager_rpc_client_backoff Total number of RPC client back off
+# TYPE hadoop_yarn_nodemanager_rpc_client_backoff gauge
+hadoop_yarn_nodemanager_rpc_client_backoff{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8041"} 0.0
+hadoop_yarn_nodemanager_rpc_client_backoff{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8040"} 0.0
+# HELP hadoop_yarn_nodemanager_rpc_authentication_failures Total number of authentication failures
+# TYPE hadoop_yarn_nodemanager_rpc_authentication_failures gauge
+hadoop_yarn_nodemanager_rpc_authentication_failures{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8041"} 0.0
+hadoop_yarn_nodemanager_rpc_authentication_failures{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8040"} 0.0
+# HELP hadoop_yarn_nodemanager_rpc_received_bytes Total number of received bytes
+# TYPE hadoop_yarn_nodemanager_rpc_received_bytes gauge
+hadoop_yarn_nodemanager_rpc_received_bytes{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8041"} 1.4834513e+08
+hadoop_yarn_nodemanager_rpc_received_bytes{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8040"} 1.6270362e+07
+# HELP hadoop_yarn_nodemanager_rpc_authorization_successes Total number of authorization successes
+# TYPE hadoop_yarn_nodemanager_rpc_authorization_successes gauge
+hadoop_yarn_nodemanager_rpc_authorization_successes{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8041"} 25153.0
+hadoop_yarn_nodemanager_rpc_authorization_successes{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8040"} 16955.0
+# HELP hadoop_yarn_nodemanager_rpc_call_queue_length Current length of the call queue
+# TYPE hadoop_yarn_nodemanager_rpc_call_queue_length gauge
+hadoop_yarn_nodemanager_rpc_call_queue_length{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8041"} 0.0
+hadoop_yarn_nodemanager_rpc_call_queue_length{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8040"} 0.0
+# HELP hadoop_yarn_nodemanager_rpc_sent_bytes Total number of sent bytes
+# TYPE hadoop_yarn_nodemanager_rpc_sent_bytes gauge
+hadoop_yarn_nodemanager_rpc_sent_bytes{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8041"} 7.785873e+06
+hadoop_yarn_nodemanager_rpc_sent_bytes{_target="yh-shhd-cdh05",cluster="yh-cdh",tag="8040"} 5.507289e+06
+# HELP hadoop_yarn_nodemanager_rpc_method_called_total Total number of the times the method is called.
+# TYPE hadoop_yarn_nodemanager_rpc_method_called_total gauge
+hadoop_yarn_nodemanager_rpc_method_called_total{_target="yh-shhd-cdh05",cluster="yh-cdh",method="RpcProcessingTime",tag="8041"} 25153.0
+hadoop_yarn_nodemanager_rpc_method_called_total{_target="yh-shhd-cdh05",cluster="yh-cdh",method="RpcQueueTime",tag="8041"} 25153.0
+hadoop_yarn_nodemanager_rpc_method_called_total{_target="yh-shhd-cdh05",cluster="yh-cdh",method="RpcProcessingTime",tag="8040"} 66578.0
+hadoop_yarn_nodemanager_rpc_method_called_total{_target="yh-shhd-cdh05",cluster="yh-cdh",method="RpcQueueTime",tag="8040"} 66578.0
+# HELP hadoop_yarn_nodemanager_metricssystem_dropped_pub_all Total number of dropped publishes.
+# TYPE hadoop_yarn_nodemanager_metricssystem_dropped_pub_all gauge
+hadoop_yarn_nodemanager_metricssystem_dropped_pub_all{_target="yh-shhd-cdh05",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_nodemanager_metricssystem_num_all_sinks Total number of sinks (BUT usually less than NumActiveSinks, see HADOOP-9946).
+# TYPE hadoop_yarn_nodemanager_metricssystem_num_all_sinks gauge
+hadoop_yarn_nodemanager_metricssystem_num_all_sinks{_target="yh-shhd-cdh05",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_nodemanager_metricssystem_method_avg_time_milliseconds Average turn around time of the operations in milliseconds.
+# TYPE hadoop_yarn_nodemanager_metricssystem_method_avg_time_milliseconds gauge
+hadoop_yarn_nodemanager_metricssystem_method_avg_time_milliseconds{_target="yh-shhd-cdh05",cluster="yh-cdh",oper="Sink_instance"} 0.0
+hadoop_yarn_nodemanager_metricssystem_method_avg_time_milliseconds{_target="yh-shhd-cdh05",cluster="yh-cdh",oper="Snapshot"} 0.0
+hadoop_yarn_nodemanager_metricssystem_method_avg_time_milliseconds{_target="yh-shhd-cdh05",cluster="yh-cdh",oper="Publish"} 0.0
+# HELP hadoop_yarn_nodemanager_metricssystem_operations_total Total number of operations
+# TYPE hadoop_yarn_nodemanager_metricssystem_operations_total gauge
+hadoop_yarn_nodemanager_metricssystem_operations_total{_target="yh-shhd-cdh05",cluster="yh-cdh",oper="Sink_instance"} 0.0
+hadoop_yarn_nodemanager_metricssystem_operations_total{_target="yh-shhd-cdh05",cluster="yh-cdh",oper="Publish"} 0.0
+hadoop_yarn_nodemanager_metricssystem_operations_total{_target="yh-shhd-cdh05",cluster="yh-cdh",oper="Snapshot"} 0.0
+# HELP hadoop_yarn_nodemanager_metricssystem_sink_instance_qsize Current queue length of sink operations (BUT always set to 0 because nothing to increment this metrics, see HADOOP-9941).
+# TYPE hadoop_yarn_nodemanager_metricssystem_sink_instance_qsize gauge
+hadoop_yarn_nodemanager_metricssystem_sink_instance_qsize{_target="yh-shhd-cdh05",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_nodemanager_metricssystem_num_active_sources Current number of active metrics sources.
+# TYPE hadoop_yarn_nodemanager_metricssystem_num_active_sources gauge
+hadoop_yarn_nodemanager_metricssystem_num_active_sources{_target="yh-shhd-cdh05",cluster="yh-cdh"} 15.0
+# HELP hadoop_yarn_nodemanager_metricssystem_sink_instance_dropped Total number of dropped sink operations for the instance.
+# TYPE hadoop_yarn_nodemanager_metricssystem_sink_instance_dropped gauge
+hadoop_yarn_nodemanager_metricssystem_sink_instance_dropped{_target="yh-shhd-cdh05",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_nodemanager_metricssystem_num_all_sources Total number of metrics sources.
+# TYPE hadoop_yarn_nodemanager_metricssystem_num_all_sources gauge
+hadoop_yarn_nodemanager_metricssystem_num_all_sources{_target="yh-shhd-cdh05",cluster="yh-cdh"} 15.0
+# HELP hadoop_yarn_nodemanager_metricssystem_num_active_sinks Current number of active sinks.
+# TYPE hadoop_yarn_nodemanager_metricssystem_num_active_sinks gauge
+hadoop_yarn_nodemanager_metricssystem_num_active_sinks{_target="yh-shhd-cdh05",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_nodemanager_uptime_milliseconds components uptime in milliseconds
+# TYPE hadoop_yarn_nodemanager_uptime_milliseconds gauge
+hadoop_yarn_nodemanager_uptime_milliseconds{_target="_target",cluster="yh-cdh",host="yh-shhd-cdh05"} 5.30969913e+08
+# HELP hadoop_yarn_nodemanager_start_time_milliseconds components start time in milliseconds
+# TYPE hadoop_yarn_nodemanager_start_time_milliseconds gauge
+hadoop_yarn_nodemanager_start_time_milliseconds{_target="_target",cluster="yh-cdh",host="yh-shhd-cdh05"} 1.586867220973e+012
+# HELP hadoop_yarn_nodemanager_rpc_detailed_method_called_total Total number of the times the method is called
+# TYPE hadoop_yarn_nodemanager_rpc_detailed_method_called_total gauge
+hadoop_yarn_nodemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh05",cluster="yh-cdh",method="Heartbeat",tag="8040"} 66578.0
+hadoop_yarn_nodemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh05",cluster="yh-cdh",method="StartContainers",tag="8041"} 19765.0
+hadoop_yarn_nodemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh05",cluster="yh-cdh",method="StopContainers",tag="8041"} 5388.0
+# HELP hadoop_yarn_nodemanager_rpc_detailed_method_avg_time_milliseconds Average turn around time of the method in milliseconds
+# TYPE hadoop_yarn_nodemanager_rpc_detailed_method_avg_time_milliseconds gauge
+hadoop_yarn_nodemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh05",cluster="yh-cdh",method="Heartbeat",tag="8040"} 0.32
+hadoop_yarn_nodemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh05",cluster="yh-cdh",method="StopContainers",tag="8041"} 0.0
+hadoop_yarn_nodemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh05",cluster="yh-cdh",method="StartContainers",tag="8041"} 0.4
+# HELP hadoop_yarn_nodemanager_ugi_method_called_total Total number of the times the method is called.
+# TYPE hadoop_yarn_nodemanager_ugi_method_called_total gauge
+hadoop_yarn_nodemanager_ugi_method_called_total{_target="yh-shhd-cdh05",cluster="yh-cdh",method="Login",state="Failure"} 0.0
+hadoop_yarn_nodemanager_ugi_method_called_total{_target="yh-shhd-cdh05",cluster="yh-cdh",method="Login",state="Success"} 0.0
+hadoop_yarn_nodemanager_ugi_method_called_total{_target="yh-shhd-cdh05",cluster="yh-cdh",method="GetGroups",state="-"} 0.0
+# HELP hadoop_yarn_nodemanager_ugi_method_avg_time_milliseconds Average turn around time of the method in milliseconds.
+# TYPE hadoop_yarn_nodemanager_ugi_method_avg_time_milliseconds gauge
+hadoop_yarn_nodemanager_ugi_method_avg_time_milliseconds{_target="yh-shhd-cdh05",cluster="yh-cdh",method="Login",state="Success"} 0.0
+hadoop_yarn_nodemanager_ugi_method_avg_time_milliseconds{_target="yh-shhd-cdh05",cluster="yh-cdh",method="GetGroups",state="-"} 0.0
+hadoop_yarn_nodemanager_ugi_method_avg_time_milliseconds{_target="yh-shhd-cdh05",cluster="yh-cdh",method="Login",state="Failure"} 0.0
+# HELP hadoop_yarn_nodemanager_ugi_renewal_failures_total Total number of renewal failures.
+# TYPE hadoop_yarn_nodemanager_ugi_renewal_failures_total gauge
+hadoop_yarn_nodemanager_ugi_renewal_failures_total{_target="-",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_nodemanager_ugi_renewal_failures Current number of renewal failures.
+# TYPE hadoop_yarn_nodemanager_ugi_renewal_failures gauge
+hadoop_yarn_nodemanager_ugi_renewal_failures{_target="-",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_nodemanager_open_file_descriptor_count Total number of open file descriptor
+# TYPE hadoop_yarn_nodemanager_open_file_descriptor_count gauge
+hadoop_yarn_nodemanager_open_file_descriptor_count{_target="yh-shhd-cdh05",cluster="yh-cdh"} 714.0
+# HELP hadoop_yarn_nodemanager_max_file_descriptor_count Total number of max file descriptor
+# TYPE hadoop_yarn_nodemanager_max_file_descriptor_count gauge
+hadoop_yarn_nodemanager_max_file_descriptor_count{_target="yh-shhd-cdh05",cluster="yh-cdh"} 32768.0
+# HELP hadoop_yarn_nodemanager_system_load_average Average of system load
+# TYPE hadoop_yarn_nodemanager_system_load_average gauge
+hadoop_yarn_nodemanager_system_load_average{_target="yh-shhd-cdh05",cluster="yh-cdh"} 1.22
+# HELP hadoop_yarn_nodemanager_free_swap_space_size The size of free swap space in bytes
+# TYPE hadoop_yarn_nodemanager_free_swap_space_size gauge
+hadoop_yarn_nodemanager_free_swap_space_size{_target="yh-shhd-cdh05",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_nodemanager_available_processors Total number of available processors
+# TYPE hadoop_yarn_nodemanager_available_processors gauge
+hadoop_yarn_nodemanager_available_processors{_target="yh-shhd-cdh05",cluster="yh-cdh"} 80.0
+# HELP hadoop_yarn_nodemanager_process_cpu_load Average of process CPU load
+# TYPE hadoop_yarn_nodemanager_process_cpu_load gauge
+hadoop_yarn_nodemanager_process_cpu_load{_target="yh-shhd-cdh05",cluster="yh-cdh"} 0.0016295491580662683
+# HELP hadoop_yarn_nodemanager_system_cpu_load Average of system CPU load
+# TYPE hadoop_yarn_nodemanager_system_cpu_load gauge
+hadoop_yarn_nodemanager_system_cpu_load{_target="yh-shhd-cdh05",cluster="yh-cdh"} 0.014587967513320574
+# HELP hadoop_yarn_nodemanager_process_cpu_time Total process cpu time in microseconds
+# TYPE hadoop_yarn_nodemanager_process_cpu_time gauge
+hadoop_yarn_nodemanager_process_cpu_time{_target="yh-shhd-cdh05",cluster="yh-cdh"} 7.501002e+013
+# HELP hadoop_yarn_nodemanager_committed_virtual_memory_size The size of committed virtual memory in bytes
+# TYPE hadoop_yarn_nodemanager_committed_virtual_memory_size gauge
+hadoop_yarn_nodemanager_committed_virtual_memory_size{_target="yh-shhd-cdh05",cluster="yh-cdh"} 3.62776576e+09
+# HELP hadoop_yarn_nodemanager_total_physical_memory_size The size of total physical memory in bytes
+# TYPE hadoop_yarn_nodemanager_total_physical_memory_size gauge
+hadoop_yarn_nodemanager_total_physical_memory_size{_target="yh-shhd-cdh05",cluster="yh-cdh"} 4.05386571776e+011
+# HELP hadoop_yarn_nodemanager_total_swap_space_size The size of total swap space in bytes
+# TYPE hadoop_yarn_nodemanager_total_swap_space_size gauge
+hadoop_yarn_nodemanager_total_swap_space_size{_target="yh-shhd-cdh05",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_nodemanager_free_physical_memory_size The size of free physical memory in bytes
+# TYPE hadoop_yarn_nodemanager_free_physical_memory_size gauge
+hadoop_yarn_nodemanager_free_physical_memory_size{_target="yh-shhd-cdh05",cluster="yh-cdh"} 3.8612619264e+010
+# HELP hadoop_yarn_nodemanager_jvm_gc_exceeded_threshold_total Number of times that the GC threshold is exceeded.
+# TYPE hadoop_yarn_nodemanager_jvm_gc_exceeded_threshold_total gauge
+hadoop_yarn_nodemanager_jvm_gc_exceeded_threshold_total{_target="yh-shhd-cdh05",cluster="yh-cdh",type="Info"} 0.0
+hadoop_yarn_nodemanager_jvm_gc_exceeded_threshold_total{_target="yh-shhd-cdh05",cluster="yh-cdh",type="Warn"} 0.0
+# HELP hadoop_yarn_nodemanager_jvm_gc_total_extra_sleep_time Total GC extra sleep time in msec.
+# TYPE hadoop_yarn_nodemanager_jvm_gc_total_extra_sleep_time gauge
+hadoop_yarn_nodemanager_jvm_gc_total_extra_sleep_time{_target="yh-shhd-cdh05",cluster="yh-cdh"} 26009.0
+# HELP hadoop_yarn_nodemanager_jvm_gc_count GC count of each type GC.
+# TYPE hadoop_yarn_nodemanager_jvm_gc_count gauge
+hadoop_yarn_nodemanager_jvm_gc_count{_target="yh-shhd-cdh05",cluster="yh-cdh",type="ParNew"} 76772.0
+hadoop_yarn_nodemanager_jvm_gc_count{_target="yh-shhd-cdh05",cluster="yh-cdh",type="ConcurrentMarkSweep"} 7.0
+hadoop_yarn_nodemanager_jvm_gc_count{_target="yh-shhd-cdh05",cluster="yh-cdh",type="total"} 76779.0
+# HELP hadoop_yarn_nodemanager_jvm_mem_max_mebibytes Current max memory in mebibytes.
+# TYPE hadoop_yarn_nodemanager_jvm_mem_max_mebibytes gauge
+hadoop_yarn_nodemanager_jvm_mem_max_mebibytes{_target="yh-shhd-cdh05",cluster="yh-cdh",mode="NonHeap"} -1.0
+hadoop_yarn_nodemanager_jvm_mem_max_mebibytes{_target="yh-shhd-cdh05",cluster="yh-cdh",mode="max"} 989.875
+hadoop_yarn_nodemanager_jvm_mem_max_mebibytes{_target="yh-shhd-cdh05",cluster="yh-cdh",mode="Heap"} 989.875
+# HELP hadoop_yarn_nodemanager_jvm_mem_used_mebibytes Current memory used in mebibytes.
+# TYPE hadoop_yarn_nodemanager_jvm_mem_used_mebibytes gauge
+hadoop_yarn_nodemanager_jvm_mem_used_mebibytes{_target="yh-shhd-cdh05",cluster="yh-cdh",mode="NonHeap"} 115.24653
+hadoop_yarn_nodemanager_jvm_mem_used_mebibytes{_target="yh-shhd-cdh05",cluster="yh-cdh",mode="Heap"} 112.750496
+# HELP hadoop_yarn_nodemanager_jvm_gc_time_milliseconds Each type GC time in milliseconds.
+# TYPE hadoop_yarn_nodemanager_jvm_gc_time_milliseconds gauge
+hadoop_yarn_nodemanager_jvm_gc_time_milliseconds{_target="yh-shhd-cdh05",cluster="yh-cdh",type="ConcurrentMarkSweep"} 467.0
+hadoop_yarn_nodemanager_jvm_gc_time_milliseconds{_target="yh-shhd-cdh05",cluster="yh-cdh",type="ParNew"} 1.201917e+06
+hadoop_yarn_nodemanager_jvm_gc_time_milliseconds{_target="yh-shhd-cdh05",cluster="yh-cdh",type="total"} 1.202384e+06
+# HELP hadoop_yarn_nodemanager_jvm_threads_state_total Current number of different threads.
+# TYPE hadoop_yarn_nodemanager_jvm_threads_state_total gauge
+hadoop_yarn_nodemanager_jvm_threads_state_total{_target="yh-shhd-cdh05",cluster="yh-cdh",state="Waiting"} 119.0
+hadoop_yarn_nodemanager_jvm_threads_state_total{_target="yh-shhd-cdh05",cluster="yh-cdh",state="Runnable"} 186.0
+hadoop_yarn_nodemanager_jvm_threads_state_total{_target="yh-shhd-cdh05",cluster="yh-cdh",state="TimedWaiting"} 48.0
+hadoop_yarn_nodemanager_jvm_threads_state_total{_target="yh-shhd-cdh05",cluster="yh-cdh",state="New"} 0.0
+hadoop_yarn_nodemanager_jvm_threads_state_total{_target="yh-shhd-cdh05",cluster="yh-cdh",state="Blocked"} 0.0
+hadoop_yarn_nodemanager_jvm_threads_state_total{_target="yh-shhd-cdh05",cluster="yh-cdh",state="Terminated"} 0.0
+# HELP hadoop_yarn_nodemanager_jvm_log_level_total Total number of each level logs.
+# TYPE hadoop_yarn_nodemanager_jvm_log_level_total gauge
+hadoop_yarn_nodemanager_jvm_log_level_total{_target="yh-shhd-cdh05",cluster="yh-cdh",level="Warn"} 0.0
+hadoop_yarn_nodemanager_jvm_log_level_total{_target="yh-shhd-cdh05",cluster="yh-cdh",level="Error"} 0.0
+hadoop_yarn_nodemanager_jvm_log_level_total{_target="yh-shhd-cdh05",cluster="yh-cdh",level="Info"} 0.0
+hadoop_yarn_nodemanager_jvm_log_level_total{_target="yh-shhd-cdh05",cluster="yh-cdh",level="Fatal"} 0.0
+# HELP hadoop_yarn_nodemanager_jvm_mem_committed_mebibytes Current memory committed in mebibytes.
+# TYPE hadoop_yarn_nodemanager_jvm_mem_committed_mebibytes gauge
+hadoop_yarn_nodemanager_jvm_mem_committed_mebibytes{_target="yh-shhd-cdh05",cluster="yh-cdh",mode="Heap"} 989.875
+hadoop_yarn_nodemanager_jvm_mem_committed_mebibytes{_target="yh-shhd-cdh05",cluster="yh-cdh",mode="NonHeap"} 118.38672
+# HELP hadoop_hdfs_namenode_startup_process_phase_count Total number of steps completed in the phase.
+# TYPE hadoop_hdfs_namenode_startup_process_phase_count gauge
+hadoop_hdfs_namenode_startup_process_phase_count{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="LoadingFsImage"} 6.362453e+06
+hadoop_hdfs_namenode_startup_process_phase_count{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="SafeMode"} 4.966636e+06
+hadoop_hdfs_namenode_startup_process_phase_count{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="SavingCheckpoint"} 0.0
+hadoop_hdfs_namenode_startup_process_phase_count{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="LoadingEdits"} 261261.0
+# HELP hadoop_hdfs_namenode_startup_process_phase_elapsed_time_milliseconds Total elapsed time in the phase in milliseconds.
+# TYPE hadoop_hdfs_namenode_startup_process_phase_elapsed_time_milliseconds gauge
+hadoop_hdfs_namenode_startup_process_phase_elapsed_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="SavingCheckpoint"} 0.0
+hadoop_hdfs_namenode_startup_process_phase_elapsed_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="LoadingEdits"} 282.0
+hadoop_hdfs_namenode_startup_process_phase_elapsed_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="SafeMode"} 61632.0
+hadoop_hdfs_namenode_startup_process_phase_elapsed_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="LoadingFsImage"} 25441.0
+# HELP hadoop_hdfs_namenode_startup_process_phase_complete_rate Current rate completed in the phase  (The max value is not 100 but 1.0).
+# TYPE hadoop_hdfs_namenode_startup_process_phase_complete_rate gauge
+hadoop_hdfs_namenode_startup_process_phase_complete_rate{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="LoadingFsImage"} 1.0
+hadoop_hdfs_namenode_startup_process_phase_complete_rate{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="SavingCheckpoint"} 1.0
+hadoop_hdfs_namenode_startup_process_phase_complete_rate{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="SafeMode"} 1.0
+hadoop_hdfs_namenode_startup_process_phase_complete_rate{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="LoadingEdits"} 1.0
+# HELP hadoop_hdfs_namenode_startup_process_total_elapsed_time_milliseconds Total elapsed time in milliseconds.
+# TYPE hadoop_hdfs_namenode_startup_process_total_elapsed_time_milliseconds gauge
+hadoop_hdfs_namenode_startup_process_total_elapsed_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="-"} 89320.0
+# HELP hadoop_hdfs_namenode_startup_process_complete_rate Current rate completed in NameNode startup progress  (The max value is not 100 but 1.0).
+# TYPE hadoop_hdfs_namenode_startup_process_complete_rate gauge
+hadoop_hdfs_namenode_startup_process_complete_rate{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="-"} 1.0
+# HELP hadoop_hdfs_namenode_startup_process_phase_total Total number of steps in the phase.
+# TYPE hadoop_hdfs_namenode_startup_process_phase_total gauge
+hadoop_hdfs_namenode_startup_process_phase_total{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="SafeMode"} 4.966505e+06
+hadoop_hdfs_namenode_startup_process_phase_total{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="SavingCheckpoint"} 0.0
+hadoop_hdfs_namenode_startup_process_phase_total{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="LoadingFsImage"} 6.362453e+06
+hadoop_hdfs_namenode_startup_process_phase_total{_target="yh-shhd-cdh02",cluster="yh-cdh",phase="LoadingEdits"} 261261.0
+# HELP hadoop_hdfs_namenode_nnactivity_operations_total Total number of each operation.
+# TYPE hadoop_hdfs_namenode_nnactivity_operations_total gauge
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RenameSnapshot"} 0.0
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="TotalFile"} 1.10573326e+08
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetAdditionalDatanode"} 0.0
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="CreateSymlink"} 0.0
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="FilesRenamed"} 907111.0
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="AllowSnapshot"} 0.0
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="FilesInGetListing"} 5.0205956e+07
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetLinkTarget"} 0.0
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="SnapshotDiffReport"} 0.0
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="FsImageLoadTime"} 27558.0
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetListing"} 3.7369754e+07
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="AddBlock"} 8.886541e+06
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="SafeModeTime"} 89778.0
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="TransactionsBatchedInSync"} 3.11723715e+08
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="ListSnapshottableDir"} 0.0
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="DisallowSnapshot"} 0.0
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetBlockLocations"} 2.6686132e+07
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="CreateSnapshot"} 0.0
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="DeleteSnapshot"} 0.0
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="FileInfo"} 1.6427193e+07
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="CreateFile"} 8.951014e+06
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="FilesDeleted"} 1.1157475e+07
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="DeleteFile"} 1.1154017e+07
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="FilesCreated"} 1.2269086e+07
+hadoop_hdfs_namenode_nnactivity_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="FilesAppended"} 191564.0
+# HELP hadoop_hdfs_namenode_nnactivity_method_avg_time_milliseconds Average turn around time of the method in milliseconds.
+# TYPE hadoop_hdfs_namenode_nnactivity_method_avg_time_milliseconds gauge
+hadoop_hdfs_namenode_nnactivity_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="BlockReport"} 232.0
+hadoop_hdfs_namenode_nnactivity_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetEdit"} 0.0
+hadoop_hdfs_namenode_nnactivity_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Transactions"} 0.01566951566951567
+hadoop_hdfs_namenode_nnactivity_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Syncs"} 18.155642023346303
+hadoop_hdfs_namenode_nnactivity_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetImage"} 0.0
+hadoop_hdfs_namenode_nnactivity_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="PutImage"} 11092.0
+hadoop_hdfs_namenode_nnactivity_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="CacheReport"} 0.0
+# HELP hadoop_hdfs_namenode_nnactivity_method_ops_total Total number of the times the method is called.
+# TYPE hadoop_hdfs_namenode_nnactivity_method_ops_total gauge
+hadoop_hdfs_namenode_nnactivity_method_ops_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="BlockReport"} 432.0
+hadoop_hdfs_namenode_nnactivity_method_ops_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Transactions"} 6.5526032e+07
+hadoop_hdfs_namenode_nnactivity_method_ops_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="CacheReport"} 246350.0
+hadoop_hdfs_namenode_nnactivity_method_ops_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetEdit"} 0.0
+hadoop_hdfs_namenode_nnactivity_method_ops_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetImage"} 0.0
+hadoop_hdfs_namenode_nnactivity_method_ops_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Syncs"} 1.1379679e+07
+hadoop_hdfs_namenode_nnactivity_method_ops_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="PutImage"} 146.0
+# HELP hadoop_hdfs_namenode_fsname_system_state_volume_failures_total Total number of volume failures across all Datanodes
+# TYPE hadoop_hdfs_namenode_fsname_system_state_volume_failures_total gauge
+hadoop_hdfs_namenode_fsname_system_state_volume_failures_total{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_state_estimated_capacity_lost_total An estimate of the total capacity lost due to volume failures
+# TYPE hadoop_hdfs_namenode_fsname_system_state_estimated_capacity_lost_total gauge
+hadoop_hdfs_namenode_fsname_system_state_estimated_capacity_lost_total{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_state_block_deletion_start_time Start time of block deletion
+# TYPE hadoop_hdfs_namenode_fsname_system_state_block_deletion_start_time gauge
+hadoop_hdfs_namenode_fsname_system_state_block_deletion_start_time{_target="yh-shhd-cdh02",cluster="yh-cdh"} 1.586867179855e+012
+# HELP hadoop_hdfs_namenode_fsname_system_state_num_decom_live_data_nodes Number of datanodes in each state
+# TYPE hadoop_hdfs_namenode_fsname_system_state_num_decom_live_data_nodes gauge
+hadoop_hdfs_namenode_fsname_system_state_num_decom_live_data_nodes{_target="yh-shhd-cdh02",cluster="yh-cdh",state="DecomLive"} 0.0
+hadoop_hdfs_namenode_fsname_system_state_num_decom_live_data_nodes{_target="yh-shhd-cdh02",cluster="yh-cdh",state="DecomDead"} 0.0
+hadoop_hdfs_namenode_fsname_system_state_num_decom_live_data_nodes{_target="yh-shhd-cdh02",cluster="yh-cdh",state="Live"} 5.0
+hadoop_hdfs_namenode_fsname_system_state_num_decom_live_data_nodes{_target="yh-shhd-cdh02",cluster="yh-cdh",state="Decommissioning"} 0.0
+hadoop_hdfs_namenode_fsname_system_state_num_decom_live_data_nodes{_target="yh-shhd-cdh02",cluster="yh-cdh",state="Stale"} 0.0
+hadoop_hdfs_namenode_fsname_system_state_num_decom_live_data_nodes{_target="yh-shhd-cdh02",cluster="yh-cdh",state="Dead"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_state_max_objects Max objects
+# TYPE hadoop_hdfs_namenode_fsname_system_state_max_objects gauge
+hadoop_hdfs_namenode_fsname_system_state_max_objects{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_state_total_sync_times Total number of milliseconds spent by various edit logs in sync operation
+# TYPE hadoop_hdfs_namenode_fsname_system_state_total_sync_times gauge
+hadoop_hdfs_namenode_fsname_system_state_total_sync_times{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_state_fs_lock_queue_length Filesystem lock queue length
+# TYPE hadoop_hdfs_namenode_fsname_system_state_fs_lock_queue_length gauge
+hadoop_hdfs_namenode_fsname_system_state_fs_lock_queue_length{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_state_fsstate Current state of the file system: 0 (for Safemode) or 1(Operational)
+# TYPE hadoop_hdfs_namenode_fsname_system_state_fsstate gauge
+hadoop_hdfs_namenode_fsname_system_state_fsstate{_target="yh-shhd-cdh02",cluster="yh-cdh"} 1.0
+# HELP hadoop_hdfs_namenode_fsname_system_state_num_stale_storages Number of storages marked as content stale (after NameNode restart/failover before first block report is received)
+# TYPE hadoop_hdfs_namenode_fsname_system_state_num_stale_storages gauge
+hadoop_hdfs_namenode_fsname_system_state_num_stale_storages{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_cache_total Total number of RetryCache in each mode
+# TYPE hadoop_hdfs_namenode_cache_total gauge
+hadoop_hdfs_namenode_cache_total{_target="yh-shhd-cdh02",cluster="yh-cdh",mode="Hit"} 175.0
+hadoop_hdfs_namenode_cache_total{_target="yh-shhd-cdh02",cluster="yh-cdh",mode="Cleared"} 0.0
+hadoop_hdfs_namenode_cache_total{_target="yh-shhd-cdh02",cluster="yh-cdh",mode="Updated"} 2.1501327e+07
+# HELP hadoop_hdfs_namenode_fsname_system_hastate (HA-only) Current state of the NameNode: 0.0 (for initializing) or 1.0 (for active) or 2.0 (for standby) or 3.0 (for stopping) state
+# TYPE hadoop_hdfs_namenode_fsname_system_hastate gauge
+hadoop_hdfs_namenode_fsname_system_hastate{_target="yh-shhd-cdh02",cluster="yh-cdh"} 1.0
+# HELP hadoop_hdfs_namenode_fsname_system_missing_blocks Current number of missing blocks
+# TYPE hadoop_hdfs_namenode_fsname_system_missing_blocks gauge
+hadoop_hdfs_namenode_fsname_system_missing_blocks{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_corrupt_blocks Current number of blocks with corrupt replicas.
+# TYPE hadoop_hdfs_namenode_fsname_system_corrupt_blocks gauge
+hadoop_hdfs_namenode_fsname_system_corrupt_blocks{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_stale_data_nodes Current number of DataNodes marked stale due to delayed heartbeat
+# TYPE hadoop_hdfs_namenode_fsname_system_stale_data_nodes gauge
+hadoop_hdfs_namenode_fsname_system_stale_data_nodes{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_pending_data_node_message_count (HA-only) Current number of pending block-related messages for later processing in the standby NameNode
+# TYPE hadoop_hdfs_namenode_fsname_system_pending_data_node_message_count gauge
+hadoop_hdfs_namenode_fsname_system_pending_data_node_message_count{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_lock_queue_length Number of threads waiting to acquire FSNameSystem lock
+# TYPE hadoop_hdfs_namenode_fsname_system_lock_queue_length gauge
+hadoop_hdfs_namenode_fsname_system_lock_queue_length{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_capacity_bytes Current DataNodes capacity in each mode in bytes
+# TYPE hadoop_hdfs_namenode_fsname_system_capacity_bytes gauge
+hadoop_hdfs_namenode_fsname_system_capacity_bytes{_target="yh-shhd-cdh02",cluster="yh-cdh",mode="UsedNonDFS"} 3.675869363864e+013
+hadoop_hdfs_namenode_fsname_system_capacity_bytes{_target="yh-shhd-cdh02",cluster="yh-cdh",mode="Total"} 1.33166434799616e+014
+hadoop_hdfs_namenode_fsname_system_capacity_bytes{_target="yh-shhd-cdh02",cluster="yh-cdh",mode="Used"} 2.503503459189e+013
+hadoop_hdfs_namenode_fsname_system_capacity_bytes{_target="yh-shhd-cdh02",cluster="yh-cdh",mode="Remaining"} 6.4649339742936e+013
+# HELP hadoop_hdfs_namenode_fsname_system_files_total Current number of files and directories
+# TYPE hadoop_hdfs_namenode_fsname_system_files_total gauge
+hadoop_hdfs_namenode_fsname_system_files_total{_target="yh-shhd-cdh02",cluster="yh-cdh"} 6.825541e+06
+# HELP hadoop_hdfs_namenode_fsname_system_transactions_since_last_log_roll Total number of transactions since last edit log roll
+# TYPE hadoop_hdfs_namenode_fsname_system_transactions_since_last_log_roll gauge
+hadoop_hdfs_namenode_fsname_system_transactions_since_last_log_roll{_target="yh-shhd-cdh02",cluster="yh-cdh"} 2860.0
+# HELP hadoop_hdfs_namenode_fsname_system_pending_replication_blocks Current number of blocks pending to be replicated
+# TYPE hadoop_hdfs_namenode_fsname_system_pending_replication_blocks gauge
+hadoop_hdfs_namenode_fsname_system_pending_replication_blocks{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_num_encryption_zones Current number of encryption zones
+# TYPE hadoop_hdfs_namenode_fsname_system_num_encryption_zones gauge
+hadoop_hdfs_namenode_fsname_system_num_encryption_zones{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_pending_deletion_blocks Current number of blocks pending deletion
+# TYPE hadoop_hdfs_namenode_fsname_system_pending_deletion_blocks gauge
+hadoop_hdfs_namenode_fsname_system_pending_deletion_blocks{_target="yh-shhd-cdh02",cluster="yh-cdh"} 14.0
+# HELP hadoop_hdfs_namenode_fsname_system_under_replicated_blocks Current number of blocks under replicated
+# TYPE hadoop_hdfs_namenode_fsname_system_under_replicated_blocks gauge
+hadoop_hdfs_namenode_fsname_system_under_replicated_blocks{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_num_active_clients Current number of active clients holding lease
+# TYPE hadoop_hdfs_namenode_fsname_system_num_active_clients gauge
+hadoop_hdfs_namenode_fsname_system_num_active_clients{_target="yh-shhd-cdh02",cluster="yh-cdh"} 30.0
+# HELP hadoop_hdfs_namenode_fsname_system_scheduled_replication_blocks Current number of blocks scheduled for replications
+# TYPE hadoop_hdfs_namenode_fsname_system_scheduled_replication_blocks gauge
+hadoop_hdfs_namenode_fsname_system_scheduled_replication_blocks{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_total_load Current number of connections
+# TYPE hadoop_hdfs_namenode_fsname_system_total_load gauge
+hadoop_hdfs_namenode_fsname_system_total_load{_target="yh-shhd-cdh02",cluster="yh-cdh"} 117.0
+# HELP hadoop_hdfs_namenode_fsname_system_block_capacity Current number of block capacity
+# TYPE hadoop_hdfs_namenode_fsname_system_block_capacity gauge
+hadoop_hdfs_namenode_fsname_system_block_capacity{_target="yh-shhd-cdh02",cluster="yh-cdh"} 1.6777216e+07
+# HELP hadoop_hdfs_namenode_fsname_system_total_sync_count Total number of sync operations performed by edit log
+# TYPE hadoop_hdfs_namenode_fsname_system_total_sync_count gauge
+hadoop_hdfs_namenode_fsname_system_total_sync_count{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_snapshottable_directories Current number of snapshottable directories
+# TYPE hadoop_hdfs_namenode_fsname_system_snapshottable_directories gauge
+hadoop_hdfs_namenode_fsname_system_snapshottable_directories{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_blocks_total Current number of allocated blocks in the system
+# TYPE hadoop_hdfs_namenode_fsname_system_blocks_total gauge
+hadoop_hdfs_namenode_fsname_system_blocks_total{_target="yh-shhd-cdh02",cluster="yh-cdh"} 5.360786e+06
+# HELP hadoop_hdfs_namenode_fsname_system_last_written_transaction_id Last transaction ID written to the edit log
+# TYPE hadoop_hdfs_namenode_fsname_system_last_written_transaction_id gauge
+hadoop_hdfs_namenode_fsname_system_last_written_transaction_id{_target="yh-shhd-cdh02",cluster="yh-cdh"} 3.23103394e+08
+# HELP hadoop_hdfs_namenode_fsname_system_expired_heartbeats Total number of expired heartbeats
+# TYPE hadoop_hdfs_namenode_fsname_system_expired_heartbeats gauge
+hadoop_hdfs_namenode_fsname_system_expired_heartbeats{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_num_timed_out_pending_replications The number of timed out replications. Not the number of unique blocks that timed out. Note: The metric name will be changed to NumTimedOutPendingReconstructions in Hadoop 3 release.
+# TYPE hadoop_hdfs_namenode_fsname_system_num_timed_out_pending_replications gauge
+hadoop_hdfs_namenode_fsname_system_num_timed_out_pending_replications{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_missing_repl_one_blocks Current number of missing blocks with replication factor 1
+# TYPE hadoop_hdfs_namenode_fsname_system_missing_repl_one_blocks gauge
+hadoop_hdfs_namenode_fsname_system_missing_repl_one_blocks{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_transactions_since_last_checkpoint Total number of transactions since last checkpoint
+# TYPE hadoop_hdfs_namenode_fsname_system_transactions_since_last_checkpoint gauge
+hadoop_hdfs_namenode_fsname_system_transactions_since_last_checkpoint{_target="yh-shhd-cdh02",cluster="yh-cdh"} 219013.0
+# HELP hadoop_hdfs_namenode_fsname_system_snapshots Current number of snapshots
+# TYPE hadoop_hdfs_namenode_fsname_system_snapshots gauge
+hadoop_hdfs_namenode_fsname_system_snapshots{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_postponed_misreplicated_blocks (HA-only) Current number of blocks postponed to replicate
+# TYPE hadoop_hdfs_namenode_fsname_system_postponed_misreplicated_blocks gauge
+hadoop_hdfs_namenode_fsname_system_postponed_misreplicated_blocks{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_excess_blocks Current number of excess blocks
+# TYPE hadoop_hdfs_namenode_fsname_system_excess_blocks gauge
+hadoop_hdfs_namenode_fsname_system_excess_blocks{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_millis_since_last_loaded_edits (HA-only) Time in milliseconds since the last time standby NameNode load edit log. In active NameNode, set to 0
+# TYPE hadoop_hdfs_namenode_fsname_system_millis_since_last_loaded_edits gauge
+hadoop_hdfs_namenode_fsname_system_millis_since_last_loaded_edits{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_fsname_system_last_checkpoint_time Time in milliseconds since epoch of last checkpoint
+# TYPE hadoop_hdfs_namenode_fsname_system_last_checkpoint_time gauge
+hadoop_hdfs_namenode_fsname_system_last_checkpoint_time{_target="yh-shhd-cdh02",cluster="yh-cdh"} 1.587396601258e+012
+# HELP hadoop_hdfs_namenode_fsname_system_num_files_under_construction Current number of files under construction
+# TYPE hadoop_hdfs_namenode_fsname_system_num_files_under_construction gauge
+hadoop_hdfs_namenode_fsname_system_num_files_under_construction{_target="yh-shhd-cdh02",cluster="yh-cdh"} 30.0
+# HELP hadoop_hdfs_namenode_nninfo_cache_used Cache Used
+# TYPE hadoop_hdfs_namenode_nninfo_cache_used gauge
+hadoop_hdfs_namenode_nninfo_cache_used{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_nninfo_node_usage_max Node usage max
+# TYPE hadoop_hdfs_namenode_nninfo_node_usage_max gauge
+hadoop_hdfs_namenode_nninfo_node_usage_max{_target="yh-shhd-cdh02",cluster="yh-cdh"} 28.14
+# HELP hadoop_hdfs_namenode_nninfo_entering_maintenance_nodes_maintenance_only_replicas Entering maintenance node maintenance_only_replicas
+# TYPE hadoop_hdfs_namenode_nninfo_entering_maintenance_nodes_maintenance_only_replicas gauge
+# HELP hadoop_hdfs_namenode_nninfo_dead_nodes_count Count of dead data node
+# TYPE hadoop_hdfs_namenode_nninfo_dead_nodes_count gauge
+hadoop_hdfs_namenode_nninfo_dead_nodes_count{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_nninfo_software_version Software version
+# TYPE hadoop_hdfs_namenode_nninfo_software_version gauge
+hadoop_hdfs_namenode_nninfo_software_version{_target="yh-shhd-cdh02",cluster="yh-cdh",software_version="2.6.0-cdh5.14.2"} 0.0
+# HELP hadoop_hdfs_namenode_nninfo_decom_nodes_count Count of decommissioned data node
+# TYPE hadoop_hdfs_namenode_nninfo_decom_nodes_count gauge
+hadoop_hdfs_namenode_nninfo_decom_nodes_count{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_nninfo_live_nodes_remaining Live node remaining
+# TYPE hadoop_hdfs_namenode_nninfo_live_nodes_remaining gauge
+hadoop_hdfs_namenode_nninfo_live_nodes_remaining{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh01",infoAddr="10.193.40.9:50075",infoSecureAddr="10.193.40.9:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.9:50010"} 2.4022839663158e+013
+hadoop_hdfs_namenode_nninfo_live_nodes_remaining{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh02",infoAddr="10.193.40.10:50075",infoSecureAddr="10.193.40.10:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.10:50010"} 2.1184723980616e+013
+hadoop_hdfs_namenode_nninfo_live_nodes_remaining{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh03",infoAddr="10.193.40.1:50075",infoSecureAddr="10.193.40.1:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.1:50010"} 6.495852545197e+012
+hadoop_hdfs_namenode_nninfo_live_nodes_remaining{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh04",infoAddr="10.193.40.2:50075",infoSecureAddr="10.193.40.2:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.2:50010"} 6.41000286464e+012
+hadoop_hdfs_namenode_nninfo_live_nodes_remaining{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh05",infoAddr="10.193.40.3:50075",infoSecureAddr="10.193.40.3:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.3:50010"} 6.535920689325e+012
+# HELP hadoop_hdfs_namenode_nninfo_decom_nodes_under_replicate_in_open_files Decom Node under_replicate_in_open_files
+# TYPE hadoop_hdfs_namenode_nninfo_decom_nodes_under_replicate_in_open_files gauge
+# HELP hadoop_hdfs_namenode_nninfo_dead_nodes_last_contact Dead node last contact in milions
+# TYPE hadoop_hdfs_namenode_nninfo_dead_nodes_last_contact gauge
+# HELP hadoop_hdfs_namenode_nninfo_used Total used space by data nodes
+# TYPE hadoop_hdfs_namenode_nninfo_used gauge
+hadoop_hdfs_namenode_nninfo_used{_target="yh-shhd-cdh02",cluster="yh-cdh"} 2.503503459189e+013
+# HELP hadoop_hdfs_namenode_nninfo_total_blocks Total number of blocks
+# TYPE hadoop_hdfs_namenode_nninfo_total_blocks gauge
+hadoop_hdfs_namenode_nninfo_total_blocks{_target="yh-shhd-cdh02",cluster="yh-cdh"} 5.360786e+06
+# HELP hadoop_hdfs_namenode_nninfo_block_pool_used_space Block pool used space
+# TYPE hadoop_hdfs_namenode_nninfo_block_pool_used_space gauge
+hadoop_hdfs_namenode_nninfo_block_pool_used_space{_target="yh-shhd-cdh02",cluster="yh-cdh"} 2.503503459189e+013
+# HELP hadoop_hdfs_namenode_nninfo_free Total free space by data nodes
+# TYPE hadoop_hdfs_namenode_nninfo_free gauge
+hadoop_hdfs_namenode_nninfo_free{_target="yh-shhd-cdh02",cluster="yh-cdh"} 6.4649339742936e+013
+# HELP hadoop_hdfs_namenode_nninfo_entering_maintenance_nodes_under_replicate_in_open_files Entering maintenance node under_replicate_in_open_files
+# TYPE hadoop_hdfs_namenode_nninfo_entering_maintenance_nodes_under_replicate_in_open_files gauge
+# HELP hadoop_hdfs_namenode_nninfo_live_nodes_block_pool_used_percent Live node block_pool_used_percent
+# TYPE hadoop_hdfs_namenode_nninfo_live_nodes_block_pool_used_percent gauge
+hadoop_hdfs_namenode_nninfo_live_nodes_block_pool_used_percent{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh01",infoAddr="10.193.40.9:50075",infoSecureAddr="10.193.40.9:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.9:50010"} 19.194904
+hadoop_hdfs_namenode_nninfo_live_nodes_block_pool_used_percent{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh02",infoAddr="10.193.40.10:50075",infoSecureAddr="10.193.40.10:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.10:50010"} 28.144184
+hadoop_hdfs_namenode_nninfo_live_nodes_block_pool_used_percent{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh03",infoAddr="10.193.40.1:50075",infoSecureAddr="10.193.40.1:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.1:50010"} 14.470203
+hadoop_hdfs_namenode_nninfo_live_nodes_block_pool_used_percent{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh04",infoAddr="10.193.40.2:50075",infoSecureAddr="10.193.40.2:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.2:50010"} 14.643831
+hadoop_hdfs_namenode_nninfo_live_nodes_block_pool_used_percent{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh05",infoAddr="10.193.40.3:50075",infoSecureAddr="10.193.40.3:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.3:50010"} 14.001001
+# HELP hadoop_hdfs_namenode_nninfo_live_nodes_count Count of live data node
+# TYPE hadoop_hdfs_namenode_nninfo_live_nodes_count gauge
+hadoop_hdfs_namenode_nninfo_live_nodes_count{_target="yh-shhd-cdh02",cluster="yh-cdh"} 5.0
+# HELP hadoop_hdfs_namenode_nninfo_live_nodes_used Live node used
+# TYPE hadoop_hdfs_namenode_nninfo_live_nodes_used gauge
+hadoop_hdfs_namenode_nninfo_live_nodes_used{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh01",infoAddr="10.193.40.9:50075",infoSecureAddr="10.193.40.9:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.9:50010"} 6.086782404042e+012
+hadoop_hdfs_namenode_nninfo_live_nodes_used{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh02",infoAddr="10.193.40.10:50075",infoSecureAddr="10.193.40.10:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.10:50010"} 8.92463453356e+012
+hadoop_hdfs_namenode_nninfo_live_nodes_used{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh03",infoAddr="10.193.40.1:50075",infoSecureAddr="10.193.40.1:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.1:50010"} 3.364111371601e+012
+hadoop_hdfs_namenode_nninfo_live_nodes_used{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh04",infoAddr="10.193.40.2:50075",infoSecureAddr="10.193.40.2:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.2:50010"} 3.404477276876e+012
+hadoop_hdfs_namenode_nninfo_live_nodes_used{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh05",infoAddr="10.193.40.3:50075",infoSecureAddr="10.193.40.3:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.3:50010"} 3.255029005811e+012
+# HELP hadoop_hdfs_namenode_nninfo_decom_nodes_under_replicated_blocks Decom Node under_replicated_blocks
+# TYPE hadoop_hdfs_namenode_nninfo_decom_nodes_under_replicated_blocks gauge
+# HELP hadoop_hdfs_namenode_nninfo_safe_mode Is in safe mode. 0: no, 1: yes
+# TYPE hadoop_hdfs_namenode_nninfo_safe_mode gauge
+hadoop_hdfs_namenode_nninfo_safe_mode{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_nninfo_entering_maintenance_nodes_under_replicated_blocks Entering maintenance node under_replicated_blocks
+# TYPE hadoop_hdfs_namenode_nninfo_entering_maintenance_nodes_under_replicated_blocks gauge
+# HELP hadoop_hdfs_namenode_nninfo_number_of_missing_blocks Number of missing blocks
+# TYPE hadoop_hdfs_namenode_nninfo_number_of_missing_blocks gauge
+hadoop_hdfs_namenode_nninfo_number_of_missing_blocks{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_nninfo_live_nodes_last_contact Live node last_contact
+# TYPE hadoop_hdfs_namenode_nninfo_live_nodes_last_contact gauge
+hadoop_hdfs_namenode_nninfo_live_nodes_last_contact{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh01",infoAddr="10.193.40.9:50075",infoSecureAddr="10.193.40.9:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.9:50010"} 1.0
+hadoop_hdfs_namenode_nninfo_live_nodes_last_contact{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh02",infoAddr="10.193.40.10:50075",infoSecureAddr="10.193.40.10:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.10:50010"} 2.0
+hadoop_hdfs_namenode_nninfo_live_nodes_last_contact{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh03",infoAddr="10.193.40.1:50075",infoSecureAddr="10.193.40.1:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.1:50010"} 0.0
+hadoop_hdfs_namenode_nninfo_live_nodes_last_contact{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh04",infoAddr="10.193.40.2:50075",infoSecureAddr="10.193.40.2:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.2:50010"} 1.0
+hadoop_hdfs_namenode_nninfo_live_nodes_last_contact{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh05",infoAddr="10.193.40.3:50075",infoSecureAddr="10.193.40.3:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.3:50010"} 0.0
+# HELP hadoop_hdfs_namenode_nninfo_total_files Total Files
+# TYPE hadoop_hdfs_namenode_nninfo_total_files gauge
+hadoop_hdfs_namenode_nninfo_total_files{_target="yh-shhd-cdh02",cluster="yh-cdh"} 6.825541e+06
+# HELP hadoop_hdfs_namenode_nninfo_live_nodes_volfails Live node volfails
+# TYPE hadoop_hdfs_namenode_nninfo_live_nodes_volfails gauge
+hadoop_hdfs_namenode_nninfo_live_nodes_volfails{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh01",infoAddr="10.193.40.9:50075",infoSecureAddr="10.193.40.9:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.9:50010"} 0.0
+hadoop_hdfs_namenode_nninfo_live_nodes_volfails{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh02",infoAddr="10.193.40.10:50075",infoSecureAddr="10.193.40.10:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.10:50010"} 0.0
+hadoop_hdfs_namenode_nninfo_live_nodes_volfails{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh03",infoAddr="10.193.40.1:50075",infoSecureAddr="10.193.40.1:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.1:50010"} 0.0
+hadoop_hdfs_namenode_nninfo_live_nodes_volfails{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh04",infoAddr="10.193.40.2:50075",infoSecureAddr="10.193.40.2:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.2:50010"} 0.0
+hadoop_hdfs_namenode_nninfo_live_nodes_volfails{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh05",infoAddr="10.193.40.3:50075",infoSecureAddr="10.193.40.3:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.3:50010"} 0.0
+# HELP hadoop_hdfs_namenode_nninfo_live_nodes_block_scheduled Live node block_scheduled
+# TYPE hadoop_hdfs_namenode_nninfo_live_nodes_block_scheduled gauge
+hadoop_hdfs_namenode_nninfo_live_nodes_block_scheduled{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh01",infoAddr="10.193.40.9:50075",infoSecureAddr="10.193.40.9:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.9:50010"} 0.0
+hadoop_hdfs_namenode_nninfo_live_nodes_block_scheduled{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh02",infoAddr="10.193.40.10:50075",infoSecureAddr="10.193.40.10:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.10:50010"} 0.0
+hadoop_hdfs_namenode_nninfo_live_nodes_block_scheduled{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh03",infoAddr="10.193.40.1:50075",infoSecureAddr="10.193.40.1:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.1:50010"} 0.0
+hadoop_hdfs_namenode_nninfo_live_nodes_block_scheduled{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh04",infoAddr="10.193.40.2:50075",infoSecureAddr="10.193.40.2:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.2:50010"} 0.0
+hadoop_hdfs_namenode_nninfo_live_nodes_block_scheduled{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh05",infoAddr="10.193.40.3:50075",infoSecureAddr="10.193.40.3:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.3:50010"} 0.0
+# HELP hadoop_hdfs_namenode_nninfo_live_nodes_used_space Live node used_space
+# TYPE hadoop_hdfs_namenode_nninfo_live_nodes_used_space gauge
+hadoop_hdfs_namenode_nninfo_live_nodes_used_space{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh01",infoAddr="10.193.40.9:50075",infoSecureAddr="10.193.40.9:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.9:50010"} 6.086782404042e+012
+hadoop_hdfs_namenode_nninfo_live_nodes_used_space{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh02",infoAddr="10.193.40.10:50075",infoSecureAddr="10.193.40.10:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.10:50010"} 8.92463453356e+012
+hadoop_hdfs_namenode_nninfo_live_nodes_used_space{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh03",infoAddr="10.193.40.1:50075",infoSecureAddr="10.193.40.1:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.1:50010"} 3.364111371601e+012
+hadoop_hdfs_namenode_nninfo_live_nodes_used_space{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh04",infoAddr="10.193.40.2:50075",infoSecureAddr="10.193.40.2:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.2:50010"} 3.404477276876e+012
+hadoop_hdfs_namenode_nninfo_live_nodes_used_space{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh05",infoAddr="10.193.40.3:50075",infoSecureAddr="10.193.40.3:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.3:50010"} 3.255029005811e+012
+# HELP hadoop_hdfs_namenode_nninfo_node_usage_std_dev Node usage std_dev
+# TYPE hadoop_hdfs_namenode_nninfo_node_usage_std_dev gauge
+hadoop_hdfs_namenode_nninfo_node_usage_std_dev{_target="yh-shhd-cdh02",cluster="yh-cdh"} 5.37
+# HELP hadoop_hdfs_namenode_nninfo_nnstarted_time_in_millis NameNode started time in millis
+# TYPE hadoop_hdfs_namenode_nninfo_nnstarted_time_in_millis gauge
+hadoop_hdfs_namenode_nninfo_nnstarted_time_in_millis{_target="yh-shhd-cdh02",cluster="yh-cdh"} 1.586867179855e+012
+# HELP hadoop_hdfs_namenode_nninfo_live_nodes_block_pool_used Live node block_pool_used
+# TYPE hadoop_hdfs_namenode_nninfo_live_nodes_block_pool_used gauge
+hadoop_hdfs_namenode_nninfo_live_nodes_block_pool_used{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh01",infoAddr="10.193.40.9:50075",infoSecureAddr="10.193.40.9:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.9:50010"} 6.086782404042e+012
+hadoop_hdfs_namenode_nninfo_live_nodes_block_pool_used{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh02",infoAddr="10.193.40.10:50075",infoSecureAddr="10.193.40.10:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.10:50010"} 8.92463453356e+012
+hadoop_hdfs_namenode_nninfo_live_nodes_block_pool_used{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh03",infoAddr="10.193.40.1:50075",infoSecureAddr="10.193.40.1:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.1:50010"} 3.364111371601e+012
+hadoop_hdfs_namenode_nninfo_live_nodes_block_pool_used{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh04",infoAddr="10.193.40.2:50075",infoSecureAddr="10.193.40.2:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.2:50010"} 3.404477276876e+012
+hadoop_hdfs_namenode_nninfo_live_nodes_block_pool_used{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh05",infoAddr="10.193.40.3:50075",infoSecureAddr="10.193.40.3:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.3:50010"} 3.255029005811e+012
+# HELP hadoop_hdfs_namenode_nninfo_node_usage_median Node usage median
+# TYPE hadoop_hdfs_namenode_nninfo_node_usage_median gauge
+hadoop_hdfs_namenode_nninfo_node_usage_median{_target="yh-shhd-cdh02",cluster="yh-cdh"} 14.64
+# HELP hadoop_hdfs_namenode_nninfo_number_of_missing_blocks_with_replication_factor_one Number of missing blocks with replication factor one
+# TYPE hadoop_hdfs_namenode_nninfo_number_of_missing_blocks_with_replication_factor_one gauge
+hadoop_hdfs_namenode_nninfo_number_of_missing_blocks_with_replication_factor_one{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_nninfo_percent_used Total used space by data nodes as percentage of total capacity
+# TYPE hadoop_hdfs_namenode_nninfo_percent_used gauge
+hadoop_hdfs_namenode_nninfo_percent_used{_target="yh-shhd-cdh02",cluster="yh-cdh"} 18.799809
+# HELP hadoop_hdfs_namenode_nninfo_corrupt_file_count Corrupt file count
+# TYPE hadoop_hdfs_namenode_nninfo_corrupt_file_count gauge
+hadoop_hdfs_namenode_nninfo_corrupt_file_count{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_nninfo_maintenance_nodes_count Count of maintenance data node
+# TYPE hadoop_hdfs_namenode_nninfo_maintenance_nodes_count gauge
+hadoop_hdfs_namenode_nninfo_maintenance_nodes_count{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_nninfo_live_nodes_capacity Live node capacity
+# TYPE hadoop_hdfs_namenode_nninfo_live_nodes_capacity gauge
+hadoop_hdfs_namenode_nninfo_live_nodes_capacity{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh01",infoAddr="10.193.40.9:50075",infoSecureAddr="10.193.40.9:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.9:50010"} 3.1710403805184e+013
+hadoop_hdfs_namenode_nninfo_live_nodes_capacity{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh02",infoAddr="10.193.40.10:50075",infoSecureAddr="10.193.40.10:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.10:50010"} 3.1710403805184e+013
+hadoop_hdfs_namenode_nninfo_live_nodes_capacity{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh03",infoAddr="10.193.40.1:50075",infoSecureAddr="10.193.40.1:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.1:50010"} 2.324854226944e+013
+hadoop_hdfs_namenode_nninfo_live_nodes_capacity{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh04",infoAddr="10.193.40.2:50075",infoSecureAddr="10.193.40.2:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.2:50010"} 2.3248542650368e+013
+hadoop_hdfs_namenode_nninfo_live_nodes_capacity{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh05",infoAddr="10.193.40.3:50075",infoSecureAddr="10.193.40.3:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.3:50010"} 2.324854226944e+013
+# HELP hadoop_hdfs_namenode_nninfo_percent_block_pool_used Percent of block pool used
+# TYPE hadoop_hdfs_namenode_nninfo_percent_block_pool_used gauge
+hadoop_hdfs_namenode_nninfo_percent_block_pool_used{_target="yh-shhd-cdh02",cluster="yh-cdh"} 18.799809
+# HELP hadoop_hdfs_namenode_nninfo_node_usage_min Node usage min
+# TYPE hadoop_hdfs_namenode_nninfo_node_usage_min gauge
+hadoop_hdfs_namenode_nninfo_node_usage_min{_target="yh-shhd-cdh02",cluster="yh-cdh"} 14.0
+# HELP hadoop_hdfs_namenode_nninfo_live_nodes_admin_state Live node admin_state 0: In Service, 1: Decommission In Progress, 2: Decommissioned
+# TYPE hadoop_hdfs_namenode_nninfo_live_nodes_admin_state gauge
+hadoop_hdfs_namenode_nninfo_live_nodes_admin_state{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh01",infoAddr="10.193.40.9:50075",infoSecureAddr="10.193.40.9:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.9:50010"} 0.0
+hadoop_hdfs_namenode_nninfo_live_nodes_admin_state{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh02",infoAddr="10.193.40.10:50075",infoSecureAddr="10.193.40.10:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.10:50010"} 0.0
+hadoop_hdfs_namenode_nninfo_live_nodes_admin_state{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh03",infoAddr="10.193.40.1:50075",infoSecureAddr="10.193.40.1:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.1:50010"} 0.0
+hadoop_hdfs_namenode_nninfo_live_nodes_admin_state{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh04",infoAddr="10.193.40.2:50075",infoSecureAddr="10.193.40.2:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.2:50010"} 0.0
+hadoop_hdfs_namenode_nninfo_live_nodes_admin_state{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh05",infoAddr="10.193.40.3:50075",infoSecureAddr="10.193.40.3:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.3:50010"} 0.0
+# HELP hadoop_hdfs_namenode_nninfo_cache_capacity Cache Capacity
+# TYPE hadoop_hdfs_namenode_nninfo_cache_capacity gauge
+hadoop_hdfs_namenode_nninfo_cache_capacity{_target="yh-shhd-cdh02",cluster="yh-cdh"} 2.147483648e+010
+# HELP hadoop_hdfs_namenode_nninfo_non_dfs_used_space Total used space by data nodes for non DFS purposes such as storing temporary files on the local file system
+# TYPE hadoop_hdfs_namenode_nninfo_non_dfs_used_space gauge
+hadoop_hdfs_namenode_nninfo_non_dfs_used_space{_target="yh-shhd-cdh02",cluster="yh-cdh"} 3.675869363864e+013
+# HELP hadoop_hdfs_namenode_nninfo_live_nodes_num_blocks Live node num_blocks
+# TYPE hadoop_hdfs_namenode_nninfo_live_nodes_num_blocks gauge
+hadoop_hdfs_namenode_nninfo_live_nodes_num_blocks{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh01",infoAddr="10.193.40.9:50075",infoSecureAddr="10.193.40.9:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.9:50010"} 1.180697e+06
+hadoop_hdfs_namenode_nninfo_live_nodes_num_blocks{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh02",infoAddr="10.193.40.10:50075",infoSecureAddr="10.193.40.10:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.10:50010"} 576919.0
+hadoop_hdfs_namenode_nninfo_live_nodes_num_blocks{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh03",infoAddr="10.193.40.1:50075",infoSecureAddr="10.193.40.1:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.1:50010"} 1.546843e+06
+hadoop_hdfs_namenode_nninfo_live_nodes_num_blocks{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh04",infoAddr="10.193.40.2:50075",infoSecureAddr="10.193.40.2:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.2:50010"} 1.543343e+06
+hadoop_hdfs_namenode_nninfo_live_nodes_num_blocks{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh05",infoAddr="10.193.40.3:50075",infoSecureAddr="10.193.40.3:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.3:50010"} 1.092293e+06
+# HELP hadoop_hdfs_namenode_nninfo_percent_remaining Total remaining space by data nodes as percentage of total capacity
+# TYPE hadoop_hdfs_namenode_nninfo_percent_remaining gauge
+hadoop_hdfs_namenode_nninfo_percent_remaining{_target="yh-shhd-cdh02",cluster="yh-cdh"} 48.547775
+# HELP hadoop_hdfs_namenode_nninfo_decom_nodes_decommission_only_replicas Decom Node decommission_only_replicas
+# TYPE hadoop_hdfs_namenode_nninfo_decom_nodes_decommission_only_replicas gauge
+# HELP hadoop_hdfs_namenode_nninfo_total Total
+# TYPE hadoop_hdfs_namenode_nninfo_total gauge
+hadoop_hdfs_namenode_nninfo_total{_target="yh-shhd-cdh02",cluster="yh-cdh"} 1.33166434799616e+014
+# HELP hadoop_hdfs_namenode_nninfo_live_nodes_non_dfs_used_space Live node non_dfs_used_space
+# TYPE hadoop_hdfs_namenode_nninfo_live_nodes_non_dfs_used_space gauge
+hadoop_hdfs_namenode_nninfo_live_nodes_non_dfs_used_space{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh01",infoAddr="10.193.40.9:50075",infoSecureAddr="10.193.40.9:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.9:50010"} 0.0
+hadoop_hdfs_namenode_nninfo_live_nodes_non_dfs_used_space{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh02",infoAddr="10.193.40.10:50075",infoSecureAddr="10.193.40.10:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.10:50010"} 0.0
+hadoop_hdfs_namenode_nninfo_live_nodes_non_dfs_used_space{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh03",infoAddr="10.193.40.1:50075",infoSecureAddr="10.193.40.1:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.1:50010"} 1.2214822556335e+013
+hadoop_hdfs_namenode_nninfo_live_nodes_non_dfs_used_space{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh04",infoAddr="10.193.40.2:50075",infoSecureAddr="10.193.40.2:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.2:50010"} 1.2260039548212e+013
+hadoop_hdfs_namenode_nninfo_live_nodes_non_dfs_used_space{_target="yh-shhd-cdh02",cluster="yh-cdh",datanode="yh-shhd-cdh05",infoAddr="10.193.40.3:50075",infoSecureAddr="10.193.40.3:0",version="2.6.0-cdh5.14.2",xferaddr="10.193.40.3:50010"} 1.2283831534093e+013
+# HELP hadoop_hdfs_namenode_rpc_num_open_connections Current number of open connections
+# TYPE hadoop_hdfs_namenode_rpc_num_open_connections gauge
+hadoop_hdfs_namenode_rpc_num_open_connections{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8022"} 6.0
+hadoop_hdfs_namenode_rpc_num_open_connections{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8020"} 57.0
+# HELP hadoop_hdfs_namenode_rpc_authentication_successes Total number of authentication successes
+# TYPE hadoop_hdfs_namenode_rpc_authentication_successes gauge
+hadoop_hdfs_namenode_rpc_authentication_successes{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8022"} 0.0
+hadoop_hdfs_namenode_rpc_authentication_successes{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8020"} 0.0
+# HELP hadoop_hdfs_namenode_rpc_authorization_failures Total number of authorization failures
+# TYPE hadoop_hdfs_namenode_rpc_authorization_failures gauge
+hadoop_hdfs_namenode_rpc_authorization_failures{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8022"} 0.0
+hadoop_hdfs_namenode_rpc_authorization_failures{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8020"} 0.0
+# HELP hadoop_hdfs_namenode_rpc_slow_calls Total number of RPC slow calls
+# TYPE hadoop_hdfs_namenode_rpc_slow_calls gauge
+hadoop_hdfs_namenode_rpc_slow_calls{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8022"} 0.0
+hadoop_hdfs_namenode_rpc_slow_calls{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8020"} 0.0
+# HELP hadoop_hdfs_namenode_rpc_method_avg_time_milliseconds Average turn around time of the method in milliseconds.
+# TYPE hadoop_hdfs_namenode_rpc_method_avg_time_milliseconds gauge
+hadoop_hdfs_namenode_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RpcProcessingTime",tag="8022"} 0.025
+hadoop_hdfs_namenode_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RpcQueueTime",tag="8022"} 0.05
+hadoop_hdfs_namenode_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RpcProcessingTime",tag="8020"} 0.11503416856492027
+hadoop_hdfs_namenode_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RpcQueueTime",tag="8020"} 0.16400911161731208
+# HELP hadoop_hdfs_namenode_rpc_client_backoff Total number of RPC client back off
+# TYPE hadoop_hdfs_namenode_rpc_client_backoff gauge
+hadoop_hdfs_namenode_rpc_client_backoff{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8022"} 0.0
+hadoop_hdfs_namenode_rpc_client_backoff{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8020"} 0.0
+# HELP hadoop_hdfs_namenode_rpc_authentication_failures Total number of authentication failures
+# TYPE hadoop_hdfs_namenode_rpc_authentication_failures gauge
+hadoop_hdfs_namenode_rpc_authentication_failures{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8022"} 0.0
+hadoop_hdfs_namenode_rpc_authentication_failures{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8020"} 0.0
+# HELP hadoop_hdfs_namenode_rpc_received_bytes Total number of received bytes
+# TYPE hadoop_hdfs_namenode_rpc_received_bytes gauge
+hadoop_hdfs_namenode_rpc_received_bytes{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8022"} 6.951856641e+09
+hadoop_hdfs_namenode_rpc_received_bytes{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8020"} 3.1289571785e+010
+# HELP hadoop_hdfs_namenode_rpc_authorization_successes Total number of authorization successes
+# TYPE hadoop_hdfs_namenode_rpc_authorization_successes gauge
+hadoop_hdfs_namenode_rpc_authorization_successes{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8022"} 4412.0
+hadoop_hdfs_namenode_rpc_authorization_successes{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8020"} 497644.0
+# HELP hadoop_hdfs_namenode_rpc_call_queue_length Current length of the call queue
+# TYPE hadoop_hdfs_namenode_rpc_call_queue_length gauge
+hadoop_hdfs_namenode_rpc_call_queue_length{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8022"} 0.0
+hadoop_hdfs_namenode_rpc_call_queue_length{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8020"} 0.0
+# HELP hadoop_hdfs_namenode_rpc_sent_bytes Total number of sent bytes
+# TYPE hadoop_hdfs_namenode_rpc_sent_bytes gauge
+hadoop_hdfs_namenode_rpc_sent_bytes{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8022"} 6.58581133e+08
+hadoop_hdfs_namenode_rpc_sent_bytes{_target="yh-shhd-cdh02",cluster="yh-cdh",tag="8020"} 4.5906679728e+010
+# HELP hadoop_hdfs_namenode_rpc_method_called_total Total number of the times the method is called.
+# TYPE hadoop_hdfs_namenode_rpc_method_called_total gauge
+hadoop_hdfs_namenode_rpc_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RpcProcessingTime",tag="8022"} 1.1944732e+07
+hadoop_hdfs_namenode_rpc_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RpcQueueTime",tag="8022"} 1.1944732e+07
+hadoop_hdfs_namenode_rpc_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RpcProcessingTime",tag="8020"} 1.25717231e+08
+hadoop_hdfs_namenode_rpc_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RpcQueueTime",tag="8020"} 1.25717231e+08
+# HELP hadoop_hdfs_namenode_metricssystem_dropped_pub_all Total number of dropped publishes.
+# TYPE hadoop_hdfs_namenode_metricssystem_dropped_pub_all gauge
+hadoop_hdfs_namenode_metricssystem_dropped_pub_all{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_metricssystem_num_all_sinks Total number of sinks (BUT usually less than NumActiveSinks, see HADOOP-9946).
+# TYPE hadoop_hdfs_namenode_metricssystem_num_all_sinks gauge
+hadoop_hdfs_namenode_metricssystem_num_all_sinks{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_metricssystem_method_avg_time_milliseconds Average turn around time of the operations in milliseconds.
+# TYPE hadoop_hdfs_namenode_metricssystem_method_avg_time_milliseconds gauge
+hadoop_hdfs_namenode_metricssystem_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",oper="Sink_instance"} 0.0
+hadoop_hdfs_namenode_metricssystem_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",oper="Snapshot"} 0.0
+hadoop_hdfs_namenode_metricssystem_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",oper="Publish"} 0.0
+# HELP hadoop_hdfs_namenode_metricssystem_operations_total Total number of operations
+# TYPE hadoop_hdfs_namenode_metricssystem_operations_total gauge
+hadoop_hdfs_namenode_metricssystem_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",oper="Sink_instance"} 0.0
+hadoop_hdfs_namenode_metricssystem_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",oper="Publish"} 0.0
+hadoop_hdfs_namenode_metricssystem_operations_total{_target="yh-shhd-cdh02",cluster="yh-cdh",oper="Snapshot"} 0.0
+# HELP hadoop_hdfs_namenode_metricssystem_sink_instance_qsize Current queue length of sink operations (BUT always set to 0 because nothing to increment this metrics, see HADOOP-9941).
+# TYPE hadoop_hdfs_namenode_metricssystem_sink_instance_qsize gauge
+hadoop_hdfs_namenode_metricssystem_sink_instance_qsize{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_metricssystem_num_active_sources Current number of active metrics sources.
+# TYPE hadoop_hdfs_namenode_metricssystem_num_active_sources gauge
+hadoop_hdfs_namenode_metricssystem_num_active_sources{_target="yh-shhd-cdh02",cluster="yh-cdh"} 14.0
+# HELP hadoop_hdfs_namenode_metricssystem_sink_instance_dropped Total number of dropped sink operations for the instance.
+# TYPE hadoop_hdfs_namenode_metricssystem_sink_instance_dropped gauge
+hadoop_hdfs_namenode_metricssystem_sink_instance_dropped{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_metricssystem_num_all_sources Total number of metrics sources.
+# TYPE hadoop_hdfs_namenode_metricssystem_num_all_sources gauge
+hadoop_hdfs_namenode_metricssystem_num_all_sources{_target="yh-shhd-cdh02",cluster="yh-cdh"} 14.0
+# HELP hadoop_hdfs_namenode_metricssystem_num_active_sinks Current number of active sinks.
+# TYPE hadoop_hdfs_namenode_metricssystem_num_active_sinks gauge
+hadoop_hdfs_namenode_metricssystem_num_active_sinks{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_uptime_milliseconds components uptime in milliseconds
+# TYPE hadoop_hdfs_namenode_uptime_milliseconds gauge
+hadoop_hdfs_namenode_uptime_milliseconds{_target="_target",cluster="yh-cdh",host="yh-shhd-cdh02"} 5.31012797e+08
+# HELP hadoop_hdfs_namenode_start_time_milliseconds components start time in milliseconds
+# TYPE hadoop_hdfs_namenode_start_time_milliseconds gauge
+hadoop_hdfs_namenode_start_time_milliseconds{_target="_target",cluster="yh-cdh",host="yh-shhd-cdh02"} 1.586867178429e+012
+# HELP hadoop_hdfs_namenode_rpc_detailed_method_called_total Total number of the times the method is called
+# TYPE hadoop_hdfs_namenode_rpc_detailed_method_called_total gauge
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Mkdirs",tag="8020"} 2.812867e+06
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Rename",tag="8020"} 882631.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="ListCachePools",tag="8020"} 8562.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="FileNotFoundException",tag="8020"} 54.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="ListEncryptionZones",tag="8020"} 147.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="SetReplication",tag="8020"} 105425.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Delete",tag="8020"} 1.1171707e+07
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="SetPermission",tag="8020"} 98364.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="UpdatePipeline",tag="8020"} 183942.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Fsync",tag="8020"} 2.772028e+06
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Rename2",tag="8020"} 24480.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetBlockLocations",tag="8020"} 2.668597e+07
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetDatanodeReport",tag="8020"} 3.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Create",tag="8020"} 8.951014e+06
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Append",tag="8020"} 191564.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="StandbyException",tag="8020"} 1.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetFsStats",tag="8020"} 5.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RetriableException",tag="8020"} 773.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetContentSummary",tag="8020"} 5768.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="SetTimes",tag="8020"} 12.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="ListCacheDirectives",tag="8020"} 8562.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="AddBlock",tag="8020"} 8.886541e+06
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="LeaseExpiredException",tag="8020"} 261.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetServerDefaults",tag="8020"} 396898.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RecoverLease",tag="8020"} 2.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetListing",tag="8020"} 3.5881493e+07
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RenewLease",tag="8020"} 545977.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="CheckAccess",tag="8020"} 17851.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="SetSafeMode",tag="8020"} 2.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Complete",tag="8020"} 9.464873e+06
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="AlreadyBeingCreatedException",tag="8020"} 8326.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="UpdateBlockForPipeline",tag="8020"} 183947.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetFileInfo",tag="8020"} 1.642718e+07
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="ReportBadBlocks",tag="8022"} 2.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="ErrorReport",tag="8022"} 7.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RollEditLog",tag="8022"} 4400.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="VersionRequest",tag="8022"} 5.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="BlockReport",tag="8022"} 329.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="MonitorHealth",tag="8022"} 530805.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="SendHeartbeat",tag="8022"} 884901.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="CommitBlockSynchronization",tag="8022"} 18.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="TransitionToActive",tag="8022"} 1.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="CacheReport",tag="8022"} 246350.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="BlockReceivedAndDeleted",tag="8022"} 9.747103e+06
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RegisterDatanode",tag="8022"} 5.0
+hadoop_hdfs_namenode_rpc_detailed_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetServiceStatus",tag="8022"} 530806.0
+# HELP hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds Average turn around time of the method in milliseconds
+# TYPE hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds gauge
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="ListCacheDirectives",tag="8020"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="CheckAccess",tag="8020"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="SetSafeMode",tag="8020"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Rename",tag="8020"} 0.14285714285714285
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="UpdateBlockForPipeline",tag="8020"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Delete",tag="8020"} 0.3669724770642202
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Create",tag="8020"} 0.16091954022988506
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Append",tag="8020"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="AlreadyBeingCreatedException",tag="8020"} 0.25
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Complete",tag="8020"} 0.18888888888888888
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RetriableException",tag="8020"} 11.575704225352112
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetFileInfo",tag="8020"} 0.07290233837689133
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="ListCachePools",tag="8020"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="SetPermission",tag="8020"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="AddBlock",tag="8020"} 0.27380952380952384
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetServerDefaults",tag="8020"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="StandbyException",tag="8020"} 11.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Rename2",tag="8020"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="UpdatePipeline",tag="8020"} 1.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetContentSummary",tag="8020"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RenewLease",tag="8020"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="SetReplication",tag="8020"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="FileNotFoundException",tag="8020"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RecoverLease",tag="8020"} 7.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetFsStats",tag="8020"} 0.8
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetBlockLocations",tag="8020"} 0.10358974358974359
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetDatanodeReport",tag="8020"} 0.6666666666666666
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Mkdirs",tag="8020"} 0.10714285714285714
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="SetTimes",tag="8020"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetListing",tag="8020"} 0.0925
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="ListEncryptionZones",tag="8020"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="LeaseExpiredException",tag="8020"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Fsync",tag="8020"} 0.038461538461538464
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetServiceStatus",tag="8022"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="TransitionToActive",tag="8022"} 1995.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="BlockReport",tag="8022"} 232.33333333333334
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="ErrorReport",tag="8022"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="BlockReceivedAndDeleted",tag="8022"} 0.010752688172043012
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="VersionRequest",tag="8022"} 119.2
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="ReportBadBlocks",tag="8022"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="SendHeartbeat",tag="8022"} 0.08333333333333333
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="CommitBlockSynchronization",tag="8022"} 0.5
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="MonitorHealth",tag="8022"} 0.16666666666666666
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="CacheReport",tag="8022"} 0.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RollEditLog",tag="8022"} 308.0
+hadoop_hdfs_namenode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="RegisterDatanode",tag="8022"} 43.333333333333336
+# HELP hadoop_hdfs_namenode_ugi_method_called_total Total number of the times the method is called.
+# TYPE hadoop_hdfs_namenode_ugi_method_called_total gauge
+hadoop_hdfs_namenode_ugi_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Login",state="Failure"} 0.0
+hadoop_hdfs_namenode_ugi_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Login",state="Success"} 0.0
+hadoop_hdfs_namenode_ugi_method_called_total{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetGroups",state="-"} 6774.0
+# HELP hadoop_hdfs_namenode_ugi_method_avg_time_milliseconds Average turn around time of the method in milliseconds.
+# TYPE hadoop_hdfs_namenode_ugi_method_avg_time_milliseconds gauge
+hadoop_hdfs_namenode_ugi_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Login",state="Success"} 0.0
+hadoop_hdfs_namenode_ugi_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="GetGroups",state="-"} 8.0
+hadoop_hdfs_namenode_ugi_method_avg_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",method="Login",state="Failure"} 0.0
+# HELP hadoop_hdfs_namenode_ugi_renewal_failures_total Total number of renewal failures.
+# TYPE hadoop_hdfs_namenode_ugi_renewal_failures_total gauge
+hadoop_hdfs_namenode_ugi_renewal_failures_total{_target="-",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_ugi_renewal_failures Current number of renewal failures.
+# TYPE hadoop_hdfs_namenode_ugi_renewal_failures gauge
+hadoop_hdfs_namenode_ugi_renewal_failures{_target="-",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_open_file_descriptor_count Total number of open file descriptor
+# TYPE hadoop_hdfs_namenode_open_file_descriptor_count gauge
+hadoop_hdfs_namenode_open_file_descriptor_count{_target="yh-shhd-cdh02",cluster="yh-cdh"} 294.0
+# HELP hadoop_hdfs_namenode_max_file_descriptor_count Total number of max file descriptor
+# TYPE hadoop_hdfs_namenode_max_file_descriptor_count gauge
+hadoop_hdfs_namenode_max_file_descriptor_count{_target="yh-shhd-cdh02",cluster="yh-cdh"} 32768.0
+# HELP hadoop_hdfs_namenode_system_load_average Average of system load
+# TYPE hadoop_hdfs_namenode_system_load_average gauge
+hadoop_hdfs_namenode_system_load_average{_target="yh-shhd-cdh02",cluster="yh-cdh"} 14.92
+# HELP hadoop_hdfs_namenode_free_swap_space_size The size of free swap space in bytes
+# TYPE hadoop_hdfs_namenode_free_swap_space_size gauge
+hadoop_hdfs_namenode_free_swap_space_size{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_available_processors Total number of available processors
+# TYPE hadoop_hdfs_namenode_available_processors gauge
+hadoop_hdfs_namenode_available_processors{_target="yh-shhd-cdh02",cluster="yh-cdh"} 80.0
+# HELP hadoop_hdfs_namenode_process_cpu_load Average of process CPU load
+# TYPE hadoop_hdfs_namenode_process_cpu_load gauge
+hadoop_hdfs_namenode_process_cpu_load{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.001098297638660077
+# HELP hadoop_hdfs_namenode_system_cpu_load Average of system CPU load
+# TYPE hadoop_hdfs_namenode_system_cpu_load gauge
+hadoop_hdfs_namenode_system_cpu_load{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.08919745822546482
+# HELP hadoop_hdfs_namenode_process_cpu_time Total process cpu time in microseconds
+# TYPE hadoop_hdfs_namenode_process_cpu_time gauge
+hadoop_hdfs_namenode_process_cpu_time{_target="yh-shhd-cdh02",cluster="yh-cdh"} 2.316411e+013
+# HELP hadoop_hdfs_namenode_committed_virtual_memory_size The size of committed virtual memory in bytes
+# TYPE hadoop_hdfs_namenode_committed_virtual_memory_size gauge
+hadoop_hdfs_namenode_committed_virtual_memory_size{_target="yh-shhd-cdh02",cluster="yh-cdh"} 1.0947600384e+010
+# HELP hadoop_hdfs_namenode_total_physical_memory_size The size of total physical memory in bytes
+# TYPE hadoop_hdfs_namenode_total_physical_memory_size gauge
+hadoop_hdfs_namenode_total_physical_memory_size{_target="yh-shhd-cdh02",cluster="yh-cdh"} 4.05193633792e+011
+# HELP hadoop_hdfs_namenode_total_swap_space_size The size of total swap space in bytes
+# TYPE hadoop_hdfs_namenode_total_swap_space_size gauge
+hadoop_hdfs_namenode_total_swap_space_size{_target="yh-shhd-cdh02",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_namenode_free_physical_memory_size The size of free physical memory in bytes
+# TYPE hadoop_hdfs_namenode_free_physical_memory_size gauge
+hadoop_hdfs_namenode_free_physical_memory_size{_target="yh-shhd-cdh02",cluster="yh-cdh"} 4.8859357184e+010
+# HELP hadoop_hdfs_namenode_jvm_gc_exceeded_threshold_total Number of times that the GC threshold is exceeded.
+# TYPE hadoop_hdfs_namenode_jvm_gc_exceeded_threshold_total gauge
+hadoop_hdfs_namenode_jvm_gc_exceeded_threshold_total{_target="yh-shhd-cdh02",cluster="yh-cdh",type="Info"} 0.0
+hadoop_hdfs_namenode_jvm_gc_exceeded_threshold_total{_target="yh-shhd-cdh02",cluster="yh-cdh",type="Warn"} 0.0
+# HELP hadoop_hdfs_namenode_jvm_gc_total_extra_sleep_time Total GC extra sleep time in msec.
+# TYPE hadoop_hdfs_namenode_jvm_gc_total_extra_sleep_time gauge
+hadoop_hdfs_namenode_jvm_gc_total_extra_sleep_time{_target="yh-shhd-cdh02",cluster="yh-cdh"} 2444.0
+# HELP hadoop_hdfs_namenode_jvm_gc_count GC count of each type GC.
+# TYPE hadoop_hdfs_namenode_jvm_gc_count gauge
+hadoop_hdfs_namenode_jvm_gc_count{_target="yh-shhd-cdh02",cluster="yh-cdh",type="ParNew"} 1556.0
+hadoop_hdfs_namenode_jvm_gc_count{_target="yh-shhd-cdh02",cluster="yh-cdh",type="ConcurrentMarkSweep"} 2.0
+hadoop_hdfs_namenode_jvm_gc_count{_target="yh-shhd-cdh02",cluster="yh-cdh",type="total"} 1558.0
+# HELP hadoop_hdfs_namenode_jvm_mem_max_mebibytes Current max memory in mebibytes.
+# TYPE hadoop_hdfs_namenode_jvm_mem_max_mebibytes gauge
+hadoop_hdfs_namenode_jvm_mem_max_mebibytes{_target="yh-shhd-cdh02",cluster="yh-cdh",mode="NonHeap"} -1.0
+hadoop_hdfs_namenode_jvm_mem_max_mebibytes{_target="yh-shhd-cdh02",cluster="yh-cdh",mode="max"} 7918.9375
+hadoop_hdfs_namenode_jvm_mem_max_mebibytes{_target="yh-shhd-cdh02",cluster="yh-cdh",mode="Heap"} 7918.9375
+# HELP hadoop_hdfs_namenode_jvm_mem_used_mebibytes Current memory used in mebibytes.
+# TYPE hadoop_hdfs_namenode_jvm_mem_used_mebibytes gauge
+hadoop_hdfs_namenode_jvm_mem_used_mebibytes{_target="yh-shhd-cdh02",cluster="yh-cdh",mode="NonHeap"} 115.76027
+hadoop_hdfs_namenode_jvm_mem_used_mebibytes{_target="yh-shhd-cdh02",cluster="yh-cdh",mode="Heap"} 3590.4585
+# HELP hadoop_hdfs_namenode_jvm_gc_time_milliseconds Each type GC time in milliseconds.
+# TYPE hadoop_hdfs_namenode_jvm_gc_time_milliseconds gauge
+hadoop_hdfs_namenode_jvm_gc_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",type="ConcurrentMarkSweep"} 485.0
+hadoop_hdfs_namenode_jvm_gc_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",type="ParNew"} 39021.0
+hadoop_hdfs_namenode_jvm_gc_time_milliseconds{_target="yh-shhd-cdh02",cluster="yh-cdh",type="total"} 39506.0
+# HELP hadoop_hdfs_namenode_jvm_threads_state_total Current number of different threads.
+# TYPE hadoop_hdfs_namenode_jvm_threads_state_total gauge
+hadoop_hdfs_namenode_jvm_threads_state_total{_target="yh-shhd-cdh02",cluster="yh-cdh",state="Waiting"} 11.0
+hadoop_hdfs_namenode_jvm_threads_state_total{_target="yh-shhd-cdh02",cluster="yh-cdh",state="Runnable"} 11.0
+hadoop_hdfs_namenode_jvm_threads_state_total{_target="yh-shhd-cdh02",cluster="yh-cdh",state="TimedWaiting"} 89.0
+hadoop_hdfs_namenode_jvm_threads_state_total{_target="yh-shhd-cdh02",cluster="yh-cdh",state="New"} 0.0
+hadoop_hdfs_namenode_jvm_threads_state_total{_target="yh-shhd-cdh02",cluster="yh-cdh",state="Blocked"} 0.0
+hadoop_hdfs_namenode_jvm_threads_state_total{_target="yh-shhd-cdh02",cluster="yh-cdh",state="Terminated"} 0.0
+# HELP hadoop_hdfs_namenode_jvm_log_level_total Total number of each level logs.
+# TYPE hadoop_hdfs_namenode_jvm_log_level_total gauge
+hadoop_hdfs_namenode_jvm_log_level_total{_target="yh-shhd-cdh02",cluster="yh-cdh",level="Warn"} 18601.0
+hadoop_hdfs_namenode_jvm_log_level_total{_target="yh-shhd-cdh02",cluster="yh-cdh",level="Error"} 2.0
+hadoop_hdfs_namenode_jvm_log_level_total{_target="yh-shhd-cdh02",cluster="yh-cdh",level="Info"} 4.0578921e+07
+hadoop_hdfs_namenode_jvm_log_level_total{_target="yh-shhd-cdh02",cluster="yh-cdh",level="Fatal"} 0.0
+# HELP hadoop_hdfs_namenode_jvm_mem_committed_mebibytes Current memory committed in mebibytes.
+# TYPE hadoop_hdfs_namenode_jvm_mem_committed_mebibytes gauge
+hadoop_hdfs_namenode_jvm_mem_committed_mebibytes{_target="yh-shhd-cdh02",cluster="yh-cdh",mode="Heap"} 7918.9375
+hadoop_hdfs_namenode_jvm_mem_committed_mebibytes{_target="yh-shhd-cdh02",cluster="yh-cdh",mode="NonHeap"} 117.58984
+# HELP hadoop_yarn_resourcemanager_ams_total Total number of Applications Masters in each operation
+# TYPE hadoop_yarn_resourcemanager_ams_total gauge
+hadoop_yarn_resourcemanager_ams_total{_target="yh-shhd-cdh04",cluster="yh-cdh",oper="Launch"} 12254.0
+hadoop_yarn_resourcemanager_ams_total{_target="yh-shhd-cdh04",cluster="yh-cdh",oper="Register"} 12261.0
+# HELP hadoop_yarn_resourcemanager_average_time_milliseconds Average time in milliseconds AM spends in each operation
+# TYPE hadoop_yarn_resourcemanager_average_time_milliseconds gauge
+hadoop_yarn_resourcemanager_average_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",oper="Register"} 2956.0
+hadoop_yarn_resourcemanager_average_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",oper="Launch"} 6.0
+# HELP hadoop_yarn_resourcemanager_nodemanager_total Current number of NodeManagers in each status
+# TYPE hadoop_yarn_resourcemanager_nodemanager_total gauge
+hadoop_yarn_resourcemanager_nodemanager_total{_target="yh-shhd-cdh04",cluster="yh-cdh",status="Rebooted"} 0.0
+hadoop_yarn_resourcemanager_nodemanager_total{_target="yh-shhd-cdh04",cluster="yh-cdh",status="Decommissioned"} 0.0
+hadoop_yarn_resourcemanager_nodemanager_total{_target="yh-shhd-cdh04",cluster="yh-cdh",status="Lost"} 0.0
+hadoop_yarn_resourcemanager_nodemanager_total{_target="yh-shhd-cdh04",cluster="yh-cdh",status="Unhealthy"} 0.0
+hadoop_yarn_resourcemanager_nodemanager_total{_target="yh-shhd-cdh04",cluster="yh-cdh",status="Active"} 5.0
+# HELP hadoop_yarn_resourcemanager_vcore_count Count of vcore
+# TYPE hadoop_yarn_resourcemanager_vcore_count gauge
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Available",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="MinShare",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="FairShare",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="MaxShare",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Pending",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Reserved",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Allocated",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Available",user="-"} 349.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="MinShare",user="-"} 0.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="FairShare",user="-"} 400.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="MaxShare",user="-"} 2.147483647e+09
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Pending",user="-"} 0.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Reserved",user="-"} 0.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Allocated",user="-"} 51.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Available",user="work"} 0.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="MinShare",user="work"} 0.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="FairShare",user="work"} 0.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="MaxShare",user="work"} 0.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Pending",user="work"} 0.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Reserved",user="work"} 0.0
+hadoop_yarn_resourcemanager_vcore_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Allocated",user="work"} 51.0
+# HELP hadoop_yarn_resourcemanager_aggregate_containers_released Total number of released containers.
+# TYPE hadoop_yarn_resourcemanager_aggregate_containers_released gauge
+hadoop_yarn_resourcemanager_aggregate_containers_released{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_aggregate_containers_released{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",user="-"} 105177.0
+hadoop_yarn_resourcemanager_aggregate_containers_released{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",user="work"} 105177.0
+# HELP hadoop_yarn_resourcemanager_active_applications Current number of active applications.
+# TYPE hadoop_yarn_resourcemanager_active_applications gauge
+hadoop_yarn_resourcemanager_active_applications{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_active_applications{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",user="-"} 0.0
+hadoop_yarn_resourcemanager_active_applications{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",user="work"} 0.0
+# HELP hadoop_yarn_resourcemanager_application_count Count of application
+# TYPE hadoop_yarn_resourcemanager_application_count gauge
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Completed",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Submitted",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Running",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Pending",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Failed",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Killed",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Completed",user="-"} 12236.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Submitted",user="-"} 12241.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Running",user="-"} 5.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Pending",user="-"} 0.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Failed",user="-"} 0.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Killed",user="-"} 0.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Completed",user="work"} 12236.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Submitted",user="work"} 12241.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Running",user="work"} 5.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Pending",user="work"} 0.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Failed",user="work"} 0.0
+hadoop_yarn_resourcemanager_application_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Killed",user="work"} 0.0
+# HELP hadoop_yarn_resourcemanager_running_app_total Current number of running applications in each elapsed time ( < 60min, 60min < x < 300min, 300min < x < 1440min and x > 1440min )
+# TYPE hadoop_yarn_resourcemanager_running_app_total gauge
+hadoop_yarn_resourcemanager_running_app_total{_target="yh-shhd-cdh04",cluster="yh-cdh",elapsed_time="0to60",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_running_app_total{_target="yh-shhd-cdh04",cluster="yh-cdh",elapsed_time="1440up",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_running_app_total{_target="yh-shhd-cdh04",cluster="yh-cdh",elapsed_time="300to1440",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_running_app_total{_target="yh-shhd-cdh04",cluster="yh-cdh",elapsed_time="60to300",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_running_app_total{_target="yh-shhd-cdh04",cluster="yh-cdh",elapsed_time="0to60",modeler_type="QueueMetrics,q0=root",queue="root",user="-"} 2.0
+hadoop_yarn_resourcemanager_running_app_total{_target="yh-shhd-cdh04",cluster="yh-cdh",elapsed_time="1440up",modeler_type="QueueMetrics,q0=root",queue="root",user="-"} 3.0
+hadoop_yarn_resourcemanager_running_app_total{_target="yh-shhd-cdh04",cluster="yh-cdh",elapsed_time="300to1440",modeler_type="QueueMetrics,q0=root",queue="root",user="-"} 0.0
+hadoop_yarn_resourcemanager_running_app_total{_target="yh-shhd-cdh04",cluster="yh-cdh",elapsed_time="60to300",modeler_type="QueueMetrics,q0=root",queue="root",user="-"} 0.0
+hadoop_yarn_resourcemanager_running_app_total{_target="yh-shhd-cdh04",cluster="yh-cdh",elapsed_time="0to60",modeler_type="QueueMetrics,q0=root,user=work",queue="root",user="work"} 2.0
+hadoop_yarn_resourcemanager_running_app_total{_target="yh-shhd-cdh04",cluster="yh-cdh",elapsed_time="1440up",modeler_type="QueueMetrics,q0=root,user=work",queue="root",user="work"} 3.0
+hadoop_yarn_resourcemanager_running_app_total{_target="yh-shhd-cdh04",cluster="yh-cdh",elapsed_time="300to1440",modeler_type="QueueMetrics,q0=root,user=work",queue="root",user="work"} 0.0
+hadoop_yarn_resourcemanager_running_app_total{_target="yh-shhd-cdh04",cluster="yh-cdh",elapsed_time="60to300",modeler_type="QueueMetrics,q0=root,user=work",queue="root",user="work"} 0.0
+# HELP hadoop_yarn_resourcemanager_active_users Current number of active users.
+# TYPE hadoop_yarn_resourcemanager_active_users gauge
+hadoop_yarn_resourcemanager_active_users{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_active_users{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",user="-"} 0.0
+hadoop_yarn_resourcemanager_active_users{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",user="work"} 0.0
+# HELP hadoop_yarn_resourcemanager_memory_in_mb Memory in MB
+# TYPE hadoop_yarn_resourcemanager_memory_in_mb gauge
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="MaxShare",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Reserved",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Pending",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Available",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="MinShare",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Allocated",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="FairShare",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="MaxShare",user="-"} 2.147483647e+09
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Reserved",user="-"} 0.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Pending",user="-"} 0.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Available",user="-"} 1.147462e+06
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="MinShare",user="-"} 0.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Allocated",user="-"} 89088.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="FairShare",user="-"} 1.23655e+06
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="MaxShare",user="work"} 0.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Reserved",user="work"} 0.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Pending",user="work"} 0.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Available",user="work"} 0.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="MinShare",user="work"} 0.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Allocated",user="work"} 89088.0
+hadoop_yarn_resourcemanager_memory_in_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="FairShare",user="work"} 0.0
+# HELP hadoop_yarn_resourcemanager_aggregate_containers_allocated Total number of allocated containers.
+# TYPE hadoop_yarn_resourcemanager_aggregate_containers_allocated gauge
+hadoop_yarn_resourcemanager_aggregate_containers_allocated{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_aggregate_containers_allocated{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",user="-"} 105211.0
+hadoop_yarn_resourcemanager_aggregate_containers_allocated{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",user="work"} 105211.0
+# HELP hadoop_yarn_resourcemanager_container_count Count of container
+# TYPE hadoop_yarn_resourcemanager_container_count gauge
+hadoop_yarn_resourcemanager_container_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Reserved",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_container_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Pending",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_container_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=dr.who",queue="root",status="Allocated",user="dr.who"} 0.0
+hadoop_yarn_resourcemanager_container_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Reserved",user="-"} 0.0
+hadoop_yarn_resourcemanager_container_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Pending",user="-"} 0.0
+hadoop_yarn_resourcemanager_container_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root",queue="root",status="Allocated",user="-"} 34.0
+hadoop_yarn_resourcemanager_container_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Reserved",user="work"} 0.0
+hadoop_yarn_resourcemanager_container_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Pending",user="work"} 0.0
+hadoop_yarn_resourcemanager_container_count{_target="yh-shhd-cdh04",cluster="yh-cdh",modeler_type="QueueMetrics,q0=root,user=work",queue="root",status="Allocated",user="work"} 34.0
+# HELP hadoop_yarn_resourcemanager_node_memory_available_mb The total amount of memory currently available on the host (in MB)
+# TYPE hadoop_yarn_resourcemanager_node_memory_available_mb gauge
+hadoop_yarn_resourcemanager_node_memory_available_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh05",rack="/default",version="2.6.0-cdh5.14.2"} 229902.0
+hadoop_yarn_resourcemanager_node_memory_available_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh01",rack="/default",version="2.6.0-cdh5.14.2"} 199182.0
+hadoop_yarn_resourcemanager_node_memory_available_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh03",rack="/default",version="2.6.0-cdh5.14.2"} 245262.0
+hadoop_yarn_resourcemanager_node_memory_available_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh04",rack="/default",version="2.6.0-cdh5.14.2"} 226830.0
+hadoop_yarn_resourcemanager_node_memory_available_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh02",rack="/default",version="2.6.0-cdh5.14.2"} 246286.0
+# HELP hadoop_yarn_resourcemanager_node_containers_total Total number of containers currently running on the host
+# TYPE hadoop_yarn_resourcemanager_node_containers_total gauge
+hadoop_yarn_resourcemanager_node_containers_total{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh05",rack="/default",version="2.6.0-cdh5.14.2"} 7.0
+hadoop_yarn_resourcemanager_node_containers_total{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh01",rack="/default",version="2.6.0-cdh5.14.2"} 15.0
+hadoop_yarn_resourcemanager_node_containers_total{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh03",rack="/default",version="2.6.0-cdh5.14.2"} 1.0
+hadoop_yarn_resourcemanager_node_containers_total{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh04",rack="/default",version="2.6.0-cdh5.14.2"} 10.0
+hadoop_yarn_resourcemanager_node_containers_total{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh02",rack="/default",version="2.6.0-cdh5.14.2"} 1.0
+# HELP hadoop_yarn_resourcemanager_node_state State of the host - valid values are: NEW, RUNNING, UNHEALTHY, DECOMMISSIONED, LOST, REBOOTED
+# TYPE hadoop_yarn_resourcemanager_node_state gauge
+hadoop_yarn_resourcemanager_node_state{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh05",rack="/default",version="2.6.0-cdh5.14.2"} 2.0
+hadoop_yarn_resourcemanager_node_state{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh01",rack="/default",version="2.6.0-cdh5.14.2"} 2.0
+hadoop_yarn_resourcemanager_node_state{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh03",rack="/default",version="2.6.0-cdh5.14.2"} 2.0
+hadoop_yarn_resourcemanager_node_state{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh04",rack="/default",version="2.6.0-cdh5.14.2"} 2.0
+hadoop_yarn_resourcemanager_node_state{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh02",rack="/default",version="2.6.0-cdh5.14.2"} 2.0
+# HELP hadoop_yarn_resourcemanager_node_memory_used_mb The total amount of memory currently used on the host (in MB)
+# TYPE hadoop_yarn_resourcemanager_node_memory_used_mb gauge
+hadoop_yarn_resourcemanager_node_memory_used_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh05",rack="/default",version="2.6.0-cdh5.14.2"} 17408.0
+hadoop_yarn_resourcemanager_node_memory_used_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh01",rack="/default",version="2.6.0-cdh5.14.2"} 48128.0
+hadoop_yarn_resourcemanager_node_memory_used_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh03",rack="/default",version="2.6.0-cdh5.14.2"} 2048.0
+hadoop_yarn_resourcemanager_node_memory_used_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh04",rack="/default",version="2.6.0-cdh5.14.2"} 20480.0
+hadoop_yarn_resourcemanager_node_memory_used_mb{_target="yh-shhd-cdh04",cluster="yh-cdh",host="yh-shhd-cdh02",rack="/default",version="2.6.0-cdh5.14.2"} 1024.0
+# HELP hadoop_yarn_resourcemanager_rpc_num_open_connections Current number of open connections
+# TYPE hadoop_yarn_resourcemanager_rpc_num_open_connections gauge
+hadoop_yarn_resourcemanager_rpc_num_open_connections{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8031"} 5.0
+hadoop_yarn_resourcemanager_rpc_num_open_connections{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8032"} 7.0
+hadoop_yarn_resourcemanager_rpc_num_open_connections{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8033"} 0.0
+hadoop_yarn_resourcemanager_rpc_num_open_connections{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8030"} 5.0
+# HELP hadoop_yarn_resourcemanager_rpc_authentication_successes Total number of authentication successes
+# TYPE hadoop_yarn_resourcemanager_rpc_authentication_successes gauge
+hadoop_yarn_resourcemanager_rpc_authentication_successes{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8031"} 0.0
+hadoop_yarn_resourcemanager_rpc_authentication_successes{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8032"} 0.0
+hadoop_yarn_resourcemanager_rpc_authentication_successes{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8033"} 0.0
+hadoop_yarn_resourcemanager_rpc_authentication_successes{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8030"} 12261.0
+# HELP hadoop_yarn_resourcemanager_rpc_authorization_failures Total number of authorization failures
+# TYPE hadoop_yarn_resourcemanager_rpc_authorization_failures gauge
+hadoop_yarn_resourcemanager_rpc_authorization_failures{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8031"} 0.0
+hadoop_yarn_resourcemanager_rpc_authorization_failures{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8032"} 0.0
+hadoop_yarn_resourcemanager_rpc_authorization_failures{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8033"} 0.0
+hadoop_yarn_resourcemanager_rpc_authorization_failures{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8030"} 0.0
+# HELP hadoop_yarn_resourcemanager_rpc_slow_calls Total number of RPC slow calls
+# TYPE hadoop_yarn_resourcemanager_rpc_slow_calls gauge
+hadoop_yarn_resourcemanager_rpc_slow_calls{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8031"} 0.0
+hadoop_yarn_resourcemanager_rpc_slow_calls{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8032"} 0.0
+hadoop_yarn_resourcemanager_rpc_slow_calls{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8033"} 0.0
+hadoop_yarn_resourcemanager_rpc_slow_calls{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8030"} 0.0
+# HELP hadoop_yarn_resourcemanager_rpc_method_avg_time_milliseconds Average turn around time of the method in milliseconds.
+# TYPE hadoop_yarn_resourcemanager_rpc_method_avg_time_milliseconds gauge
+hadoop_yarn_resourcemanager_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RpcProcessingTime",tag="8031"} 0.02702702702702703
+hadoop_yarn_resourcemanager_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RpcQueueTime",tag="8031"} 0.05405405405405406
+hadoop_yarn_resourcemanager_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RpcProcessingTime",tag="8032"} 0.15789473684210525
+hadoop_yarn_resourcemanager_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RpcQueueTime",tag="8032"} 0.05263157894736842
+hadoop_yarn_resourcemanager_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RpcProcessingTime",tag="8033"} 0.0
+hadoop_yarn_resourcemanager_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RpcQueueTime",tag="8033"} 0.0
+hadoop_yarn_resourcemanager_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RpcProcessingTime",tag="8030"} 0.2
+hadoop_yarn_resourcemanager_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RpcQueueTime",tag="8030"} 0.06666666666666667
+# HELP hadoop_yarn_resourcemanager_rpc_client_backoff Total number of RPC client back off
+# TYPE hadoop_yarn_resourcemanager_rpc_client_backoff gauge
+hadoop_yarn_resourcemanager_rpc_client_backoff{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8031"} 0.0
+hadoop_yarn_resourcemanager_rpc_client_backoff{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8032"} 0.0
+hadoop_yarn_resourcemanager_rpc_client_backoff{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8033"} 0.0
+hadoop_yarn_resourcemanager_rpc_client_backoff{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8030"} 0.0
+# HELP hadoop_yarn_resourcemanager_rpc_authentication_failures Total number of authentication failures
+# TYPE hadoop_yarn_resourcemanager_rpc_authentication_failures gauge
+hadoop_yarn_resourcemanager_rpc_authentication_failures{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8031"} 0.0
+hadoop_yarn_resourcemanager_rpc_authentication_failures{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8032"} 0.0
+hadoop_yarn_resourcemanager_rpc_authentication_failures{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8033"} 0.0
+hadoop_yarn_resourcemanager_rpc_authentication_failures{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8030"} 0.0
+# HELP hadoop_yarn_resourcemanager_rpc_received_bytes Total number of received bytes
+# TYPE hadoop_yarn_resourcemanager_rpc_received_bytes gauge
+hadoop_yarn_resourcemanager_rpc_received_bytes{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8031"} 1.202372921e+09
+hadoop_yarn_resourcemanager_rpc_received_bytes{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8032"} 2.78272408e+08
+hadoop_yarn_resourcemanager_rpc_received_bytes{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8033"} 2697.0
+hadoop_yarn_resourcemanager_rpc_received_bytes{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8030"} 1.09814015e+08
+# HELP hadoop_yarn_resourcemanager_rpc_authorization_successes Total number of authorization successes
+# TYPE hadoop_yarn_resourcemanager_rpc_authorization_successes gauge
+hadoop_yarn_resourcemanager_rpc_authorization_successes{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8031"} 5.0
+hadoop_yarn_resourcemanager_rpc_authorization_successes{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8032"} 125054.0
+hadoop_yarn_resourcemanager_rpc_authorization_successes{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8033"} 15.0
+hadoop_yarn_resourcemanager_rpc_authorization_successes{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8030"} 12261.0
+# HELP hadoop_yarn_resourcemanager_rpc_call_queue_length Current length of the call queue
+# TYPE hadoop_yarn_resourcemanager_rpc_call_queue_length gauge
+hadoop_yarn_resourcemanager_rpc_call_queue_length{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8031"} 0.0
+hadoop_yarn_resourcemanager_rpc_call_queue_length{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8032"} 0.0
+hadoop_yarn_resourcemanager_rpc_call_queue_length{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8033"} 0.0
+hadoop_yarn_resourcemanager_rpc_call_queue_length{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8030"} 0.0
+# HELP hadoop_yarn_resourcemanager_rpc_sent_bytes Total number of sent bytes
+# TYPE hadoop_yarn_resourcemanager_rpc_sent_bytes gauge
+hadoop_yarn_resourcemanager_rpc_sent_bytes{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8031"} 1.19233911e+08
+hadoop_yarn_resourcemanager_rpc_sent_bytes{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8032"} 4.36138117e+08
+hadoop_yarn_resourcemanager_rpc_sent_bytes{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8033"} 536.0
+hadoop_yarn_resourcemanager_rpc_sent_bytes{_target="yh-shhd-cdh04",cluster="yh-cdh",tag="8030"} 8.2319762e+07
+# HELP hadoop_yarn_resourcemanager_rpc_method_called_total Total number of the times the method is called.
+# TYPE hadoop_yarn_resourcemanager_rpc_method_called_total gauge
+hadoop_yarn_resourcemanager_rpc_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RpcProcessingTime",tag="8031"} 2.712114e+06
+hadoop_yarn_resourcemanager_rpc_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RpcQueueTime",tag="8031"} 2.712114e+06
+hadoop_yarn_resourcemanager_rpc_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RpcProcessingTime",tag="8032"} 1.403727e+06
+hadoop_yarn_resourcemanager_rpc_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RpcQueueTime",tag="8032"} 1.403727e+06
+hadoop_yarn_resourcemanager_rpc_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RpcProcessingTime",tag="8033"} 15.0
+hadoop_yarn_resourcemanager_rpc_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RpcQueueTime",tag="8033"} 15.0
+hadoop_yarn_resourcemanager_rpc_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RpcProcessingTime",tag="8030"} 890254.0
+hadoop_yarn_resourcemanager_rpc_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RpcQueueTime",tag="8030"} 890254.0
+# HELP hadoop_yarn_resourcemanager_metricssystem_dropped_pub_all Total number of dropped publishes.
+# TYPE hadoop_yarn_resourcemanager_metricssystem_dropped_pub_all gauge
+hadoop_yarn_resourcemanager_metricssystem_dropped_pub_all{_target="yh-shhd-cdh04",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_resourcemanager_metricssystem_num_all_sinks Total number of sinks (BUT usually less than NumActiveSinks, see HADOOP-9946).
+# TYPE hadoop_yarn_resourcemanager_metricssystem_num_all_sinks gauge
+hadoop_yarn_resourcemanager_metricssystem_num_all_sinks{_target="yh-shhd-cdh04",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_resourcemanager_metricssystem_method_avg_time_milliseconds Average turn around time of the operations in milliseconds.
+# TYPE hadoop_yarn_resourcemanager_metricssystem_method_avg_time_milliseconds gauge
+hadoop_yarn_resourcemanager_metricssystem_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",oper="Sink_instance"} 0.0
+hadoop_yarn_resourcemanager_metricssystem_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",oper="Snapshot"} 0.0
+hadoop_yarn_resourcemanager_metricssystem_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",oper="Publish"} 0.0
+# HELP hadoop_yarn_resourcemanager_metricssystem_operations_total Total number of operations
+# TYPE hadoop_yarn_resourcemanager_metricssystem_operations_total gauge
+hadoop_yarn_resourcemanager_metricssystem_operations_total{_target="yh-shhd-cdh04",cluster="yh-cdh",oper="Sink_instance"} 0.0
+hadoop_yarn_resourcemanager_metricssystem_operations_total{_target="yh-shhd-cdh04",cluster="yh-cdh",oper="Publish"} 0.0
+hadoop_yarn_resourcemanager_metricssystem_operations_total{_target="yh-shhd-cdh04",cluster="yh-cdh",oper="Snapshot"} 0.0
+# HELP hadoop_yarn_resourcemanager_metricssystem_sink_instance_qsize Current queue length of sink operations (BUT always set to 0 because nothing to increment this metrics, see HADOOP-9941).
+# TYPE hadoop_yarn_resourcemanager_metricssystem_sink_instance_qsize gauge
+hadoop_yarn_resourcemanager_metricssystem_sink_instance_qsize{_target="yh-shhd-cdh04",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_resourcemanager_metricssystem_num_active_sources Current number of active metrics sources.
+# TYPE hadoop_yarn_resourcemanager_metricssystem_num_active_sources gauge
+hadoop_yarn_resourcemanager_metricssystem_num_active_sources{_target="yh-shhd-cdh04",cluster="yh-cdh"} 20.0
+# HELP hadoop_yarn_resourcemanager_metricssystem_sink_instance_dropped Total number of dropped sink operations for the instance.
+# TYPE hadoop_yarn_resourcemanager_metricssystem_sink_instance_dropped gauge
+hadoop_yarn_resourcemanager_metricssystem_sink_instance_dropped{_target="yh-shhd-cdh04",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_resourcemanager_metricssystem_num_all_sources Total number of metrics sources.
+# TYPE hadoop_yarn_resourcemanager_metricssystem_num_all_sources gauge
+hadoop_yarn_resourcemanager_metricssystem_num_all_sources{_target="yh-shhd-cdh04",cluster="yh-cdh"} 20.0
+# HELP hadoop_yarn_resourcemanager_metricssystem_num_active_sinks Current number of active sinks.
+# TYPE hadoop_yarn_resourcemanager_metricssystem_num_active_sinks gauge
+hadoop_yarn_resourcemanager_metricssystem_num_active_sinks{_target="yh-shhd-cdh04",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_resourcemanager_uptime_milliseconds components uptime in milliseconds
+# TYPE hadoop_yarn_resourcemanager_uptime_milliseconds gauge
+hadoop_yarn_resourcemanager_uptime_milliseconds{_target="_target",cluster="yh-cdh",host="yh-shhd-cdh04"} 5.30970398e+08
+# HELP hadoop_yarn_resourcemanager_start_time_milliseconds components start time in milliseconds
+# TYPE hadoop_yarn_resourcemanager_start_time_milliseconds gauge
+hadoop_yarn_resourcemanager_start_time_milliseconds{_target="_target",cluster="yh-cdh",host="yh-shhd-cdh04"} 1.586867221213e+012
+# HELP hadoop_yarn_resourcemanager_rpc_detailed_method_called_total Total number of the times the method is called
+# TYPE hadoop_yarn_resourcemanager_rpc_detailed_method_called_total gauge
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="ApplicationNotFoundException",tag="8032"} 10218.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="GetApplicationReport",tag="8032"} 1.3643e+06
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="GetClusterMetrics",tag="8032"} 2970.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="GetNewApplication",tag="8032"} 12235.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="SubmitApplication",tag="8032"} 12234.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="GetQueueInfo",tag="8032"} 1769.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="ForceKillApplication",tag="8032"} 1.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="NodeHeartbeat",tag="8031"} 2.712109e+06
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RegisterNodeManager",tag="8031"} 5.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="ApplicationMasterNotRegisteredException",tag="8030"} 7.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RegisterApplicationMaster",tag="8030"} 12261.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="FinishApplicationMaster",tag="8030"} 24484.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="Allocate",tag="8030"} 853502.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="TransitionToActive",tag="8033"} 0.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="TransitionToStandby",tag="8033"} 0.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="MonitorHealth",tag="8033"} 1.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="GetServiceStatus",tag="8033"} 14.0
+# HELP hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds Average turn around time of the method in milliseconds
+# TYPE hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds gauge
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="GetNewApplication",tag="8032"} 0.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="GetClusterMetrics",tag="8032"} 0.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="SubmitApplication",tag="8032"} 0.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="GetApplicationReport",tag="8032"} 0.15789473684210525
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="ApplicationNotFoundException",tag="8032"} 0.011627906976744186
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="ForceKillApplication",tag="8032"} 2.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="GetQueueInfo",tag="8032"} 0.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RegisterNodeManager",tag="8031"} 29.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="NodeHeartbeat",tag="8031"} 0.02702702702702703
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="FinishApplicationMaster",tag="8030"} 0.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="Allocate",tag="8030"} 0.25
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="ApplicationMasterNotRegisteredException",tag="8030"} 1.8571428571428572
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="RegisterApplicationMaster",tag="8030"} 0.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="MonitorHealth",tag="8033"} 0.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="TransitionToActive",tag="8033"} 0.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="TransitionToStandby",tag="8033"} 0.0
+hadoop_yarn_resourcemanager_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="GetServiceStatus",tag="8033"} 0.0
+# HELP hadoop_yarn_resourcemanager_ugi_method_called_total Total number of the times the method is called.
+# TYPE hadoop_yarn_resourcemanager_ugi_method_called_total gauge
+hadoop_yarn_resourcemanager_ugi_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="Login",state="Failure"} 0.0
+hadoop_yarn_resourcemanager_ugi_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="Login",state="Success"} 0.0
+hadoop_yarn_resourcemanager_ugi_method_called_total{_target="yh-shhd-cdh04",cluster="yh-cdh",method="GetGroups",state="-"} 0.0
+# HELP hadoop_yarn_resourcemanager_ugi_method_avg_time_milliseconds Average turn around time of the method in milliseconds.
+# TYPE hadoop_yarn_resourcemanager_ugi_method_avg_time_milliseconds gauge
+hadoop_yarn_resourcemanager_ugi_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="Login",state="Success"} 0.0
+hadoop_yarn_resourcemanager_ugi_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="GetGroups",state="-"} 0.0
+hadoop_yarn_resourcemanager_ugi_method_avg_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",method="Login",state="Failure"} 0.0
+# HELP hadoop_yarn_resourcemanager_ugi_renewal_failures_total Total number of renewal failures.
+# TYPE hadoop_yarn_resourcemanager_ugi_renewal_failures_total gauge
+hadoop_yarn_resourcemanager_ugi_renewal_failures_total{_target="-",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_resourcemanager_ugi_renewal_failures Current number of renewal failures.
+# TYPE hadoop_yarn_resourcemanager_ugi_renewal_failures gauge
+hadoop_yarn_resourcemanager_ugi_renewal_failures{_target="-",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_resourcemanager_open_file_descriptor_count Total number of open file descriptor
+# TYPE hadoop_yarn_resourcemanager_open_file_descriptor_count gauge
+hadoop_yarn_resourcemanager_open_file_descriptor_count{_target="yh-shhd-cdh04",cluster="yh-cdh"} 261.0
+# HELP hadoop_yarn_resourcemanager_max_file_descriptor_count Total number of max file descriptor
+# TYPE hadoop_yarn_resourcemanager_max_file_descriptor_count gauge
+hadoop_yarn_resourcemanager_max_file_descriptor_count{_target="yh-shhd-cdh04",cluster="yh-cdh"} 32768.0
+# HELP hadoop_yarn_resourcemanager_system_load_average Average of system load
+# TYPE hadoop_yarn_resourcemanager_system_load_average gauge
+hadoop_yarn_resourcemanager_system_load_average{_target="yh-shhd-cdh04",cluster="yh-cdh"} 0.17
+# HELP hadoop_yarn_resourcemanager_free_swap_space_size The size of free swap space in bytes
+# TYPE hadoop_yarn_resourcemanager_free_swap_space_size gauge
+hadoop_yarn_resourcemanager_free_swap_space_size{_target="yh-shhd-cdh04",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_resourcemanager_available_processors Total number of available processors
+# TYPE hadoop_yarn_resourcemanager_available_processors gauge
+hadoop_yarn_resourcemanager_available_processors{_target="yh-shhd-cdh04",cluster="yh-cdh"} 80.0
+# HELP hadoop_yarn_resourcemanager_process_cpu_load Average of process CPU load
+# TYPE hadoop_yarn_resourcemanager_process_cpu_load gauge
+hadoop_yarn_resourcemanager_process_cpu_load{_target="yh-shhd-cdh04",cluster="yh-cdh"} 0.00016252234682268812
+# HELP hadoop_yarn_resourcemanager_system_cpu_load Average of system CPU load
+# TYPE hadoop_yarn_resourcemanager_system_cpu_load gauge
+hadoop_yarn_resourcemanager_system_cpu_load{_target="yh-shhd-cdh04",cluster="yh-cdh"} 0.004916300991386316
+# HELP hadoop_yarn_resourcemanager_process_cpu_time Total process cpu time in microseconds
+# TYPE hadoop_yarn_resourcemanager_process_cpu_time gauge
+hadoop_yarn_resourcemanager_process_cpu_time{_target="yh-shhd-cdh04",cluster="yh-cdh"} 4.03004e+012
+# HELP hadoop_yarn_resourcemanager_committed_virtual_memory_size The size of committed virtual memory in bytes
+# TYPE hadoop_yarn_resourcemanager_committed_virtual_memory_size gauge
+hadoop_yarn_resourcemanager_committed_virtual_memory_size{_target="yh-shhd-cdh04",cluster="yh-cdh"} 3.502157824e+09
+# HELP hadoop_yarn_resourcemanager_total_physical_memory_size The size of total physical memory in bytes
+# TYPE hadoop_yarn_resourcemanager_total_physical_memory_size gauge
+hadoop_yarn_resourcemanager_total_physical_memory_size{_target="yh-shhd-cdh04",cluster="yh-cdh"} 4.0538683392e+011
+# HELP hadoop_yarn_resourcemanager_total_swap_space_size The size of total swap space in bytes
+# TYPE hadoop_yarn_resourcemanager_total_swap_space_size gauge
+hadoop_yarn_resourcemanager_total_swap_space_size{_target="yh-shhd-cdh04",cluster="yh-cdh"} 0.0
+# HELP hadoop_yarn_resourcemanager_free_physical_memory_size The size of free physical memory in bytes
+# TYPE hadoop_yarn_resourcemanager_free_physical_memory_size gauge
+hadoop_yarn_resourcemanager_free_physical_memory_size{_target="yh-shhd-cdh04",cluster="yh-cdh"} 4.5406543872e+010
+# HELP hadoop_yarn_resourcemanager_jvm_gc_exceeded_threshold_total Number of times that the GC threshold is exceeded.
+# TYPE hadoop_yarn_resourcemanager_jvm_gc_exceeded_threshold_total gauge
+hadoop_yarn_resourcemanager_jvm_gc_exceeded_threshold_total{_target="yh-shhd-cdh04",cluster="yh-cdh",type="Info"} 0.0
+hadoop_yarn_resourcemanager_jvm_gc_exceeded_threshold_total{_target="yh-shhd-cdh04",cluster="yh-cdh",type="Warn"} 0.0
+# HELP hadoop_yarn_resourcemanager_jvm_gc_total_extra_sleep_time Total GC extra sleep time in msec.
+# TYPE hadoop_yarn_resourcemanager_jvm_gc_total_extra_sleep_time gauge
+hadoop_yarn_resourcemanager_jvm_gc_total_extra_sleep_time{_target="yh-shhd-cdh04",cluster="yh-cdh"} 1606.0
+# HELP hadoop_yarn_resourcemanager_jvm_gc_count GC count of each type GC.
+# TYPE hadoop_yarn_resourcemanager_jvm_gc_count gauge
+hadoop_yarn_resourcemanager_jvm_gc_count{_target="yh-shhd-cdh04",cluster="yh-cdh",type="ParNew"} 796.0
+hadoop_yarn_resourcemanager_jvm_gc_count{_target="yh-shhd-cdh04",cluster="yh-cdh",type="ConcurrentMarkSweep"} 4.0
+hadoop_yarn_resourcemanager_jvm_gc_count{_target="yh-shhd-cdh04",cluster="yh-cdh",type="total"} 800.0
+# HELP hadoop_yarn_resourcemanager_jvm_mem_max_mebibytes Current max memory in mebibytes.
+# TYPE hadoop_yarn_resourcemanager_jvm_mem_max_mebibytes gauge
+hadoop_yarn_resourcemanager_jvm_mem_max_mebibytes{_target="yh-shhd-cdh04",cluster="yh-cdh",mode="NonHeap"} -1.0
+hadoop_yarn_resourcemanager_jvm_mem_max_mebibytes{_target="yh-shhd-cdh04",cluster="yh-cdh",mode="max"} 989.875
+hadoop_yarn_resourcemanager_jvm_mem_max_mebibytes{_target="yh-shhd-cdh04",cluster="yh-cdh",mode="Heap"} 989.875
+# HELP hadoop_yarn_resourcemanager_jvm_mem_used_mebibytes Current memory used in mebibytes.
+# TYPE hadoop_yarn_resourcemanager_jvm_mem_used_mebibytes gauge
+hadoop_yarn_resourcemanager_jvm_mem_used_mebibytes{_target="yh-shhd-cdh04",cluster="yh-cdh",mode="NonHeap"} 112.60955
+hadoop_yarn_resourcemanager_jvm_mem_used_mebibytes{_target="yh-shhd-cdh04",cluster="yh-cdh",mode="Heap"} 517.33057
+# HELP hadoop_yarn_resourcemanager_jvm_gc_time_milliseconds Each type GC time in milliseconds.
+# TYPE hadoop_yarn_resourcemanager_jvm_gc_time_milliseconds gauge
+hadoop_yarn_resourcemanager_jvm_gc_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",type="ConcurrentMarkSweep"} 167.0
+hadoop_yarn_resourcemanager_jvm_gc_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",type="ParNew"} 5268.0
+hadoop_yarn_resourcemanager_jvm_gc_time_milliseconds{_target="yh-shhd-cdh04",cluster="yh-cdh",type="total"} 5435.0
+# HELP hadoop_yarn_resourcemanager_jvm_threads_state_total Current number of different threads.
+# TYPE hadoop_yarn_resourcemanager_jvm_threads_state_total gauge
+hadoop_yarn_resourcemanager_jvm_threads_state_total{_target="yh-shhd-cdh04",cluster="yh-cdh",state="Waiting"} 62.0
+hadoop_yarn_resourcemanager_jvm_threads_state_total{_target="yh-shhd-cdh04",cluster="yh-cdh",state="Runnable"} 19.0
+hadoop_yarn_resourcemanager_jvm_threads_state_total{_target="yh-shhd-cdh04",cluster="yh-cdh",state="TimedWaiting"} 180.0
+hadoop_yarn_resourcemanager_jvm_threads_state_total{_target="yh-shhd-cdh04",cluster="yh-cdh",state="New"} 0.0
+hadoop_yarn_resourcemanager_jvm_threads_state_total{_target="yh-shhd-cdh04",cluster="yh-cdh",state="Blocked"} 0.0
+hadoop_yarn_resourcemanager_jvm_threads_state_total{_target="yh-shhd-cdh04",cluster="yh-cdh",state="Terminated"} 0.0
+# HELP hadoop_yarn_resourcemanager_jvm_log_level_total Total number of each level logs.
+# TYPE hadoop_yarn_resourcemanager_jvm_log_level_total gauge
+hadoop_yarn_resourcemanager_jvm_log_level_total{_target="yh-shhd-cdh04",cluster="yh-cdh",level="Warn"} 0.0
+hadoop_yarn_resourcemanager_jvm_log_level_total{_target="yh-shhd-cdh04",cluster="yh-cdh",level="Error"} 0.0
+hadoop_yarn_resourcemanager_jvm_log_level_total{_target="yh-shhd-cdh04",cluster="yh-cdh",level="Info"} 0.0
+hadoop_yarn_resourcemanager_jvm_log_level_total{_target="yh-shhd-cdh04",cluster="yh-cdh",level="Fatal"} 0.0
+# HELP hadoop_yarn_resourcemanager_jvm_mem_committed_mebibytes Current memory committed in mebibytes.
+# TYPE hadoop_yarn_resourcemanager_jvm_mem_committed_mebibytes gauge
+hadoop_yarn_resourcemanager_jvm_mem_committed_mebibytes{_target="yh-shhd-cdh04",cluster="yh-cdh",mode="Heap"} 989.875
+hadoop_yarn_resourcemanager_jvm_mem_committed_mebibytes{_target="yh-shhd-cdh04",cluster="yh-cdh",mode="NonHeap"} 115.55078
+# HELP hadoop_hdfs_datanode_ram_disk_bytes_write Total number of bytes written to memory
+# TYPE hadoop_hdfs_datanode_ram_disk_bytes_write gauge
+hadoop_hdfs_datanode_ram_disk_bytes_write{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_copy_block_op_num_ops Total number of block copy operations
+# TYPE hadoop_hdfs_datanode_copy_block_op_num_ops gauge
+hadoop_hdfs_datanode_copy_block_op_num_ops{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_packet_ack_round_trip_time_nanos_avg_time Average time from ack send to receive minus the downstream ack time in nanoseconds
+# TYPE hadoop_hdfs_datanode_packet_ack_round_trip_time_nanos_avg_time gauge
+hadoop_hdfs_datanode_packet_ack_round_trip_time_nanos_avg_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 285714.0833333333
+# HELP hadoop_hdfs_datanode_write_block_op_num_ops Total number of write operations
+# TYPE hadoop_hdfs_datanode_write_block_op_num_ops gauge
+hadoop_hdfs_datanode_write_block_op_num_ops{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 310339.0
+# HELP hadoop_hdfs_datanode_fsync_nanos_num_ops Total number of fsync
+# TYPE hadoop_hdfs_datanode_fsync_nanos_num_ops gauge
+hadoop_hdfs_datanode_fsync_nanos_num_ops{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_replace_block_op_num_ops Total number of block replace operations
+# TYPE hadoop_hdfs_datanode_replace_block_op_num_ops gauge
+hadoop_hdfs_datanode_replace_block_op_num_ops{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_volume_failures Total number of volume failures occurred
+# TYPE hadoop_hdfs_datanode_volume_failures gauge
+hadoop_hdfs_datanode_volume_failures{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_heartbeats_total_avg_time Average total heartbeat time in milliseconds
+# TYPE hadoop_hdfs_datanode_heartbeats_total_avg_time gauge
+hadoop_hdfs_datanode_heartbeats_total_avg_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_remote_bytes_written Number of bytes written by remote clients
+# TYPE hadoop_hdfs_datanode_remote_bytes_written gauge
+hadoop_hdfs_datanode_remote_bytes_written{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 7.29005949946e+011
+# HELP hadoop_hdfs_datanode_copy_block_op_avg_time Average time of block copy operations in milliseconds
+# TYPE hadoop_hdfs_datanode_copy_block_op_avg_time gauge
+hadoop_hdfs_datanode_copy_block_op_avg_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_send_data_packet_transfer_nanos_avg_time Average transfer time of sending packets in nanoseconds
+# TYPE hadoop_hdfs_datanode_send_data_packet_transfer_nanos_avg_time gauge
+hadoop_hdfs_datanode_send_data_packet_transfer_nanos_avg_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 16085.875
+# HELP hadoop_hdfs_datanode_read_block_op_num_ops Total number of read operations
+# TYPE hadoop_hdfs_datanode_read_block_op_num_ops gauge
+hadoop_hdfs_datanode_read_block_op_num_ops{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 3.451868e+06
+# HELP hadoop_hdfs_datanode_incremental_block_reports_avg_time Average time of incremental block report operations in milliseconds
+# TYPE hadoop_hdfs_datanode_incremental_block_reports_avg_time gauge
+hadoop_hdfs_datanode_incremental_block_reports_avg_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.6666666666666666
+# HELP hadoop_hdfs_datanode_block_verification_failures Total number of verifications failures
+# TYPE hadoop_hdfs_datanode_block_verification_failures gauge
+hadoop_hdfs_datanode_block_verification_failures{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_heartbeats_avg_time Average heartbeat time in milliseconds
+# TYPE hadoop_hdfs_datanode_heartbeats_avg_time gauge
+hadoop_hdfs_datanode_heartbeats_avg_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.8
+# HELP hadoop_hdfs_datanode_block_operations_total Total number of blocks in different oprations
+# TYPE hadoop_hdfs_datanode_block_operations_total gauge
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="DeletedBeforeLazyPersisted"} 0.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="Replicated"} 8107.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="Write"} 0.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="Verified"} 434442.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="EvictionWindowMsNumOps"} 0.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="Uncached"} 0.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="EvictionWindowMsAvgTime"} 0.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="Removed"} 76103.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="Read"} 3.451868e+06
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="LazyPersistWindowMsNumOps"} 0.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="ReadHits"} 0.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="Evicted"} 0.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="GetLocalPathInfo"} 0.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="EvictedWithoutRead"} 0.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="Written"} 326878.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="Cached"} 0.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="LazyPersisted"} 0.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="LazyPersistWindowMsAvgTime"} 0.0
+hadoop_hdfs_datanode_block_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01",oper="WriteFallback"} 0.0
+# HELP hadoop_hdfs_datanode_flush_nanos_avg_time Average flush time in nanoseconds
+# TYPE hadoop_hdfs_datanode_flush_nanos_avg_time gauge
+hadoop_hdfs_datanode_flush_nanos_avg_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 12754.941176470587
+# HELP hadoop_hdfs_datanode_fsync_count Total number of fsync
+# TYPE hadoop_hdfs_datanode_fsync_count gauge
+hadoop_hdfs_datanode_fsync_count{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_ram_disk_bytes_lazy_persisted Total number of bytes written to disk by lazy writer
+# TYPE hadoop_hdfs_datanode_ram_disk_bytes_lazy_persisted gauge
+hadoop_hdfs_datanode_ram_disk_bytes_lazy_persisted{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_total_write_time Total number of milliseconds spent on write operation
+# TYPE hadoop_hdfs_datanode_total_write_time gauge
+hadoop_hdfs_datanode_total_write_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 1.322156e+06
+# HELP hadoop_hdfs_datanode_send_data_packet_blocked_on_network_nanos_num_ops Total number of sending packets
+# TYPE hadoop_hdfs_datanode_send_data_packet_blocked_on_network_nanos_num_ops gauge
+hadoop_hdfs_datanode_send_data_packet_blocked_on_network_nanos_num_ops{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 2.2693891e+07
+# HELP hadoop_hdfs_datanode_lifelines_num_ops Total number of lifeline messages
+# TYPE hadoop_hdfs_datanode_lifelines_num_ops gauge
+hadoop_hdfs_datanode_lifelines_num_ops{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_cache_reports_num_ops Total number of cache report operations
+# TYPE hadoop_hdfs_datanode_cache_reports_num_ops gauge
+hadoop_hdfs_datanode_cache_reports_num_ops{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 92796.0
+# HELP hadoop_hdfs_datanode_datanode_network_errors Total number of datanode network error
+# TYPE hadoop_hdfs_datanode_datanode_network_errors gauge
+hadoop_hdfs_datanode_datanode_network_errors{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 13218.0
+# HELP hadoop_hdfs_datanode_total_read_time Total number of milliseconds spent on read operation
+# TYPE hadoop_hdfs_datanode_total_read_time gauge
+hadoop_hdfs_datanode_total_read_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 3.634335e+06
+# HELP hadoop_hdfs_datanode_incremental_block_reports_num_ops Total number of incremental block report operations
+# TYPE hadoop_hdfs_datanode_incremental_block_reports_num_ops gauge
+hadoop_hdfs_datanode_incremental_block_reports_num_ops{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 661251.0
+# HELP hadoop_hdfs_datanode_remote_bytes_read Number of bytes read by remote clients
+# TYPE hadoop_hdfs_datanode_remote_bytes_read gauge
+hadoop_hdfs_datanode_remote_bytes_read{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 3.92894022304e+011
+# HELP hadoop_hdfs_datanode_block_checksum_op_num_ops Total number of blockChecksum operations
+# TYPE hadoop_hdfs_datanode_block_checksum_op_num_ops gauge
+hadoop_hdfs_datanode_block_checksum_op_num_ops{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 12763.0
+# HELP hadoop_hdfs_datanode_send_data_packet_transfer_nanos_num_ops Total number of sending packets
+# TYPE hadoop_hdfs_datanode_send_data_packet_transfer_nanos_num_ops gauge
+hadoop_hdfs_datanode_send_data_packet_transfer_nanos_num_ops{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 2.2693891e+07
+# HELP hadoop_hdfs_datanode_send_data_packet_blocked_on_network_nanos_avg_time Average waiting time of sending packets in nanoseconds
+# TYPE hadoop_hdfs_datanode_send_data_packet_blocked_on_network_nanos_avg_time gauge
+hadoop_hdfs_datanode_send_data_packet_blocked_on_network_nanos_avg_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 16887.56333333333
+# HELP hadoop_hdfs_datanode_read_block_op_avg_time Average time of read operations in milliseconds
+# TYPE hadoop_hdfs_datanode_read_block_op_avg_time gauge
+hadoop_hdfs_datanode_read_block_op_avg_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.9045801526717557
+# HELP hadoop_hdfs_datanode_lifelines_avg_time Average lifeline message processing time in milliseconds
+# TYPE hadoop_hdfs_datanode_lifelines_avg_time gauge
+hadoop_hdfs_datanode_lifelines_avg_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_from_client_total Total number of each operations from different client
+# TYPE hadoop_hdfs_datanode_from_client_total gauge
+hadoop_hdfs_datanode_from_client_total{_target="yh-shhd-cdh01",client="Remote",cluster="yh-cdh",host="yh-shhd-cdh01",oper="Reads"} 2.371705e+06
+hadoop_hdfs_datanode_from_client_total{_target="yh-shhd-cdh01",client="Local",cluster="yh-cdh",host="yh-shhd-cdh01",oper="Reads"} 1.080163e+06
+hadoop_hdfs_datanode_from_client_total{_target="yh-shhd-cdh01",client="Local",cluster="yh-cdh",host="yh-shhd-cdh01",oper="Writes"} 110164.0
+hadoop_hdfs_datanode_from_client_total{_target="yh-shhd-cdh01",client="Remote",cluster="yh-cdh",host="yh-shhd-cdh01",oper="Writes"} 200175.0
+# HELP hadoop_hdfs_datanode_bytes_written Total number of bytes written to DataNode
+# TYPE hadoop_hdfs_datanode_bytes_written gauge
+hadoop_hdfs_datanode_bytes_written{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 9.93180345427e+011
+# HELP hadoop_hdfs_datanode_block_reports_avg_time Average time of block report operations in milliseconds
+# TYPE hadoop_hdfs_datanode_block_reports_avg_time gauge
+hadoop_hdfs_datanode_block_reports_avg_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 673.0
+# HELP hadoop_hdfs_datanode_cache_reports_avg_time Average time of cache report operations in milliseconds
+# TYPE hadoop_hdfs_datanode_cache_reports_avg_time gauge
+hadoop_hdfs_datanode_cache_reports_avg_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_fsync_nanos_avg_time Average fsync time in nanoseconds
+# TYPE hadoop_hdfs_datanode_fsync_nanos_avg_time gauge
+hadoop_hdfs_datanode_fsync_nanos_avg_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_flush_nanos_num_ops Total number of flushes
+# TYPE hadoop_hdfs_datanode_flush_nanos_num_ops gauge
+hadoop_hdfs_datanode_flush_nanos_num_ops{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 1.7943944e+07
+# HELP hadoop_hdfs_datanode_replace_block_op_avg_time Average time of block replace operations in milliseconds
+# TYPE hadoop_hdfs_datanode_replace_block_op_avg_time gauge
+hadoop_hdfs_datanode_replace_block_op_avg_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_write_block_op_avg_time Average time of write operations in milliseconds
+# TYPE hadoop_hdfs_datanode_write_block_op_avg_time gauge
+hadoop_hdfs_datanode_write_block_op_avg_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 10.333333333333334
+# HELP hadoop_hdfs_datanode_block_reports_num_ops Total number of block report operations
+# TYPE hadoop_hdfs_datanode_block_reports_num_ops gauge
+hadoop_hdfs_datanode_block_reports_num_ops{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 52.0
+# HELP hadoop_hdfs_datanode_heartbeats_total_num_ops Total number of heartbeats which is a duplicate of HeartbeatsNumOps
+# TYPE hadoop_hdfs_datanode_heartbeats_total_num_ops gauge
+hadoop_hdfs_datanode_heartbeats_total_num_ops{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_data_node_active_xceivers_count Total number of datanode active Xceivers
+# TYPE hadoop_hdfs_datanode_data_node_active_xceivers_count gauge
+hadoop_hdfs_datanode_data_node_active_xceivers_count{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_block_checksum_op_avg_time Average time of blockChecksum operations in milliseconds
+# TYPE hadoop_hdfs_datanode_block_checksum_op_avg_time gauge
+hadoop_hdfs_datanode_block_checksum_op_avg_time{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.5714285714285714
+# HELP hadoop_hdfs_datanode_packet_ack_round_trip_time_nanos_num_ops Total number of ack round trip
+# TYPE hadoop_hdfs_datanode_packet_ack_round_trip_time_nanos_num_ops gauge
+hadoop_hdfs_datanode_packet_ack_round_trip_time_nanos_num_ops{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 8.882915e+06
+# HELP hadoop_hdfs_datanode_heartbeats_num_ops Total number of heartbeats
+# TYPE hadoop_hdfs_datanode_heartbeats_num_ops gauge
+hadoop_hdfs_datanode_heartbeats_num_ops{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 353957.0
+# HELP hadoop_hdfs_datanode_bytes_read Total number of bytes read from DataNode
+# TYPE hadoop_hdfs_datanode_bytes_read gauge
+hadoop_hdfs_datanode_bytes_read{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 6.68316554056e+011
+# HELP hadoop_hdfs_datanode_cache_used Total number of cache used
+# TYPE hadoop_hdfs_datanode_cache_used gauge
+hadoop_hdfs_datanode_cache_used{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_blocks_failed_to_un_cache Total number of blocks failed to uncached
+# TYPE hadoop_hdfs_datanode_blocks_failed_to_un_cache gauge
+hadoop_hdfs_datanode_blocks_failed_to_un_cache{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_capacity Current raw capacity of DataNode in bytes
+# TYPE hadoop_hdfs_datanode_capacity gauge
+hadoop_hdfs_datanode_capacity{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 3.1710403805184e+013
+# HELP hadoop_hdfs_datanode_blocks_failed_to_cache Total number of blocks failed to cache
+# TYPE hadoop_hdfs_datanode_blocks_failed_to_cache gauge
+hadoop_hdfs_datanode_blocks_failed_to_cache{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_failed_volumes Total number of failed volumes
+# TYPE hadoop_hdfs_datanode_failed_volumes gauge
+hadoop_hdfs_datanode_failed_volumes{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_estimated_capacity_lost_total An estimate of the total capacity lost due to volume failures
+# TYPE hadoop_hdfs_datanode_estimated_capacity_lost_total gauge
+hadoop_hdfs_datanode_estimated_capacity_lost_total{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_blocks_cached Total number of blocks cached
+# TYPE hadoop_hdfs_datanode_blocks_cached gauge
+hadoop_hdfs_datanode_blocks_cached{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_last_volume_failure_date Last time of volume failures
+# TYPE hadoop_hdfs_datanode_last_volume_failure_date gauge
+hadoop_hdfs_datanode_last_volume_failure_date{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 0.0
+# HELP hadoop_hdfs_datanode_cache_capacity Current raw capacity of cache in bytes
+# TYPE hadoop_hdfs_datanode_cache_capacity gauge
+hadoop_hdfs_datanode_cache_capacity{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 4.294967296e+09
+# HELP hadoop_hdfs_datanode_remaining Current remaining capacity in bytes
+# TYPE hadoop_hdfs_datanode_remaining gauge
+hadoop_hdfs_datanode_remaining{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 2.4022837763565e+013
+# HELP hadoop_hdfs_datanode_dfs_used Current space used by DataNodes for DFS purposes in bytes
+# TYPE hadoop_hdfs_datanode_dfs_used gauge
+hadoop_hdfs_datanode_dfs_used{_target="yh-shhd-cdh01",cluster="yh-cdh",host="yh-shhd-cdh01"} 6.086784303635e+012
+# HELP hadoop_hdfs_datanode_xceiver_count Total number of datanode Xceivers
+# TYPE hadoop_hdfs_datanode_xceiver_count gauge
+hadoop_hdfs_datanode_xceiver_count{_target="yh-shhd-cdh01",cluster="yh-cdh",version="2.6.0-cdh5.14.2"} 12.0
+# HELP hadoop_hdfs_datanode_volume_state Volume infomation in each path and in each mode
+# TYPE hadoop_hdfs_datanode_volume_state gauge
+hadoop_hdfs_datanode_volume_state{_target="yh-shhd-cdh01",cluster="yh-cdh",path="/mnt/disk1/dfs/dn/current",state="freeSpace",version="2.6.0-cdh5.14.2"} 6.020284152294e+012
+hadoop_hdfs_datanode_volume_state{_target="yh-shhd-cdh01",cluster="yh-cdh",path="/mnt/disk1/dfs/dn/current",state="reservedSpace",version="2.6.0-cdh5.14.2"} 1.073741824e+010
+hadoop_hdfs_datanode_volume_state{_target="yh-shhd-cdh01",cluster="yh-cdh",path="/mnt/disk1/dfs/dn/current",state="reservedSpaceForRBW",version="2.6.0-cdh5.14.2"} 1.33952e+08
+hadoop_hdfs_datanode_volume_state{_target="yh-shhd-cdh01",cluster="yh-cdh",path="/mnt/disk1/dfs/dn/current",state="usedSpace",version="2.6.0-cdh5.14.2"} 1.507087979546e+012
+hadoop_hdfs_datanode_volume_state{_target="yh-shhd-cdh01",cluster="yh-cdh",path="/mnt/disk0/dfs/dn/current",state="freeSpace",version="2.6.0-cdh5.14.2"} 5.959619932148e+012
+hadoop_hdfs_datanode_volume_state{_target="yh-shhd-cdh01",cluster="yh-cdh",path="/mnt/disk0/dfs/dn/current",state="reservedSpace",version="2.6.0-cdh5.14.2"} 1.073741824e+010
+hadoop_hdfs_datanode_volume_state{_target="yh-shhd-cdh01",cluster="yh-cdh",path="/mnt/disk0/dfs/dn/current",state="reservedSpaceForRBW",version="2.6.0-cdh5.14.2"} 0.0
+hadoop_hdfs_datanode_volume_state{_target="yh-shhd-cdh01",cluster="yh-cdh",path="/mnt/disk0/dfs/dn/current",state="usedSpace",version="2.6.0-cdh5.14.2"} 1.567886151692e+012
+hadoop_hdfs_datanode_volume_state{_target="yh-shhd-cdh01",cluster="yh-cdh",path="/mnt/disk3/dfs/dn/current",state="freeSpace",version="2.6.0-cdh5.14.2"} 6.025237270185e+012
+hadoop_hdfs_datanode_volume_state{_target="yh-shhd-cdh01",cluster="yh-cdh",path="/mnt/disk3/dfs/dn/current",state="reservedSpace",version="2.6.0-cdh5.14.2"} 1.073741824e+010
+hadoop_hdfs_datanode_volume_state{_target="yh-shhd-cdh01",cluster="yh-cdh",path="/mnt/disk3/dfs/dn/current",state="reservedSpaceForRBW",version="2.6.0-cdh5.14.2"} 1.34193152e+08
+hadoop_hdfs_datanode_volume_state{_target="yh-shhd-cdh01",cluster="yh-cdh",path="/mnt/disk3/dfs/dn/current",state="usedSpace",version="2.6.0-cdh5.14.2"} 1.502134620503e+012
+hadoop_hdfs_datanode_volume_state{_target="yh-shhd-cdh01",cluster="yh-cdh",path="/mnt/disk2/dfs/dn/current",state="freeSpace",version="2.6.0-cdh5.14.2"} 6.017696408938e+012
+hadoop_hdfs_datanode_volume_state{_target="yh-shhd-cdh01",cluster="yh-cdh",path="/mnt/disk2/dfs/dn/current",state="reservedSpace",version="2.6.0-cdh5.14.2"} 1.073741824e+010
+hadoop_hdfs_datanode_volume_state{_target="yh-shhd-cdh01",cluster="yh-cdh",path="/mnt/disk2/dfs/dn/current",state="reservedSpaceForRBW",version="2.6.0-cdh5.14.2"} 1.34123008e+08
+hadoop_hdfs_datanode_volume_state{_target="yh-shhd-cdh01",cluster="yh-cdh",path="/mnt/disk2/dfs/dn/current",state="usedSpace",version="2.6.0-cdh5.14.2"} 1.509675551894e+012
+# HELP hadoop_hdfs_datanode_rpc_num_open_connections Current number of open connections
+# TYPE hadoop_hdfs_datanode_rpc_num_open_connections gauge
+hadoop_hdfs_datanode_rpc_num_open_connections{_target="yh-shhd-cdh01",cluster="yh-cdh",tag="50020"} 0.0
+# HELP hadoop_hdfs_datanode_rpc_authentication_successes Total number of authentication successes
+# TYPE hadoop_hdfs_datanode_rpc_authentication_successes gauge
+hadoop_hdfs_datanode_rpc_authentication_successes{_target="yh-shhd-cdh01",cluster="yh-cdh",tag="50020"} 0.0
+# HELP hadoop_hdfs_datanode_rpc_authorization_failures Total number of authorization failures
+# TYPE hadoop_hdfs_datanode_rpc_authorization_failures gauge
+hadoop_hdfs_datanode_rpc_authorization_failures{_target="yh-shhd-cdh01",cluster="yh-cdh",tag="50020"} 0.0
+# HELP hadoop_hdfs_datanode_rpc_slow_calls Total number of RPC slow calls
+# TYPE hadoop_hdfs_datanode_rpc_slow_calls gauge
+hadoop_hdfs_datanode_rpc_slow_calls{_target="yh-shhd-cdh01",cluster="yh-cdh",tag="50020"} 0.0
+# HELP hadoop_hdfs_datanode_rpc_method_avg_time_milliseconds Average turn around time of the method in milliseconds.
+# TYPE hadoop_hdfs_datanode_rpc_method_avg_time_milliseconds gauge
+hadoop_hdfs_datanode_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh01",cluster="yh-cdh",method="RpcProcessingTime",tag="50020"} 0.0
+hadoop_hdfs_datanode_rpc_method_avg_time_milliseconds{_target="yh-shhd-cdh01",cluster="yh-cdh",method="RpcQueueTime",tag="50020"} 1.0
+# HELP hadoop_hdfs_datanode_rpc_client_backoff Total number of RPC client back off
+# TYPE hadoop_hdfs_datanode_rpc_client_backoff gauge
+hadoop_hdfs_datanode_rpc_client_backoff{_target="yh-shhd-cdh01",cluster="yh-cdh",tag="50020"} 0.0
+# HELP hadoop_hdfs_datanode_rpc_authentication_failures Total number of authentication failures
+# TYPE hadoop_hdfs_datanode_rpc_authentication_failures gauge
+hadoop_hdfs_datanode_rpc_authentication_failures{_target="yh-shhd-cdh01",cluster="yh-cdh",tag="50020"} 0.0
+# HELP hadoop_hdfs_datanode_rpc_received_bytes Total number of received bytes
+# TYPE hadoop_hdfs_datanode_rpc_received_bytes gauge
+hadoop_hdfs_datanode_rpc_received_bytes{_target="yh-shhd-cdh01",cluster="yh-cdh",tag="50020"} 6.214374e+06
+# HELP hadoop_hdfs_datanode_rpc_authorization_successes Total number of authorization successes
+# TYPE hadoop_hdfs_datanode_rpc_authorization_successes gauge
+hadoop_hdfs_datanode_rpc_authorization_successes{_target="yh-shhd-cdh01",cluster="yh-cdh",tag="50020"} 17934.0
+# HELP hadoop_hdfs_datanode_rpc_call_queue_length Current length of the call queue
+# TYPE hadoop_hdfs_datanode_rpc_call_queue_length gauge
+hadoop_hdfs_datanode_rpc_call_queue_length{_target="yh-shhd-cdh01",cluster="yh-cdh",tag="50020"} 0.0
+# HELP hadoop_hdfs_datanode_rpc_sent_bytes Total number of sent bytes
+# TYPE hadoop_hdfs_datanode_rpc_sent_bytes gauge
+hadoop_hdfs_datanode_rpc_sent_bytes{_target="yh-shhd-cdh01",cluster="yh-cdh",tag="50020"} 3.884769e+06
+# HELP hadoop_hdfs_datanode_rpc_method_called_total Total number of the times the method is called.
+# TYPE hadoop_hdfs_datanode_rpc_method_called_total gauge
+hadoop_hdfs_datanode_rpc_method_called_total{_target="yh-shhd-cdh01",cluster="yh-cdh",method="RpcProcessingTime",tag="50020"} 17934.0
+hadoop_hdfs_datanode_rpc_method_called_total{_target="yh-shhd-cdh01",cluster="yh-cdh",method="RpcQueueTime",tag="50020"} 17934.0
+# HELP hadoop_hdfs_datanode_metricssystem_dropped_pub_all Total number of dropped publishes.
+# TYPE hadoop_hdfs_datanode_metricssystem_dropped_pub_all gauge
+hadoop_hdfs_datanode_metricssystem_dropped_pub_all{_target="yh-shhd-cdh01",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_datanode_metricssystem_num_all_sinks Total number of sinks (BUT usually less than NumActiveSinks, see HADOOP-9946).
+# TYPE hadoop_hdfs_datanode_metricssystem_num_all_sinks gauge
+hadoop_hdfs_datanode_metricssystem_num_all_sinks{_target="yh-shhd-cdh01",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_datanode_metricssystem_method_avg_time_milliseconds Average turn around time of the operations in milliseconds.
+# TYPE hadoop_hdfs_datanode_metricssystem_method_avg_time_milliseconds gauge
+hadoop_hdfs_datanode_metricssystem_method_avg_time_milliseconds{_target="yh-shhd-cdh01",cluster="yh-cdh",oper="Sink_instance"} 0.0
+hadoop_hdfs_datanode_metricssystem_method_avg_time_milliseconds{_target="yh-shhd-cdh01",cluster="yh-cdh",oper="Snapshot"} 0.0
+hadoop_hdfs_datanode_metricssystem_method_avg_time_milliseconds{_target="yh-shhd-cdh01",cluster="yh-cdh",oper="Publish"} 0.0
+# HELP hadoop_hdfs_datanode_metricssystem_operations_total Total number of operations
+# TYPE hadoop_hdfs_datanode_metricssystem_operations_total gauge
+hadoop_hdfs_datanode_metricssystem_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",oper="Sink_instance"} 0.0
+hadoop_hdfs_datanode_metricssystem_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",oper="Publish"} 0.0
+hadoop_hdfs_datanode_metricssystem_operations_total{_target="yh-shhd-cdh01",cluster="yh-cdh",oper="Snapshot"} 0.0
+# HELP hadoop_hdfs_datanode_metricssystem_sink_instance_qsize Current queue length of sink operations (BUT always set to 0 because nothing to increment this metrics, see HADOOP-9941).
+# TYPE hadoop_hdfs_datanode_metricssystem_sink_instance_qsize gauge
+hadoop_hdfs_datanode_metricssystem_sink_instance_qsize{_target="yh-shhd-cdh01",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_datanode_metricssystem_num_active_sources Current number of active metrics sources.
+# TYPE hadoop_hdfs_datanode_metricssystem_num_active_sources gauge
+hadoop_hdfs_datanode_metricssystem_num_active_sources{_target="yh-shhd-cdh01",cluster="yh-cdh"} 5.0
+# HELP hadoop_hdfs_datanode_metricssystem_sink_instance_dropped Total number of dropped sink operations for the instance.
+# TYPE hadoop_hdfs_datanode_metricssystem_sink_instance_dropped gauge
+hadoop_hdfs_datanode_metricssystem_sink_instance_dropped{_target="yh-shhd-cdh01",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_datanode_metricssystem_num_all_sources Total number of metrics sources.
+# TYPE hadoop_hdfs_datanode_metricssystem_num_all_sources gauge
+hadoop_hdfs_datanode_metricssystem_num_all_sources{_target="yh-shhd-cdh01",cluster="yh-cdh"} 5.0
+# HELP hadoop_hdfs_datanode_metricssystem_num_active_sinks Current number of active sinks.
+# TYPE hadoop_hdfs_datanode_metricssystem_num_active_sinks gauge
+hadoop_hdfs_datanode_metricssystem_num_active_sinks{_target="yh-shhd-cdh01",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_datanode_uptime_milliseconds components uptime in milliseconds
+# TYPE hadoop_hdfs_datanode_uptime_milliseconds gauge
+hadoop_hdfs_datanode_uptime_milliseconds{_target="_target",cluster="yh-cdh",host="yh-shhd-cdh01"} 5.31013566e+08
+# HELP hadoop_hdfs_datanode_start_time_milliseconds components start time in milliseconds
+# TYPE hadoop_hdfs_datanode_start_time_milliseconds gauge
+hadoop_hdfs_datanode_start_time_milliseconds{_target="_target",cluster="yh-cdh",host="yh-shhd-cdh01"} 1.586867178416e+012
+# HELP hadoop_hdfs_datanode_rpc_detailed_method_called_total Total number of the times the method is called
+# TYPE hadoop_hdfs_datanode_rpc_detailed_method_called_total gauge
+hadoop_hdfs_datanode_rpc_detailed_method_called_total{_target="yh-shhd-cdh01",cluster="yh-cdh",method="GetReplicaVisibleLength",tag="50020"} 17927.0
+hadoop_hdfs_datanode_rpc_detailed_method_called_total{_target="yh-shhd-cdh01",cluster="yh-cdh",method="ReplicaNotFoundException",tag="50020"} 7.0
+# HELP hadoop_hdfs_datanode_rpc_detailed_method_avg_time_milliseconds Average turn around time of the method in milliseconds
+# TYPE hadoop_hdfs_datanode_rpc_detailed_method_avg_time_milliseconds gauge
+hadoop_hdfs_datanode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh01",cluster="yh-cdh",method="GetReplicaVisibleLength",tag="50020"} 0.0
+hadoop_hdfs_datanode_rpc_detailed_method_avg_time_milliseconds{_target="yh-shhd-cdh01",cluster="yh-cdh",method="ReplicaNotFoundException",tag="50020"} 1.0
+# HELP hadoop_hdfs_datanode_ugi_method_called_total Total number of the times the method is called.
+# TYPE hadoop_hdfs_datanode_ugi_method_called_total gauge
+hadoop_hdfs_datanode_ugi_method_called_total{_target="yh-shhd-cdh01",cluster="yh-cdh",method="Login",state="Failure"} 0.0
+hadoop_hdfs_datanode_ugi_method_called_total{_target="yh-shhd-cdh01",cluster="yh-cdh",method="Login",state="Success"} 0.0
+hadoop_hdfs_datanode_ugi_method_called_total{_target="yh-shhd-cdh01",cluster="yh-cdh",method="GetGroups",state="-"} 0.0
+# HELP hadoop_hdfs_datanode_ugi_method_avg_time_milliseconds Average turn around time of the method in milliseconds.
+# TYPE hadoop_hdfs_datanode_ugi_method_avg_time_milliseconds gauge
+hadoop_hdfs_datanode_ugi_method_avg_time_milliseconds{_target="yh-shhd-cdh01",cluster="yh-cdh",method="Login",state="Success"} 0.0
+hadoop_hdfs_datanode_ugi_method_avg_time_milliseconds{_target="yh-shhd-cdh01",cluster="yh-cdh",method="GetGroups",state="-"} 0.0
+hadoop_hdfs_datanode_ugi_method_avg_time_milliseconds{_target="yh-shhd-cdh01",cluster="yh-cdh",method="Login",state="Failure"} 0.0
+# HELP hadoop_hdfs_datanode_ugi_renewal_failures_total Total number of renewal failures.
+# TYPE hadoop_hdfs_datanode_ugi_renewal_failures_total gauge
+hadoop_hdfs_datanode_ugi_renewal_failures_total{_target="-",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_datanode_ugi_renewal_failures Current number of renewal failures.
+# TYPE hadoop_hdfs_datanode_ugi_renewal_failures gauge
+hadoop_hdfs_datanode_ugi_renewal_failures{_target="-",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_datanode_open_file_descriptor_count Total number of open file descriptor
+# TYPE hadoop_hdfs_datanode_open_file_descriptor_count gauge
+hadoop_hdfs_datanode_open_file_descriptor_count{_target="yh-shhd-cdh01",cluster="yh-cdh"} 1300.0
+# HELP hadoop_hdfs_datanode_max_file_descriptor_count Total number of max file descriptor
+# TYPE hadoop_hdfs_datanode_max_file_descriptor_count gauge
+hadoop_hdfs_datanode_max_file_descriptor_count{_target="yh-shhd-cdh01",cluster="yh-cdh"} 32768.0
+# HELP hadoop_hdfs_datanode_system_load_average Average of system load
+# TYPE hadoop_hdfs_datanode_system_load_average gauge
+hadoop_hdfs_datanode_system_load_average{_target="yh-shhd-cdh01",cluster="yh-cdh"} 8.73
+# HELP hadoop_hdfs_datanode_free_swap_space_size The size of free swap space in bytes
+# TYPE hadoop_hdfs_datanode_free_swap_space_size gauge
+hadoop_hdfs_datanode_free_swap_space_size{_target="yh-shhd-cdh01",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_datanode_available_processors Total number of available processors
+# TYPE hadoop_hdfs_datanode_available_processors gauge
+hadoop_hdfs_datanode_available_processors{_target="yh-shhd-cdh01",cluster="yh-cdh"} 80.0
+# HELP hadoop_hdfs_datanode_process_cpu_load Average of process CPU load
+# TYPE hadoop_hdfs_datanode_process_cpu_load gauge
+hadoop_hdfs_datanode_process_cpu_load{_target="yh-shhd-cdh01",cluster="yh-cdh"} 0.0007349833710012311
+# HELP hadoop_hdfs_datanode_system_cpu_load Average of system CPU load
+# TYPE hadoop_hdfs_datanode_system_cpu_load gauge
+hadoop_hdfs_datanode_system_cpu_load{_target="yh-shhd-cdh01",cluster="yh-cdh"} 0.1780545147307325
+# HELP hadoop_hdfs_datanode_process_cpu_time Total process cpu time in microseconds
+# TYPE hadoop_hdfs_datanode_process_cpu_time gauge
+hadoop_hdfs_datanode_process_cpu_time{_target="yh-shhd-cdh01",cluster="yh-cdh"} 3.280746e+013
+# HELP hadoop_hdfs_datanode_committed_virtual_memory_size The size of committed virtual memory in bytes
+# TYPE hadoop_hdfs_datanode_committed_virtual_memory_size gauge
+hadoop_hdfs_datanode_committed_virtual_memory_size{_target="yh-shhd-cdh01",cluster="yh-cdh"} 4.573769728e+09
+# HELP hadoop_hdfs_datanode_total_physical_memory_size The size of total physical memory in bytes
+# TYPE hadoop_hdfs_datanode_total_physical_memory_size gauge
+hadoop_hdfs_datanode_total_physical_memory_size{_target="yh-shhd-cdh01",cluster="yh-cdh"} 4.05193580544e+011
+# HELP hadoop_hdfs_datanode_total_swap_space_size The size of total swap space in bytes
+# TYPE hadoop_hdfs_datanode_total_swap_space_size gauge
+hadoop_hdfs_datanode_total_swap_space_size{_target="yh-shhd-cdh01",cluster="yh-cdh"} 0.0
+# HELP hadoop_hdfs_datanode_free_physical_memory_size The size of free physical memory in bytes
+# TYPE hadoop_hdfs_datanode_free_physical_memory_size gauge
+hadoop_hdfs_datanode_free_physical_memory_size{_target="yh-shhd-cdh01",cluster="yh-cdh"} 3.0873194496e+010
+# HELP hadoop_hdfs_datanode_jvm_gc_exceeded_threshold_total Number of times that the GC threshold is exceeded.
+# TYPE hadoop_hdfs_datanode_jvm_gc_exceeded_threshold_total gauge
+hadoop_hdfs_datanode_jvm_gc_exceeded_threshold_total{_target="yh-shhd-cdh01",cluster="yh-cdh",type="Info"} 0.0
+hadoop_hdfs_datanode_jvm_gc_exceeded_threshold_total{_target="yh-shhd-cdh01",cluster="yh-cdh",type="Warn"} 0.0
+# HELP hadoop_hdfs_datanode_jvm_gc_total_extra_sleep_time Total GC extra sleep time in msec.
+# TYPE hadoop_hdfs_datanode_jvm_gc_total_extra_sleep_time gauge
+hadoop_hdfs_datanode_jvm_gc_total_extra_sleep_time{_target="yh-shhd-cdh01",cluster="yh-cdh"} 21170.0
+# HELP hadoop_hdfs_datanode_jvm_gc_count GC count of each type GC.
+# TYPE hadoop_hdfs_datanode_jvm_gc_count gauge
+hadoop_hdfs_datanode_jvm_gc_count{_target="yh-shhd-cdh01",cluster="yh-cdh",type="ParNew"} 1374.0
+hadoop_hdfs_datanode_jvm_gc_count{_target="yh-shhd-cdh01",cluster="yh-cdh",type="ConcurrentMarkSweep"} 23.0
+hadoop_hdfs_datanode_jvm_gc_count{_target="yh-shhd-cdh01",cluster="yh-cdh",type="total"} 1397.0
+# HELP hadoop_hdfs_datanode_jvm_mem_max_mebibytes Current max memory in mebibytes.
+# TYPE hadoop_hdfs_datanode_jvm_mem_max_mebibytes gauge
+hadoop_hdfs_datanode_jvm_mem_max_mebibytes{_target="yh-shhd-cdh01",cluster="yh-cdh",mode="NonHeap"} -1.0
+hadoop_hdfs_datanode_jvm_mem_max_mebibytes{_target="yh-shhd-cdh01",cluster="yh-cdh",mode="max"} 1979.75
+hadoop_hdfs_datanode_jvm_mem_max_mebibytes{_target="yh-shhd-cdh01",cluster="yh-cdh",mode="Heap"} 1979.75
+# HELP hadoop_hdfs_datanode_jvm_mem_used_mebibytes Current memory used in mebibytes.
+# TYPE hadoop_hdfs_datanode_jvm_mem_used_mebibytes gauge
+hadoop_hdfs_datanode_jvm_mem_used_mebibytes{_target="yh-shhd-cdh01",cluster="yh-cdh",mode="NonHeap"} 76.53562
+hadoop_hdfs_datanode_jvm_mem_used_mebibytes{_target="yh-shhd-cdh01",cluster="yh-cdh",mode="Heap"} 1233.6709
+# HELP hadoop_hdfs_datanode_jvm_gc_time_milliseconds Each type GC time in milliseconds.
+# TYPE hadoop_hdfs_datanode_jvm_gc_time_milliseconds gauge
+hadoop_hdfs_datanode_jvm_gc_time_milliseconds{_target="yh-shhd-cdh01",cluster="yh-cdh",type="ConcurrentMarkSweep"} 1548.0
+hadoop_hdfs_datanode_jvm_gc_time_milliseconds{_target="yh-shhd-cdh01",cluster="yh-cdh",type="ParNew"} 130910.0
+hadoop_hdfs_datanode_jvm_gc_time_milliseconds{_target="yh-shhd-cdh01",cluster="yh-cdh",type="total"} 132458.0
+# HELP hadoop_hdfs_datanode_jvm_threads_state_total Current number of different threads.
+# TYPE hadoop_hdfs_datanode_jvm_threads_state_total gauge
+hadoop_hdfs_datanode_jvm_threads_state_total{_target="yh-shhd-cdh01",cluster="yh-cdh",state="Waiting"} 13.0
+hadoop_hdfs_datanode_jvm_threads_state_total{_target="yh-shhd-cdh01",cluster="yh-cdh",state="Runnable"} 179.0
+hadoop_hdfs_datanode_jvm_threads_state_total{_target="yh-shhd-cdh01",cluster="yh-cdh",state="TimedWaiting"} 29.0
+hadoop_hdfs_datanode_jvm_threads_state_total{_target="yh-shhd-cdh01",cluster="yh-cdh",state="New"} 0.0
+hadoop_hdfs_datanode_jvm_threads_state_total{_target="yh-shhd-cdh01",cluster="yh-cdh",state="Blocked"} 0.0
+hadoop_hdfs_datanode_jvm_threads_state_total{_target="yh-shhd-cdh01",cluster="yh-cdh",state="Terminated"} 0.0
+# HELP hadoop_hdfs_datanode_jvm_log_level_total Total number of each level logs.
+# TYPE hadoop_hdfs_datanode_jvm_log_level_total gauge
+hadoop_hdfs_datanode_jvm_log_level_total{_target="yh-shhd-cdh01",cluster="yh-cdh",level="Warn"} 43.0
+hadoop_hdfs_datanode_jvm_log_level_total{_target="yh-shhd-cdh01",cluster="yh-cdh",level="Error"} 1289.0
+hadoop_hdfs_datanode_jvm_log_level_total{_target="yh-shhd-cdh01",cluster="yh-cdh",level="Info"} 1.133409e+06
+hadoop_hdfs_datanode_jvm_log_level_total{_target="yh-shhd-cdh01",cluster="yh-cdh",level="Fatal"} 0.0
+# HELP hadoop_hdfs_datanode_jvm_mem_committed_mebibytes Current memory committed in mebibytes.
+# TYPE hadoop_hdfs_datanode_jvm_mem_committed_mebibytes gauge
+hadoop_hdfs_datanode_jvm_mem_committed_mebibytes{_target="yh-shhd-cdh01",cluster="yh-cdh",mode="Heap"} 1979.75
+hadoop_hdfs_datanode_jvm_mem_committed_mebibytes{_target="yh-shhd-cdh01",cluster="yh-cdh",mode="NonHeap"} 78.93359
