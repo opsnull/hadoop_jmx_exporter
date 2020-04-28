@@ -7,60 +7,62 @@ from prometheus_client.core import GaugeMetricFamily
 
 import utils
 from utils import get_module_logger
-from common import MetricCollector, common_metrics_collector
+from common import MetricCollector, CommonMetricCollector
 
 logger = get_module_logger(__name__)
 
 
 class DataNodeMetricCollector(MetricCollector):
-    def __init__(self, cluster, url):
-        MetricCollector.__init__(self, cluster, url, "hdfs", "datanode")
-        self._hadoop_datanode_metrics = {}
-        self._target = "-"
-        for i in range(len(self._file_list)):
-            self._hadoop_datanode_metrics.setdefault(self._file_list[i], {})
+    def __init__(self, cluster, urls):
+        MetricCollector.__init__(self, cluster, urls, "hdfs", "datanode")
+        self.target = "-"
+
+        self.hadoop_datanode_metrics = {}
+        for i in range(len(self.file_list)):
+            self.hadoop_datanode_metrics.setdefault(self.file_list[i], {})
+
+        self.common_metric_collector = CommonMetricCollector(cluster, "hdfs", "datanode")
 
     def collect(self):
-        try:
-            beans = utils.get_metrics(self._url)
-        except Exception as e:
-            logger.info("Can't scrape metrics from url: {0}, error: {1}".format(self._url, e))
-        else:
-            for i in range(len(beans)):
-                if 'DataNodeActivity' in beans[i]['name']:
-                    self._target = beans[i]['tag.Hostname']
-                    break
+        for index, url in enumerate(self.urls):
+            try:
+                beans = utils.get_metrics(url)
+            except Exception as e:
+                logger.info("Can't scrape metrics from url: {0}, error: {1}".format(url, e))
+            else:
+                if index == 0:
+                    self.common_metric_collector.setup_labels(beans)
+                    self.setup_metrics_labels(beans)
 
-            # set up all metrics with labels and descriptions.
-            self._setup_metrics_labels(beans)
+                for i in range(len(beans)):
+                    if 'DataNodeActivity' in beans[i]['name']:
+                        self.target = beans[i]["tag.Hostname"]
+                        break
 
-            # add metric value to every metric.
-            self._get_metrics(beans)
+                self.hadoop_datanode_metrics.update(self.common_metric_collector.get_metrics(beans, self.target))
 
-            # update namenode metrics with common metrics
-            common_metrics = common_metrics_collector(self._cluster, beans, "hdfs", "datanode", self._target)
-            self._hadoop_datanode_metrics.update(common_metrics())
+                self.get_metrics(beans)
 
-            for i in range(len(self._merge_list)):
-                service = self._merge_list[i]
-                for metric in self._hadoop_datanode_metrics[service]:
-                    yield self._hadoop_datanode_metrics[service][metric]
+        for i in range(len(self.merge_list)):
+            service = self.merge_list[i]
+            for metric in self.hadoop_datanode_metrics[service]:
+                yield self.hadoop_datanode_metrics[service][metric]
 
-    def _setup_dninfo_labels(self):
-        for metric in self._metrics['DataNodeInfo']:
+    def setup_dninfo_labels(self):
+        for metric in self.metrics['DataNodeInfo']:
             if 'VolumeInfo' in metric:
                 label = ["cluster", "version", "path", "state"]
-                name = "_".join([self._prefix, 'volume_state'])
+                name = "_".join([self.prefix, 'volume_state'])
             else:
                 label = ["cluster", "version"]
                 snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
-                name = "_".join([self._prefix, snake_case])
+                name = "_".join([self.prefix, snake_case])
             label.append("_target")
-            self._hadoop_datanode_metrics['DataNodeInfo'][metric] = GaugeMetricFamily(name, self._metrics['DataNodeInfo'][metric], labels=label)
+            self.hadoop_datanode_metrics['DataNodeInfo'][metric] = GaugeMetricFamily(name, self.metrics['DataNodeInfo'][metric], labels=label)
 
-    def _setup_dnactivity_labels(self):
+    def setup_dnactivity_labels(self):
         block_flag, client_flag = 1, 1
-        for metric in self._metrics['DataNodeActivity']:
+        for metric in self.metrics['DataNodeActivity']:
             # TODO: 判断以 Block 开头的关键字。排查 AvgTime
             if 'Blocks' in metric:
                 if block_flag:
@@ -85,31 +87,31 @@ class DataNodeMetricCollector(MetricCollector):
                 label = ['cluster', 'host']
                 key = metric
                 name = snake_case
-                descriptions = self._metrics['DataNodeActivity'][metric]
+                descriptions = self.metrics['DataNodeActivity'][metric]
             label.append("_target")
-            self._hadoop_datanode_metrics['DataNodeActivity'][key] = GaugeMetricFamily("_".join([self._prefix, name]), descriptions, labels=label)
+            self.hadoop_datanode_metrics['DataNodeActivity'][key] = GaugeMetricFamily("_".join([self.prefix, name]), descriptions, labels=label)
 
-    def _setup_fsdatasetstate_labels(self):
-        for metric in self._metrics['FSDatasetState']:
+    def setup_fsdatasetstate_labels(self):
+        for metric in self.metrics['FSDatasetState']:
             label = ['cluster', 'host', "_target"]
             if "Num" in metric:
                 snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric.split("Num")[1]).lower()
             else:
                 snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
-            name = "_".join([self._prefix, snake_case])
-            self._hadoop_datanode_metrics['FSDatasetState'][metric] = GaugeMetricFamily(name, self._metrics['FSDatasetState'][metric], labels=label)
+            name = "_".join([self.prefix, snake_case])
+            self.hadoop_datanode_metrics['FSDatasetState'][metric] = GaugeMetricFamily(name, self.metrics['FSDatasetState'][metric], labels=label)
 
-    def _setup_metrics_labels(self, beans):
+    def setup_metrics_labels(self, beans):
         for i in range(len(beans)):
             if 'DataNodeInfo' in beans[i]['name']:
-                self._setup_dninfo_labels()
+                self.setup_dninfo_labels()
             if 'DataNodeActivity' in beans[i]['name']:
-                self._setup_dnactivity_labels()
+                self.setup_dnactivity_labels()
             if 'FSDatasetState' in beans[i]['name']:
-                self._setup_fsdatasetstate_labels()
+                self.setup_fsdatasetstate_labels()
 
-    def _get_dninfo_metrics(self, bean):
-        for metric in self._metrics['DataNodeInfo']:
+    def get_dninfo_metrics(self, bean):
+        for metric in self.metrics['DataNodeInfo']:
             version = bean['Version']
             if 'VolumeInfo' in metric:
                 if 'VolumeInfo' in bean:
@@ -118,20 +120,20 @@ class DataNodeMetricCollector(MetricCollector):
                         path = k
                         for key, val in v.items():
                             state = key
-                            label = [self._cluster, version, path, state, self._target]
+                            label = [self.cluster, version, path, state, self.target]
                             value = val
-                            self._hadoop_datanode_metrics['DataNodeInfo'][metric].add_metric(label, value)
+                            self.hadoop_datanode_metrics['DataNodeInfo'][metric].add_metric(label, value)
                 else:
                     continue
             else:
-                label = [self._cluster, version, self._target]
+                label = [self.cluster, version, self.target]
                 value = bean[metric]
-                self._hadoop_datanode_metrics['DataNodeInfo'][metric].add_metric(label, value)
+                self.hadoop_datanode_metrics['DataNodeInfo'][metric].add_metric(label, value)
 
-    def _get_dnactivity_metrics(self, bean):
-        for metric in self._metrics['DataNodeActivity']:
+    def get_dnactivity_metrics(self, bean):
+        for metric in self.metrics['DataNodeActivity']:
             host = bean['tag.Hostname']
-            label = [self._cluster, host]
+            label = [self.cluster, host]
             if 'Blocks' in metric:
                 oper = metric.split("Blocks")[1]
                 label.append(oper)
@@ -143,20 +145,20 @@ class DataNodeMetricCollector(MetricCollector):
                 key = "Client"
             else:
                 key = metric
-            label.append(self._target)
-            self._hadoop_datanode_metrics['DataNodeActivity'][key].add_metric(label, bean[metric] if metric in bean else 0)
+            label.append(self.target)
+            self.hadoop_datanode_metrics['DataNodeActivity'][key].add_metric(label, bean[metric] if metric in bean else 0)
 
-    def _get_fsdatasetstate_metrics(self, bean):
-        for metric in self._metrics['FSDatasetState']:
-            label = [self._cluster, self._target, self._target]
-            self._hadoop_datanode_metrics['FSDatasetState'][metric].add_metric(
+    def get_fsdatasetstate_metrics(self, bean):
+        for metric in self.metrics['FSDatasetState']:
+            label = [self.cluster, self.target, self.target]
+            self.hadoop_datanode_metrics['FSDatasetState'][metric].add_metric(
                 label, bean[metric] if metric in bean else 0)
 
-    def _get_metrics(self, beans):
+    def get_metrics(self, beans):
         for i in range(len(beans)):
             if 'DataNodeInfo' in beans[i]['name']:
-                self._get_dninfo_metrics(beans[i])
+                self.get_dninfo_metrics(beans[i])
             if 'DataNodeActivity' in beans[i]['name']:
-                self._get_dnactivity_metrics(beans[i])
+                self.get_dnactivity_metrics(beans[i])
             if 'FSDatasetState' in beans[i]['name']:
-                self._get_fsdatasetstate_metrics(beans[i])
+                self.get_fsdatasetstate_metrics(beans[i])

@@ -16,24 +16,23 @@ logger = get_module_logger(__name__)
 
 
 def register_prometheus(cluster, args):
-    if args.namenode_url is not None:
-        REGISTRY.register(NameNodeMetricCollector(cluster, args.namenode_url))
-    if args.datanode_url is not None:
-        REGISTRY.register(DataNodeMetricCollector(cluster, args.datanode_url))
-    if args.journalnode_url is None:
-        REGISTRY.register(JournalNodeMetricCollector(cluster, args.journalnode_url))
-    if args.resourcemanager_url is not None:
-        REGISTRY.register(ResourceManagerMetricCollector(cluster, args.resourcemanager_url))
-    if args.nodemanager_url is not None:
-        REGISTRY.register(NodeManagerMetricCollector(cluster, args.nodemanager_url))
-
+    if args.nns is not None:
+        REGISTRY.register(NameNodeMetricCollector(cluster, args.nns))
+    if args.dns is not None:
+        REGISTRY.register(DataNodeMetricCollector(cluster, args.dns))
+    if args.jns is not None:
+        REGISTRY.register(JournalNodeMetricCollector(cluster, args.jns))
+    if args.rms is not None:
+        REGISTRY.register(ResourceManagerMetricCollector(cluster, args.rms, args.queue))
+    if args.nms is not None:
+        REGISTRY.register(NodeManagerMetricCollector(cluster, args.nms))
 
 def main():
     args = utils.parse_args()
-    address = args.address
+    host = args.host
     port = int(args.port)
-    start_http_server(port, address)
-    print "Listen at %s:%s" % (address, port)
+    start_http_server(port, host)
+    print "Listen at %s:%s" % (host, port)
     register_prometheus(args.cluster, args)
     raw_input("hang")
 

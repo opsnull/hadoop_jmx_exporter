@@ -11,20 +11,19 @@ logger = get_module_logger(__name__)
 
 
 class MetricCollector(object):
-    def __init__(self, cluster, url, component, service):
-        self._cluster = cluster
-        self._url = url.rstrip('/')
-        self._component = component
-        self._prefix = 'hadoop_{0}_{1}'.format(component, service)
+    def __init__(self, cluster, urls, component, service):
+        self.cluster = cluster
+        self.urls = urls
+        self.component = component
+        self.prefix = 'hadoop_{0}_{1}'.format(component, service)
 
-        self._file_list = utils.get_file_list(service)
-        self._common_file = utils.get_file_list("common")
-        self._merge_list = self._file_list + self._common_file
+        self.file_list = utils.get_file_list(service)
+        self.metrics = {}
+        for i in range(len(self.file_list)):
+            self.metrics.setdefault(self.file_list[i], utils.read_json_file(service, self.file_list[i]))
 
-        self._metrics = {}
-        for i in range(len(self._file_list)):
-            self._metrics.setdefault(
-                self._file_list[i], utils.read_json_file(service, self._file_list[i]))
+        common_file = utils.get_file_list("common")
+        self.merge_list = self.file_list + common_file
 
     def collect(self):
         pass
@@ -36,22 +35,57 @@ class MetricCollector(object):
         pass
 
 
-def common_metrics_collector(cluster, beans, component, service, _target):
-    tmp_metrics = {}
-    common_metrics = {}
-    _cluster = cluster
-    _prefix = 'hadoop_{0}_{1}'.format(component, service)
-    _metrics_type = utils.get_file_list("common")
+class CommonMetricCollector():
+    def __init__(self, cluster, component, service):
+        self.cluster = cluster
+        self.componet = component
+        self.service = service
+        self.prefix = 'hadoop_{0}_{1}'.format(component, service)
+        self.common_metrics = {}
+        self.tmp_metrics = {}
+        file_list = utils.get_file_list("common")
+        for i in range(len(file_list)):
+            self.common_metrics.setdefault(file_list[i], {})
+            self.tmp_metrics.setdefault(file_list[i], utils.read_json_file("common", file_list[i]))
 
-    for i in range(len(_metrics_type)):
-        common_metrics.setdefault(_metrics_type[i], {})
-        tmp_metrics.setdefault(_metrics_type[i], utils.read_json_file("common", _metrics_type[i]))
+    def setup_labels(self, beans):
+        for i in range(len(beans)):
+            if 'name=JvmMetrics' in beans[i]['name']:
+                self.setup_jvm_labels()
+            if 'OperatingSystem' in beans[i]['name']:
+                self.setup_os_labels()
+            if 'RpcActivity' in beans[i]['name']:
+                self.setup_rpc_labels()
+            if 'RpcDetailedActivity' in beans[i]['name']:
+                self.setup_rpc_detailed_labels()
+            if 'UgiMetrics' in beans[i]['name']:
+                self.setup_ugi_labels()
+            if 'MetricsSystem' in beans[i]['name'] and "sub=Stats" in beans[i]['name']:
+                self.setup_metric_system_labels()
+            if 'Runtime' in beans[i]['name']:
+                self.setup_runtime_labels()
 
-    def setup_jvm_labels():
-        for metric in tmp_metrics["JvmMetrics"]:
-            '''
-            Processing module JvmMetrics
-            '''
+    def get_metrics(self, beans, target):
+        self.target = target
+        for i in range(len(beans)):
+            if 'name=JvmMetrics' in beans[i]['name']:
+                self.get_jvm_metrics(beans[i])
+            if 'OperatingSystem' in beans[i]['name']:
+                self.get_os_metrics(beans[i])
+            if 'RpcActivity' in beans[i]['name']:
+                self.get_rpc_metrics(beans[i])
+            if 'RpcDetailedActivity' in beans[i]['name']:
+                self.get_rpc_detailed_metrics(beans[i])
+            if 'UgiMetrics' in beans[i]['name']:
+                self.get_ugi_metrics(beans[i])
+            if 'MetricsSystem' in beans[i]['name'] and "sub=Stats" in beans[i]['name']:
+                self.get_metric_system_metrics(beans[i])
+            if 'Runtime' in beans[i]['name']:
+                self.get_runtime_metrics(beans[i])
+        return self.common_metrics
+
+    def setup_jvm_labels(self):
+        for metric in self.tmp_metrics["JvmMetrics"]:
             snake_case = "_".join(["jvm", re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()])
             if 'Mem' in metric:
                 name = "".join([snake_case, "ebibytes"])
@@ -68,7 +102,7 @@ def common_metrics_collector(cluster, beans, component, service, _target):
                 else:
                     key = name
                     label = ["cluster"]
-                    descriptions = tmp_metrics['JvmMetrics'][metric]
+                    descriptions = self.tmp_metrics['JvmMetrics'][metric]
             elif 'Gc' in metric:
                 label = ["cluster", "type"]
                 if "GcCount" in metric:
@@ -83,7 +117,7 @@ def common_metrics_collector(cluster, beans, component, service, _target):
                 else:
                     key = snake_case
                     label = ["cluster"]
-                    descriptions = tmp_metrics['JvmMetrics'][metric]
+                    descriptions = self.tmp_metrics['JvmMetrics'][metric]
             elif 'Threads' in metric:
                 label = ["cluster", "state"]
                 key = "jvm_threads_state_total"
@@ -95,25 +129,19 @@ def common_metrics_collector(cluster, beans, component, service, _target):
             else:
                 label = ["cluster"]
                 key = snake_case
-                descriptions = tmp_metrics['JvmMetrics'][metric]
+                descriptions = self.tmp_metrics['JvmMetrics'][metric]
             label.append("_target")
-            common_metrics['JvmMetrics'][key] = GaugeMetricFamily("_".join([_prefix, key]), descriptions, labels=label)
-        return common_metrics
+            self.common_metrics['JvmMetrics'][key] = GaugeMetricFamily("_".join([self.prefix, key]), descriptions, labels=label)
 
-    def setup_os_labels():
-        for metric in tmp_metrics['OperatingSystem']:
+    def setup_os_labels(self):
+        for metric in self.tmp_metrics['OperatingSystem']:
             label = ["cluster", "_target"]
             snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
-            common_metrics['OperatingSystem'][metric] = GaugeMetricFamily("_".join([_prefix, snake_case]), tmp_metrics['OperatingSystem'][metric], labels=label)
-        return common_metrics
+            self.common_metrics['OperatingSystem'][metric] = GaugeMetricFamily("_".join([self.prefix, snake_case]), self.tmp_metrics['OperatingSystem'][metric], labels=label)
 
-    def setup_rpc_labels():
+    def setup_rpc_labels(self):
         num_rpc_flag, avg_rpc_flag = 1, 1
-        for metric in tmp_metrics["RpcActivity"]:
-            '''
-            Processing module RpcActivity, when multiple RpcActivity module exist,
-            `tag.port` should be an identifier to distinguish each module.
-            '''
+        for metric in self.tmp_metrics["RpcActivity"]:
             if 'Rpc' in metric:
                 snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
             else:
@@ -124,9 +152,9 @@ def common_metrics_collector(cluster, beans, component, service, _target):
                     key = "MethodNumOps"
                     label.append("method")
                     label.append("_target")
-                    name = "_".join([_prefix, "rpc_method_called_total"])
+                    name = "_".join([self.prefix, "rpc_method_called_total"])
                     description = "Total number of the times the method is called."
-                    common_metrics['RpcActivity'][key] = GaugeMetricFamily(name, description, labels=label)
+                    self.common_metrics['RpcActivity'][key] = GaugeMetricFamily(name, description, labels=label)
                     num_rpc_flag = 0
                 else:
                     continue
@@ -135,70 +163,66 @@ def common_metrics_collector(cluster, beans, component, service, _target):
                     key = "MethodAvgTime"
                     label.append("method")
                     label.append("_target")
-                    name = "_".join([_prefix, "rpc_method_avg_time_milliseconds"])
+                    name = "_".join([self.prefix, "rpc_method_avg_time_milliseconds"])
                     descrption = "Average turn around time of the method in milliseconds."
-                    common_metrics['RpcActivity'][key] = GaugeMetricFamily(name, descrption, labels=label)
+                    self.common_metrics['RpcActivity'][key] = GaugeMetricFamily(name, descrption, labels=label)
                     avg_rpc_flag = 0
                 else:
                     continue
             else:
                 key = metric
                 label.append("_target")
-                common_metrics['RpcActivity'][key] = GaugeMetricFamily("_".join([_prefix, snake_case]), tmp_metrics['RpcActivity'][metric], labels=label)
-        return common_metrics
+                self.common_metrics['RpcActivity'][key] = GaugeMetricFamily("_".join([self.prefix, snake_case]), self.tmp_metrics['RpcActivity'][metric], labels=label)
 
-    def setup_rpc_detailed_labels():
-        for metric in tmp_metrics['RpcDetailedActivity']:
+    def setup_rpc_detailed_labels(self):
+        for metric in self.tmp_metrics['RpcDetailedActivity']:
             label = ["cluster", "tag"]
             if "NumOps" in metric:
                 key = "NumOps"
                 label.append("method")
-                name = "_".join([_prefix, 'rpc_detailed_method_called_total'])
+                name = "_".join([self.prefix, 'rpc_detailed_method_called_total'])
             elif "AvgTime" in metric:
                 key = "AvgTime"
                 label.append("method")
-                name = "_".join([_prefix, 'rpc_detailed_method_avg_time_milliseconds'])
+                name = "_".join([self.prefix, 'rpc_detailed_method_avg_time_milliseconds'])
             else:
                 pass
             label.append("_target")
-            common_metrics['RpcDetailedActivity'][key] = GaugeMetricFamily(name, tmp_metrics['RpcDetailedActivity'][metric], labels=label)
-        return common_metrics
+            self.common_metrics['RpcDetailedActivity'][key] = GaugeMetricFamily(name, self.tmp_metrics['RpcDetailedActivity'][metric], labels=label)
+        return self.common_metrics
 
-    def setup_ugi_labels():
+    def setup_ugi_labels(self):
         ugi_num_flag, ugi_avg_flag = 1, 1
-        for metric in tmp_metrics['UgiMetrics']:
+        for metric in self.tmp_metrics['UgiMetrics']:
             label = ["cluster"]
             if 'NumOps' in metric:
                 if ugi_num_flag:
                     key = 'NumOps'
-                    label.extend(["method", "state"])
+                    label.extend(["method", "state", "_target"])
                     ugi_num_flag = 0
-                    label.append("_target")
-                    name = "_".join([_prefix, 'ugi_method_called_total'])
+                    name = "_".join([self.prefix, 'ugi_method_called_total'])
                     description = "Total number of the times the method is called."
-                    common_metrics['UgiMetrics'][key] = GaugeMetricFamily(name, description, labels=label)
+                    self.common_metrics['UgiMetrics'][key] = GaugeMetricFamily(name, description, labels=label)
                 else:
                     continue
             elif 'AvgTime' in metric:
                 if ugi_avg_flag:
                     key = 'AvgTime'
-                    label.extend(["method", "state"])
+                    label.extend(["method", "state", "_target"])
                     ugi_avg_flag = 0
-                    label.append("_target")
-                    name = "_".join([_prefix, 'ugi_method_avg_time_milliseconds'])
+                    name = "_".join([self.prefix, 'ugi_method_avg_time_milliseconds'])
                     description = "Average turn around time of the method in milliseconds."
-                    common_metrics['UgiMetrics'][key] = GaugeMetricFamily(name, description, labels=label)
+                    self.common_metrics['UgiMetrics'][key] = GaugeMetricFamily(name, description, labels=label)
                 else:
                     continue
             else:
                 snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
                 label.append("_target")
-                common_metrics['UgiMetrics'][metric] = GaugeMetricFamily("_".join([_prefix, 'ugi', snake_case]), tmp_metrics['UgiMetrics'][metric], labels=label)
-        return common_metrics
+                self.common_metrics['UgiMetrics'][metric] = GaugeMetricFamily("_".join([self.prefix, 'ugi', snake_case]), self.tmp_metrics['UgiMetrics'][metric], labels=label)
 
-    def setup_metric_system_labels():
+    def setup_metric_system_labels(self):
         metric_num_flag, metric_avg_flag = 1, 1
-        for metric in tmp_metrics['MetricsSystem']:
+        for metric in self.tmp_metrics['MetricsSystem']:
             label = ["cluster"]
             if 'NumOps' in metric:
                 if metric_num_flag:
@@ -206,7 +230,8 @@ def common_metrics_collector(cluster, beans, component, service, _target):
                     label.append("oper")
                     label.append("_target")
                     metric_num_flag = 0
-                    common_metrics['MetricsSystem'][key] = GaugeMetricFamily("_".join([_prefix, 'metricssystem_operations_total']), "Total number of operations", labels=label)
+                    self.common_metrics['MetricsSystem'][key] = GaugeMetricFamily("_".join([self.prefix, 'metricssystem_operations_total']),
+                                                                                  "Total number of operations", labels=label)
                 else:
                     continue
             elif 'AvgTime' in metric:
@@ -215,67 +240,47 @@ def common_metrics_collector(cluster, beans, component, service, _target):
                     label.append("oper")
                     label.append("_target")
                     metric_avg_flag = 0
-                    name = "_".join([_prefix, 'metricssystem_method_avg_time_milliseconds'])
+                    name = "_".join([self.prefix, 'metricssystem_method_avg_time_milliseconds'])
                     description = "Average turn around time of the operations in milliseconds."
-                    common_metrics['MetricsSystem'][key] = GaugeMetricFamily(name, description, labels=label)
+                    self.common_metrics['MetricsSystem'][key] = GaugeMetricFamily(name, description, labels=label)
                 else:
                     continue
             else:
                 label.append("_target")
                 snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
-                name = "_".join([_prefix, 'metricssystem', snake_case])
-                common_metrics['MetricsSystem'][metric] = GaugeMetricFamily(name, tmp_metrics['MetricsSystem'][metric], labels=label)
-        return common_metrics
+                name = "_".join([self.prefix, 'metricssystem', snake_case])
+                self.common_metrics['MetricsSystem'][metric] = GaugeMetricFamily(name, self.tmp_metrics['MetricsSystem'][metric], labels=label)
 
-    def setup_runtime_labels():
-        for metric in tmp_metrics['Runtime']:
+    def setup_runtime_labels(self):
+        for metric in self.tmp_metrics['Runtime']:
             label = ["cluster", "host"]
             label.append("_target")
             snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
-            common_metrics['Runtime'][metric] = GaugeMetricFamily("_".join([_prefix, snake_case, "milliseconds"]), tmp_metrics['Runtime'][metric], labels=label)
-        return common_metrics
+            self.common_metrics['Runtime'][metric] = GaugeMetricFamily("_".join([self.prefix, snake_case, "milliseconds"]), self.tmp_metrics['Runtime'][metric], labels=label)
 
-    def setup_labels(beans):
-        for i in range(len(beans)):
-            if 'name=JvmMetrics' in beans[i]['name']:
-                setup_jvm_labels()
-            if 'OperatingSystem' in beans[i]['name']:
-                setup_os_labels()
-            if 'RpcActivity' in beans[i]['name']:
-                setup_rpc_labels()
-            if 'RpcDetailedActivity' in beans[i]['name']:
-                setup_rpc_detailed_labels()
-            if 'UgiMetrics' in beans[i]['name']:
-                setup_ugi_labels()
-            if 'MetricsSystem' in beans[i]['name'] and "sub=Stats" in beans[i]['name']:
-                setup_metric_system_labels()
-            if 'Runtime' in beans[i]['name']:
-                setup_runtime_labels()
-        return common_metrics
-
-    def get_jvm_metrics(bean):
-        for metric in tmp_metrics['JvmMetrics']:
+    def get_jvm_metrics(self, bean):
+        for metric in self.tmp_metrics['JvmMetrics']:
             name = "_".join(
                 ["jvm", re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()])
             if 'Mem' in metric:
                 if "Used" in metric:
                     key = "jvm_mem_used_mebibytes"
                     mode = metric.split("Used")[0].split("Mem")[1]
-                    label = [_cluster, mode]
+                    label = [self.cluster, mode]
                 elif "Committed" in metric:
                     key = "jvm_mem_committed_mebibytes"
                     mode = metric.split("Committed")[0].split("Mem")[1]
-                    label = [_cluster, mode]
+                    label = [self.cluster, mode]
                 elif "Max" in metric:
                     key = "jvm_mem_max_mebibytes"
                     if "Heap" in metric:
                         mode = metric.split("Max")[0].split("Mem")[1]
                     else:
                         mode = "max"
-                    label = [_cluster, mode]
+                    label = [self.cluster, mode]
                 else:
                     key = "".join([name, 'ebibytes'])
-                    label = [_cluster]
+                    label = [self.cluster]
             elif 'Gc' in metric:
                 if "GcCount" in metric:
                     key = "jvm_gc_count"
@@ -283,150 +288,120 @@ def common_metrics_collector(cluster, beans, component, service, _target):
                         typo = "total"
                     else:
                         typo = metric.split("GcCount")[1]
-                    label = [_cluster, typo]
+                    label = [self.cluster, typo]
                 elif "GcTimeMillis" in metric:
                     key = "jvm_gc_time_milliseconds"
                     if "GcTimeMillis" == metric:
                         typo = "total"
                     else:
                         typo = metric.split("GcTimeMillis")[1]
-                    label = [_cluster, typo]
+                    label = [self.cluster, typo]
                 elif "ThresholdExceeded" in metric:
                     key = "jvm_gc_exceeded_threshold_total"
                     typo = metric.split("ThresholdExceeded")[
                         0].split("GcNum")[1]
-                    label = [_cluster, typo]
+                    label = [self.cluster, typo]
                 else:
                     key = name
-                    label = [_cluster]
+                    label = [self.cluster]
             elif 'Threads' in metric:
                 key = "jvm_threads_state_total"
                 state = metric.split("Threads")[1]
-                label = [_cluster, state]
+                label = [self.cluster, state]
             elif 'Log' in metric:
                 key = "jvm_log_level_total"
                 level = metric.split("Log")[1]
-                label = [_cluster, level]
+                label = [self.cluster, level]
             else:
                 key = name
-                label = [_cluster]
-            label.append(_target)
-            common_metrics['JvmMetrics'][key].add_metric(label, bean[metric] if metric in bean else 0)
-        return common_metrics
+                label = [self.cluster]
+            label.append(self.target)
+            self.common_metrics['JvmMetrics'][key].add_metric(label, bean[metric] if metric in bean else 0)
 
-    def get_os_metrics(bean):
-        for metric in tmp_metrics['OperatingSystem']:
-            label = [_cluster]
-            label.append(_target)
-            common_metrics['OperatingSystem'][metric].add_metric(label, bean[metric] if metric in bean else 0)
-        return common_metrics
+    def get_os_metrics(self, bean):
+        for metric in self.tmp_metrics['OperatingSystem']:
+            label = [self.cluster]
+            label.append(self.target)
+            self.common_metrics['OperatingSystem'][metric].add_metric(label, bean[metric] if metric in bean else 0)
 
-    def get_rpc_metrics(bean):
+    def get_rpc_metrics(self, bean):
         rpc_tag = bean['tag.port']
-        for metric in tmp_metrics['RpcActivity']:
+        for metric in self.tmp_metrics['RpcActivity']:
             if "NumOps" in metric:
                 method = metric.split('NumOps')[0]
-                label = [_cluster, rpc_tag, method]
+                label = [self.cluster, rpc_tag, method]
                 key = "MethodNumOps"
             elif "AvgTime" in metric:
                 method = metric.split('AvgTime')[0]
-                label = [_cluster, rpc_tag, method]
+                label = [self.cluster, rpc_tag, method]
                 key = "MethodAvgTime"
             else:
-                label = [_cluster, rpc_tag]
+                label = [self.cluster, rpc_tag]
                 key = metric
-            label.append(_target)
-            common_metrics['RpcActivity'][key].add_metric(label, bean[metric] if metric in bean else 0)
-        return common_metrics
+            label.append(self.target)
+            self.common_metrics['RpcActivity'][key].add_metric(label, bean[metric] if metric in bean else 0)
 
-    def get_rpc_detailed_metrics(bean):
+    def get_rpc_detailed_metrics(self, bean):
         detail_tag = bean['tag.port']
         for metric in bean:
             if metric[0].isupper():
-                label = [_cluster, detail_tag]
+                label = [self.cluster, detail_tag]
                 if "NumOps" in metric:
                     key = "NumOps"
                     method = metric.split('NumOps')[0]
-                    label = [_cluster, detail_tag, method]
+                    label = [self.cluster, detail_tag, method]
                 elif "AvgTime" in metric:
                     key = "AvgTime"
                     method = metric.split("AvgTime")[0]
-                    label = [_cluster, detail_tag, method]
+                    label = [self.cluster, detail_tag, method]
                 else:
                     pass
-                label.append(_target)
-                common_metrics['RpcDetailedActivity'][key].add_metric(label, bean[metric])
-        return common_metrics
+                label.append(self.target)
+                self.common_metrics['RpcDetailedActivity'][key].add_metric(label, bean[metric])
 
-    def get_ugi_metrics(bean):
-        for metric in tmp_metrics['UgiMetrics']:
+    def get_ugi_metrics(self, bean):
+        for metric in self.tmp_metrics['UgiMetrics']:
             if 'NumOps' in metric:
                 key = 'NumOps'
                 if 'Login' in metric:
                     method = 'Login'
                     state = metric.split('Login')[1].split('NumOps')[0]
-                    label = [_cluster, method, state]
+                    label = [self.cluster, method, state]
                 else:
                     method = metric.split('NumOps')[0]
-                    label = [_cluster, method, "-"]
-                # common_metrics['UgiMetrics'][key].add_metric(label, bean[metric] if metric in bean and bean[metric] else 0)
+                    label = [self.cluster, method, "-"]
             elif 'AvgTime' in metric:
                 key = 'AvgTime'
                 if 'Login' in metric:
                     method = 'Login'
                     state = metric.split('Login')[1].split('AvgTime')[0]
-                    label = [_cluster, method, state]
+                    label = [self.cluster, method, state]
                 else:
                     method = metric.split('AvgTime')[0]
-                    label = [_cluster, method, "-"]
-                # common_metrics['UgiMetrics'][key].add_metric(label, bean[metric] if metric in bean and bean[metric] else 0)
+                    label = [self.cluster, method, "-"]
             else:
                 key = metric
-                label = [_cluster, "-", "-"]
-            label.append(_target)
-            common_metrics['UgiMetrics'][key].add_metric(label, bean[metric] if metric in bean and bean[metric] else 0)
-        return common_metrics
+                label = [self.cluster]
+            label.append(self.target)
+            self.common_metrics['UgiMetrics'][key].add_metric(label, bean[metric] if metric in bean and bean[metric] else 0)
 
-    def get_metric_system_metrics(bean):
-        for metric in tmp_metrics['MetricsSystem']:
+    def get_metric_system_metrics(self, bean):
+        for metric in self.tmp_metrics['MetricsSystem']:
             if 'NumOps' in metric:
                 key = 'NumOps'
                 oper = metric.split('NumOps')[0]
-                label = [_cluster, oper]
+                label = [self.cluster, oper]
             elif 'AvgTime' in metric:
                 key = 'AvgTime'
                 oper = metric.split('AvgTime')[0]
-                label = [_cluster, oper]
+                label = [self.cluster, oper]
             else:
                 key = metric
-                label = [_cluster]
-            label.append(_target)
-            common_metrics['MetricsSystem'][key].add_metric(label, bean[metric] if metric in bean and bean[metric] else 0)
-        return common_metrics
+                label = [self.cluster]
+            label.append(self.target)
+            self.common_metrics['MetricsSystem'][key].add_metric(label, bean[metric] if metric in bean and bean[metric] else 0)
 
-    def get_runtime_metrics(bean):
-        for metric in tmp_metrics['Runtime']:
-            label = [_cluster, bean['Name'].split("@")[1], "_target"]
-            common_metrics['Runtime'][metric].add_metric(label, bean[metric] if metric in bean and bean[metric] else 0)
-        return common_metrics
-
-    def get_metrics():
-        common_metrics = setup_labels(beans)
-        for i in range(len(beans)):
-            if 'name=JvmMetrics' in beans[i]['name']:
-                get_jvm_metrics(beans[i])
-            if 'OperatingSystem' in beans[i]['name']:
-                get_os_metrics(beans[i])
-            if 'RpcActivity' in beans[i]['name']:
-                get_rpc_metrics(beans[i])
-            if 'RpcDetailedActivity' in beans[i]['name']:
-                get_rpc_detailed_metrics(beans[i])
-            if 'UgiMetrics' in beans[i]['name']:
-                get_ugi_metrics(beans[i])
-            if 'MetricsSystem' in beans[i]['name'] and "sub=Stats" in beans[i]['name']:
-                get_metric_system_metrics(beans[i])
-            if 'Runtime' in beans[i]['name']:
-                get_runtime_metrics(beans[i])
-        return common_metrics
-
-    return get_metrics
+    def get_runtime_metrics(self, bean):
+        for metric in self.tmp_metrics['Runtime']:
+            label = [self.cluster, bean['Name'].split("@")[1], self.target]
+            self.common_metrics['Runtime'][metric].add_metric(label, bean[metric] if metric in bean and bean[metric] else 0)

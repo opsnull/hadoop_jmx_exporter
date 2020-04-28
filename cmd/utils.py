@@ -131,66 +131,15 @@ def get_file_list(file_path_name):
 
 
 def parse_args():
-
     parser = argparse.ArgumentParser(description='hadoop jmx metric prometheus exporter')
-    parser.add_argument(
-        '-c', '--cluster',
-        required=False,
-        metavar='cluster_name',
-        help='Hadoop cluster labels. (default "yh-cdh")',
-        default='yh-cdh'
-    )
-    parser.add_argument(
-        '-hdfs', '--namenode-url',
-        required=False,
-        metavar='namenode_jmx_url',
-        help='Hadoop hdfs metrics URL.',
-    )
-    parser.add_argument(
-        '-rm', '--resourcemanager-url',
-        required=False,
-        metavar='resourcemanager_jmx_url',
-        help='Hadoop resourcemanager metrics URL.',
-    )
-    parser.add_argument(
-        '-dn', '--datanode-url',
-        required=False,
-        metavar='datanode_jmx_url',
-        help='Hadoop datanode metrics URL.',
-    )
-    parser.add_argument(
-        '-jn', '--journalnode-url',
-        required=False,
-        metavar='journalnode_jmx_url',
-        help='Hadoop journalnode metrics URL.',
-    )
-    parser.add_argument(
-        '-nm', '--nodemanager-url',
-        required=False,
-        metavar='nodemanager_jmx_url',
-        help='Hadoop nodemanager metrics URL.',
-    )
-    parser.add_argument(
-        '-p', '--path',
-        metavar='metrics_path',
-        required=False,
-        help='Path under which to expose metrics. (default "/metrics")',
-        default='/metrics'
-    )
-    parser.add_argument(
-        '-host', '-ip', '--address', '--addr',
-        metavar='ip_or_hostname',
-        required=False,
-        type=str,
-        help='Polling server on this address. (default "0.0.0.0")',
-        default='0.0.0.0'
-    )
-    parser.add_argument(
-        '-P', '--port',
-        metavar='port',
-        required=False,
-        type=int,
-        help='Listen to this port. (default "6688")',
-        default=6688
-    )
+    parser.add_argument('-cluster', required=True, metavar='cluster_name', help='Hadoop cluster name (maybe HA name)')
+    parser.add_argument('-queue', required=False, metavar='queue_regexp', help='Regular expression of queue name', default='root.*')
+    parser.add_argument('-nns', required=False, metavar='namenode_jmx_url', help='Hadoop hdfs namenode jmx metrics URL.', nargs="*")
+    parser.add_argument('-dns', required=False, metavar='datanode_jmx_url', help='Hadoop datanode jmx metrics URL.', nargs="*")
+    parser.add_argument('-rms', required=False, metavar='resourcemanager_jmx_url', help='Hadoop resourcemanager metrics jmx URL.', nargs="*")
+    parser.add_argument('-nms', required=False, metavar='nodemanager_jmx_url', help='Hadoop nodemanager jmx metrics URL.', nargs="*")
+    parser.add_argument('-jns', required=False, metavar='journalnode_jmx_url', help='Hadoop journalnode jmx metrics URL.', nargs="*")
+    parser.add_argument('-host', required=False, metavar='ip_or_hostname', help='Listen on this address.', default='0.0.0.0')
+    parser.add_argument('-port', required=False, metavar='port', type=int, help='Listen to this port.', default=6688)
+    parser.add_argument('-path', required=False, metavar='metrics_path', help='Path under which to expose metrics.', default='/metrics')
     return parser.parse_args()
