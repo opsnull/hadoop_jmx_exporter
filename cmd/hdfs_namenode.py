@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
 import yaml
@@ -6,9 +6,9 @@ import re
 
 from prometheus_client.core import GaugeMetricFamily
 
-import utils
 from utils import get_module_logger
 from common import MetricCollector, CommonMetricCollector
+from scraper import ScrapeMetrics
 
 logger = get_module_logger(__name__)
 
@@ -24,18 +24,18 @@ class NameNodeMetricCollector(MetricCollector):
 
         self.common_metric_collector = CommonMetricCollector(cluster, "hdfs", "namenode")
 
+        self.scrape_metrics = ScrapeMetrics(urls)
+
     def collect(self):
         isSetup = False
-        for index, url in enumerate(self.urls):
-            beans = utils.get_metrics(url)
-            if len(beans) == 0:
-                continue
+        beans_list = self.scrape_metrics.scrape()
+        for beans in beans_list:
             if not isSetup:
                 self.common_metric_collector.setup_labels(beans)
                 self.setup_metrics_labels(beans)
                 isSetup = True
             for i in range(len(beans)):
-                if 'name=FSNamesystem' in beans[i]['name']:
+                if 'tag.Hostname' in beans[i]:
                     self.target = beans[i]["tag.Hostname"]
                     break
             self.hadoop_namenode_metrics.update(self.common_metric_collector.get_metrics(beans, self.target))
@@ -43,8 +43,9 @@ class NameNodeMetricCollector(MetricCollector):
 
         for i in range(len(self.merge_list)):
             service = self.merge_list[i]
-            for metric in self.hadoop_namenode_metrics[service]:
-                yield self.hadoop_namenode_metrics[service][metric]
+            if service in self.hadoop_namenode_metrics:
+                for metric in self.hadoop_namenode_metrics[service]:
+                    yield self.hadoop_namenode_metrics[service][metric]
 
     def setup_nnactivity_labels(self):
         num_namenode_flag, avg_namenode_flag, ops_namenode_flag = 1, 1, 1
@@ -68,15 +69,12 @@ class NameNodeMetricCollector(MetricCollector):
                     avg_namenode_flag = 0
                 else:
                     continue
-            else:
-                if ops_namenode_flag:
-                    ops_namenode_flag = 0
-                    key = "Operations"
-                    name = "_".join([self.prefix, "nnactivity_operations_total"])
-                    description = "Total number of each operation."
-                    self.hadoop_namenode_metrics['NameNodeActivity'][key] = GaugeMetricFamily(name, description, labels=label)
-                else:
-                    continue
+            elif ops_namenode_flag:
+                key = "Operations"
+                name = "_".join([self.prefix, "nnactivity_operations_total"])
+                description = "Total number of each operation."
+                self.hadoop_namenode_metrics['NameNodeActivity'][key] = GaugeMetricFamily(name, description, labels=label)
+                ops_namenode_flag = 0
 
     def setup_startupprogress_labels(self):
         sp_count_flag, sp_elapsed_flag, sp_total_flag, sp_complete_flag = 1, 1, 1, 1
@@ -274,7 +272,6 @@ class NameNodeMetricCollector(MetricCollector):
             self.hadoop_namenode_metrics['NameNodeInfo'][key] = GaugeMetricFamily(name, self.metrics["NameNodeInfo"][metric], labels=label)
 
     def setup_metrics_labels(self, beans):
-        # The metrics we want to export.
         for i in range(len(beans)):
             if 'NameNodeActivity' in beans[i]['name']:
                 self.setup_nnactivity_labels()
@@ -374,8 +371,7 @@ class NameNodeMetricCollector(MetricCollector):
             elif "DataNodes" in metric:
                 key = 'datanodes_num'
                 state = metric.split("DataNodes")[0].split("Num")[1]
-                label = [self.cluster, state]
-                label.append(self.target)
+                label = [self.cluster, state, self.target]
                 self.hadoop_namenode_metrics['FSNamesystemState'][key].add_metric(label, bean[metric] if metric in bean and bean[metric] else 0)
             else:
                 label.append(self.target)
@@ -384,8 +380,7 @@ class NameNodeMetricCollector(MetricCollector):
     def get_retrycache_metrics(self, bean):
         for metric in self.metrics['RetryCache']:
             key = "cache"
-            label = [self.cluster, metric.split('Cache')[1]]
-            label.append(self.target)
+            label = [self.cluster, metric.split('Cache')[1], self.target]
             self.hadoop_namenode_metrics['RetryCache'][key].add_metric(label, bean[metric] if metric in bean and bean[metric] else 0)
 
     def get_nninfo_metrics(self, bean):

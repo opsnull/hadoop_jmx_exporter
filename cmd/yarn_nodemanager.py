@@ -1,13 +1,12 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
-
 
 import re
 from prometheus_client.core import GaugeMetricFamily
 
-import utils
 from utils import get_module_logger
 from common import MetricCollector, CommonMetricCollector
+from scraper import ScrapeMetrics
 
 logger = get_module_logger(__name__)
 
@@ -24,12 +23,12 @@ class NodeManagerMetricCollector(MetricCollector):
 
         self.common_metric_collector = CommonMetricCollector(cluster, "yarn", "nodemanager")
 
+        self.scrape_metrics = ScrapeMetrics(urls)
+
     def collect(self):
         isSetup = False
-        for index, url in enumerate(self.urls):
-            beans = utils.get_metrics(url)
-            if len(beans) == 0:
-                continue
+        beans_list = self.scrape_metrics.scrape()
+        for beans in beans_list:
             if not isSetup:
                 self.common_metric_collector.setup_labels(beans)
                 self.setup_metrics_labels(beans)
@@ -43,8 +42,9 @@ class NodeManagerMetricCollector(MetricCollector):
 
         for i in range(len(self.merge_list)):
             service = self.merge_list[i]
-            for metric in self.hadoop_nodemanager_metrics[service]:
-                yield self.hadoop_nodemanager_metrics[service][metric]
+            if service in self.hadoop_nodemanager_metrics:
+                for metric in self.hadoop_nodemanager_metrics[service]:
+                    yield self.hadoop_nodemanager_metrics[service][metric]
 
     def setup_metrics_labels(self, beans):
         for i in range(len(beans)):
@@ -61,7 +61,7 @@ class NodeManagerMetricCollector(MetricCollector):
                                 name = "_".join([self.prefix, "container_count"])
                                 description = "Count of container"
                             else:
-                                pass
+                                continue
                         else:
                             snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
                             name = "_".join([self.prefix, snake_case])
@@ -73,15 +73,17 @@ class NodeManagerMetricCollector(MetricCollector):
     def get_metrics(self, beans):
         for i in range(len(beans)):
             for service in self.metrics:
-                if service in beans[i]['name']:
-                    for metric in beans[i]:
-                        if metric in self.metrics[service]:
-                            label = [self.cluster, self.target]
-                            if metric.startswith("Containers"):
-                                key = "containers"
-                                label.append(metric.split("Containers")[1])
-                            else:
-                                key = metric
-                            label.append(self.target)
-                            value = beans[i][metric] if beans[i][metric] > 0 else 0  # incase vcore&memory<0
-                            self.hadoop_nodemanager_metrics[service][key].add_metric(label, value)
+                if service not in beans[i]['name']:
+                    continue
+                for metric in beans[i]:
+                    if metric not in self.metrics[service]:
+                        continue
+                    label = [self.cluster, self.target]
+                    if metric.startswith("Containers"):
+                        key = "containers"
+                        label.append(metric.split("Containers")[1])
+                    else:
+                        key = metric
+                    label.append(self.target)
+                    value = beans[i][metric] if beans[i][metric] > 0 else 0  # incase vcore or memory < 0
+                    self.hadoop_nodemanager_metrics[service][key].add_metric(label, value)

@@ -1,13 +1,13 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
 import re
 from prometheus_client.core import GaugeMetricFamily
 
 import utils
-from utils import get_module_logger
 
-logger = get_module_logger(__name__)
+
+logger = utils.get_module_logger(__name__)
 
 
 class MetricCollector(object):
@@ -137,21 +137,20 @@ class CommonMetricCollector():
         for metric in self.tmp_metrics['OperatingSystem']:
             label = ["cluster", "_target"]
             snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
-            self.common_metrics['OperatingSystem'][metric] = GaugeMetricFamily("_".join([self.prefix, snake_case]), self.tmp_metrics['OperatingSystem'][metric], labels=label)
+            name = "_".join([self.prefix, snake_case])
+            self.common_metrics['OperatingSystem'][metric] = GaugeMetricFamily(name, self.tmp_metrics['OperatingSystem'][metric], labels=label)
 
     def setup_rpc_labels(self):
         num_rpc_flag, avg_rpc_flag = 1, 1
         for metric in self.tmp_metrics["RpcActivity"]:
+            snake_case = "_".join(["rpc", re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()])
             if 'Rpc' in metric:
                 snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
-            else:
-                snake_case = "_".join(["rpc", re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()])
             label = ["cluster", "tag"]
             if "NumOps" in metric:
                 if num_rpc_flag:
                     key = "MethodNumOps"
-                    label.append("method")
-                    label.append("_target")
+                    label.extend(["method", "_target"])
                     name = "_".join([self.prefix, "rpc_method_called_total"])
                     description = "Total number of the times the method is called."
                     self.common_metrics['RpcActivity'][key] = GaugeMetricFamily(name, description, labels=label)
@@ -161,8 +160,7 @@ class CommonMetricCollector():
             elif "AvgTime" in metric:
                 if avg_rpc_flag:
                     key = "MethodAvgTime"
-                    label.append("method")
-                    label.append("_target")
+                    label.extend(["method", "_target"])
                     name = "_".join([self.prefix, "rpc_method_avg_time_milliseconds"])
                     descrption = "Average turn around time of the method in milliseconds."
                     self.common_metrics['RpcActivity'][key] = GaugeMetricFamily(name, descrption, labels=label)
@@ -172,22 +170,20 @@ class CommonMetricCollector():
             else:
                 key = metric
                 label.append("_target")
-                self.common_metrics['RpcActivity'][key] = GaugeMetricFamily("_".join([self.prefix, snake_case]), self.tmp_metrics['RpcActivity'][metric], labels=label)
+                name = "_".join([self.prefix, snake_case])
+                self.common_metrics['RpcActivity'][key] = GaugeMetricFamily(name, self.tmp_metrics['RpcActivity'][metric], labels=label)
 
     def setup_rpc_detailed_labels(self):
         for metric in self.tmp_metrics['RpcDetailedActivity']:
-            label = ["cluster", "tag"]
+            label = ["cluster", "tag", "method", "_target"]
             if "NumOps" in metric:
                 key = "NumOps"
-                label.append("method")
                 name = "_".join([self.prefix, 'rpc_detailed_method_called_total'])
             elif "AvgTime" in metric:
                 key = "AvgTime"
-                label.append("method")
                 name = "_".join([self.prefix, 'rpc_detailed_method_avg_time_milliseconds'])
             else:
-                pass
-            label.append("_target")
+                continue
             self.common_metrics['RpcDetailedActivity'][key] = GaugeMetricFamily(name, self.tmp_metrics['RpcDetailedActivity'][metric], labels=label)
         return self.common_metrics
 
@@ -216,9 +212,10 @@ class CommonMetricCollector():
                 else:
                     continue
             else:
-                snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
                 label.append("_target")
-                self.common_metrics['UgiMetrics'][metric] = GaugeMetricFamily("_".join([self.prefix, 'ugi', snake_case]), self.tmp_metrics['UgiMetrics'][metric], labels=label)
+                snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
+                name = "_".join([self.prefix, 'ugi', snake_case])
+                self.common_metrics['UgiMetrics'][metric] = GaugeMetricFamily(name, self.tmp_metrics['UgiMetrics'][metric], labels=label)
 
     def setup_metric_system_labels(self):
         metric_num_flag, metric_avg_flag = 1, 1
@@ -227,18 +224,16 @@ class CommonMetricCollector():
             if 'NumOps' in metric:
                 if metric_num_flag:
                     key = 'NumOps'
-                    label.append("oper")
-                    label.append("_target")
+                    label.extend(["oper", "_target"])
                     metric_num_flag = 0
-                    self.common_metrics['MetricsSystem'][key] = GaugeMetricFamily("_".join([self.prefix, 'metricssystem_operations_total']),
-                                                                                  "Total number of operations", labels=label)
+                    name = "_".join([self.prefix, 'metricssystem_operations_total'])
+                    self.common_metrics['MetricsSystem'][key] = GaugeMetricFamily(name, "Total number of operations", labels=label)
                 else:
                     continue
             elif 'AvgTime' in metric:
                 if metric_avg_flag:
                     key = 'AvgTime'
-                    label.append("oper")
-                    label.append("_target")
+                    label.extend(["oper", "_target"])
                     metric_avg_flag = 0
                     name = "_".join([self.prefix, 'metricssystem_method_avg_time_milliseconds'])
                     description = "Average turn around time of the operations in milliseconds."
@@ -253,10 +248,10 @@ class CommonMetricCollector():
 
     def setup_runtime_labels(self):
         for metric in self.tmp_metrics['Runtime']:
-            label = ["cluster", "host"]
-            label.append("_target")
+            label = ["cluster", "host", "_target"]
             snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
-            self.common_metrics['Runtime'][metric] = GaugeMetricFamily("_".join([self.prefix, snake_case, "milliseconds"]), self.tmp_metrics['Runtime'][metric], labels=label)
+            name = "_".join([self.prefix, snake_case, "milliseconds"])
+            self.common_metrics['Runtime'][metric] = GaugeMetricFamily(name, self.tmp_metrics['Runtime'][metric], labels=label)
 
     def get_jvm_metrics(self, bean):
         for metric in self.tmp_metrics['JvmMetrics']:
@@ -344,18 +339,15 @@ class CommonMetricCollector():
         detail_tag = bean['tag.port']
         for metric in bean:
             if metric[0].isupper():
-                label = [self.cluster, detail_tag]
                 if "NumOps" in metric:
                     key = "NumOps"
                     method = metric.split('NumOps')[0]
-                    label = [self.cluster, detail_tag, method]
                 elif "AvgTime" in metric:
                     key = "AvgTime"
                     method = metric.split("AvgTime")[0]
-                    label = [self.cluster, detail_tag, method]
                 else:
-                    pass
-                label.append(self.target)
+                    continue
+                label = [self.cluster, detail_tag, method, self.target]
                 self.common_metrics['RpcDetailedActivity'][key].add_metric(label, bean[metric])
 
     def get_ugi_metrics(self, bean):

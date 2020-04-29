@@ -1,13 +1,13 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
 import yaml
 import re
 from prometheus_client.core import GaugeMetricFamily
 
-import utils
 from utils import get_module_logger
 from common import MetricCollector, CommonMetricCollector
+from scraper import ScrapeMetrics
 
 logger = get_module_logger(__name__)
 
@@ -23,18 +23,18 @@ class DataNodeMetricCollector(MetricCollector):
 
         self.common_metric_collector = CommonMetricCollector(cluster, "hdfs", "datanode")
 
+        self.scrape_metrics = ScrapeMetrics(urls)
+
     def collect(self):
         isSetup = False
-        for index, url in enumerate(self.urls):
-            beans = utils.get_metrics(url)
-            if len(beans) == 0:
-                continue
+        beans_list = self.scrape_metrics.scrape()
+        for beans in beans_list:
             if not isSetup:
                 self.common_metric_collector.setup_labels(beans)
                 self.setup_metrics_labels(beans)
                 isSetup = True
             for i in range(len(beans)):
-                if 'DataNodeActivity' in beans[i]['name']:
+                if 'tag.Hostname' in beans[i]:
                     self.target = beans[i]["tag.Hostname"]
                     break
             self.hadoop_datanode_metrics.update(self.common_metric_collector.get_metrics(beans, self.target))
@@ -42,8 +42,9 @@ class DataNodeMetricCollector(MetricCollector):
 
         for i in range(len(self.merge_list)):
             service = self.merge_list[i]
-            for metric in self.hadoop_datanode_metrics[service]:
-                yield self.hadoop_datanode_metrics[service][metric]
+            if service in self.hadoop_datanode_metrics:
+                for metric in self.hadoop_datanode_metrics[service]:
+                    yield self.hadoop_datanode_metrics[service][metric]
 
     def setup_dninfo_labels(self):
         for metric in self.metrics['DataNodeInfo']:
@@ -60,7 +61,6 @@ class DataNodeMetricCollector(MetricCollector):
     def setup_dnactivity_labels(self):
         block_flag, client_flag = 1, 1
         for metric in self.metrics['DataNodeActivity']:
-            # TODO: 判断以 Block 开头的关键字。排查 AvgTime
             if 'Blocks' in metric:
                 if block_flag:
                     label = ['cluster', 'host', 'oper']

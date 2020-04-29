@@ -1,9 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
 import os
-import socket
-import requests
 import argparse
 import logging
 import yaml
@@ -31,50 +29,6 @@ def get_module_logger(mod_name):
 
 
 logger = get_module_logger(__name__)
-
-
-def get_metrics(url):
-    result = []
-    try:
-        s = requests.session()
-        response = s.get(url, timeout=5)
-    except Exception as e:
-        logger.warning("error in func: get_metrics, error msg: %s" % e)
-        result = []
-    else:
-        if response.status_code != requests.codes.ok:
-            logger.warning("Get {0} failed, response code is: {1}.".format(url, response.status_code))
-            result = []
-        rlt = response.json()
-        logger.debug(rlt)
-        if rlt and "beans" in rlt:
-            result = rlt['beans']
-        else:
-            logger.warning("No metrics get in the {0}.".format(url))
-            result = []
-    finally:
-        s.close()
-    return result
-
-
-def get_host_ip():
-    try:
-        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.connect(('8.8.8.8', 80))
-        ip = s.getsockname()[0]
-    finally:
-        s.close()
-    return ip
-
-
-def get_hostname():
-    try:
-        host = socket.getfqdn()
-    except Exception as e:
-        logger.info("get hostname failed, error msg: {0}".format(e))
-        return None
-    else:
-        return host
 
 
 def read_json_file(path_name, file_name):
@@ -108,12 +62,12 @@ def get_file_list(file_path_name):
 def parse_args():
     parser = argparse.ArgumentParser(description='hadoop jmx metric prometheus exporter')
     parser.add_argument('-cluster', required=True, metavar='cluster_name', help='Hadoop cluster name (maybe HA name)')
-    parser.add_argument('-queue', required=False, metavar='queue_regexp', help='Regular expression of queue name. default: root.*', default='root.*')
+    parser.add_argument('-queue', required=False, metavar='yarn_queue_regexp', help='Regular expression of queue name. default: root.*', default='root.*')
     parser.add_argument('-nns', required=False, metavar='namenode_jmx_url', help='Hadoop hdfs namenode jmx metrics URL.', nargs="*")
     parser.add_argument('-dns', required=False, metavar='datanode_jmx_url', help='Hadoop datanode jmx metrics URL.', nargs="*")
     parser.add_argument('-rms', required=False, metavar='resourcemanager_jmx_url', help='Hadoop resourcemanager metrics jmx URL.', nargs="*")
     parser.add_argument('-nms', required=False, metavar='nodemanager_jmx_url', help='Hadoop nodemanager jmx metrics URL.', nargs="*")
     parser.add_argument('-jns', required=False, metavar='journalnode_jmx_url', help='Hadoop journalnode jmx metrics URL.', nargs="*")
-    parser.add_argument('-host', required=False, metavar='ip_or_hostname', help='Listen on this address. default: 0.0.0.0', default='0.0.0.0')
+    parser.add_argument('-host', required=False, metavar='host', help='Listen on this address. default: 0.0.0.0', default='0.0.0.0')
     parser.add_argument('-port', required=False, metavar='port', type=int, help='Listen to this port. default: 6688', default=6688)
     return parser.parse_args()
