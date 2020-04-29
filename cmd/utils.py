@@ -10,30 +10,21 @@ import yaml
 
 
 def get_module_logger(mod_name):
-    '''
-    define a common logger template to record log.
-    @param mod_name log module name.
-    @return logger.
-    '''
     logger = logging.getLogger(mod_name)
     logger.setLevel(logging.DEBUG)
 
-    # 设置日志文件handler，并设置记录级别
     path = os.path.dirname(os.path.abspath(__file__))
     par_path = os.path.dirname(path)
     fh = logging.FileHandler(os.path.join(par_path, "hadoop_jmx_exporter.log"))
     fh.setLevel(logging.INFO)
 
-    # 设置终端输出handler，并设置记录级别
     sh = logging.StreamHandler()
     sh.setLevel(logging.INFO)
 
-    # 设置日志格式
     fmt = logging.Formatter(fmt='%(asctime)s %(filename)s[line:%(lineno)d]-[%(levelname)s]: %(message)s')
     fh.setFormatter(fmt)
     sh.setFormatter(fmt)
 
-    # 添加handler到logger对象
     logger.addHandler(fh)
     logger.addHandler(sh)
     return logger
@@ -43,10 +34,6 @@ logger = get_module_logger(__name__)
 
 
 def get_metrics(url):
-    '''
-    :param url: The jmx url, e.g. http://host1:50070/jmx,http://host1:8088/jmx, http://host2:19888/jmx...
-    :return a dict of all metrics scraped in the jmx url.
-    '''
     result = []
     try:
         s = requests.session()
@@ -81,10 +68,6 @@ def get_host_ip():
 
 
 def get_hostname():
-    '''
-    get hostname via socket.
-    @return a string of hostname
-    '''
     try:
         host = socket.getfqdn()
     except Exception as e:
@@ -95,9 +78,6 @@ def get_hostname():
 
 
 def read_json_file(path_name, file_name):
-    '''
-    read metric json files.
-    '''
     path = os.path.dirname(os.path.realpath(__file__))
     metric_path = os.path.join(path, "../metrics", path_name)
     metric_name = "{0}.json".format(file_name)
@@ -111,11 +91,6 @@ def read_json_file(path_name, file_name):
 
 
 def get_file_list(file_path_name):
-    '''
-    This function is to get all .json file name in the specified file_path_name.
-    @param file_path: The file path name, e.g. namenode, ugi, resourcemanager ...
-    @return a list of file name.
-    '''
     path = os.path.dirname(os.path.abspath(__file__))
     json_path = os.path.join(path, "../metrics", file_path_name)
     try:
@@ -141,5 +116,4 @@ def parse_args():
     parser.add_argument('-jns', required=False, metavar='journalnode_jmx_url', help='Hadoop journalnode jmx metrics URL.', nargs="*")
     parser.add_argument('-host', required=False, metavar='ip_or_hostname', help='Listen on this address. default: 0.0.0.0', default='0.0.0.0')
     parser.add_argument('-port', required=False, metavar='port', type=int, help='Listen to this port. default: 6688', default=6688)
-    parser.add_argument('-path', required=False, metavar='metrics_path', help='Path under which to expose metrics. default: /metrics', default='/metrics')
     return parser.parse_args()

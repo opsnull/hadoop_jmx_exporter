@@ -25,24 +25,21 @@ class NodeManagerMetricCollector(MetricCollector):
         self.common_metric_collector = CommonMetricCollector(cluster, "yarn", "nodemanager")
 
     def collect(self):
+        isSetup = False
         for index, url in enumerate(self.urls):
-            try:
-                beans = utils.get_metrics(url)
-            except Exception as e:
-                logger.info("Can't scrape metrics from url: {0}, error: {1}".format(url, e))
-            else:
-                if index == 0:
-                    self.common_metric_collector.setup_labels(beans)
-                    self.setup_metrics_labels(beans)
-
-                for i in range(len(beans)):
-                    if 'tag.Hostname' in beans[i]:
-                        self.target = beans[i]["tag.Hostname"]
-                        break
-
-                self.hadoop_nodemanager_metrics.update(self.common_metric_collector.get_metrics(beans, self.target))
-
-                self.get_metrics(beans)
+            beans = utils.get_metrics(url)
+            if len(beans) == 0:
+                continue
+            if not isSetup:
+                self.common_metric_collector.setup_labels(beans)
+                self.setup_metrics_labels(beans)
+                isSetup = True
+            for i in range(len(beans)):
+                if 'tag.Hostname' in beans[i]:
+                    self.target = beans[i]["tag.Hostname"]
+                    break
+            self.hadoop_nodemanager_metrics.update(self.common_metric_collector.get_metrics(beans, self.target))
+            self.get_metrics(beans)
 
         for i in range(len(self.merge_list)):
             service = self.merge_list[i]

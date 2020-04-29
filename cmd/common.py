@@ -260,8 +260,7 @@ class CommonMetricCollector():
 
     def get_jvm_metrics(self, bean):
         for metric in self.tmp_metrics['JvmMetrics']:
-            name = "_".join(
-                ["jvm", re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()])
+            name = "_".join(["jvm", re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()])
             if 'Mem' in metric:
                 if "Used" in metric:
                     key = "jvm_mem_used_mebibytes"
