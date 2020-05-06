@@ -1,8 +1,14 @@
 # hadoop_jmx_exporter
 
-Hadoop HDFS & YARN jmx metrics: prometheus exporter.
+Hadoop HDFS & YARN jmx metrics prometheus exporter.
+
+All metrics can be found [here](./examples/all_metrics.txt).
+
+Grafana dashboards json file and a short video demo in [dashboards](./dashboards) directory.
 
 Tested on CDH 5.14.2.
+
+![HDFS-Namenode](./dashboards/HDFS-NameNode.png)
 
 # Run
 
