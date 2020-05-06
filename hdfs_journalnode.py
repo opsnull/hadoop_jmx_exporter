@@ -83,8 +83,6 @@ class JournalNodeMetricCollector(MetricCollector):
 
     def setup_metrics_labels(self, beans):
         for i in range(len(beans)):
-            # 格式类似于："name": "Hadoop:service=JournalNode,name=Journal-nameservice1"
-            # nameservice1 为集群名称
             if 'name=Journal-' in beans[i]['name']:
                 self.setup_journalnode_labels()
 

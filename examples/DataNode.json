@@ -1,0 +1,300 @@
+{
+    "beans": [
+        {
+            "name": "Hadoop:service=DataNode,name=JvmMetrics",
+            "modelerType": "JvmMetrics",
+            "tag.Context": "jvm",
+            "tag.ProcessName": "DataNode",
+            "tag.SessionId": null,
+            "tag.Hostname": "yh-shhd-cdh01",
+            "MemNonHeapUsedM": 78.327324,
+            "MemNonHeapCommittedM": 79.87109,
+            "MemNonHeapMaxM": -1,
+            "MemHeapUsedM": 1307.1587,
+            "MemHeapCommittedM": 1979.75,
+            "MemHeapMaxM": 1979.75,
+            "MemMaxM": 1979.75,
+            "GcCountParNew": 5222,
+            "GcTimeMillisParNew": 532221,
+            "GcCountConcurrentMarkSweep": 92,
+            "GcTimeMillisConcurrentMarkSweep": 7191,
+            "GcCount": 5314,
+            "GcTimeMillis": 539412,
+            "GcNumWarnThresholdExceeded": 0,
+            "GcNumInfoThresholdExceeded": 0,
+            "GcTotalExtraSleepTime": 79593,
+            "ThreadsNew": 0,
+            "ThreadsRunnable": 186,
+            "ThreadsBlocked": 0,
+            "ThreadsWaiting": 20,
+            "ThreadsTimedWaiting": 31,
+            "ThreadsTerminated": 0,
+            "LogFatal": 0,
+            "LogError": 4779,
+            "LogWarn": 466,
+            "LogInfo": 4585284
+        },
+        {
+            "name": "Hadoop:service=DataNode,name=FSDatasetState-2d7d9029-dcdc-404a-9d98-cb72ad235493",
+            "modelerType": "org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsDatasetImpl",
+            "Remaining": 21524598985077,
+            "DfsUsed": 8583846612190,
+            "Capacity": 31710403805184,
+            "LastVolumeFailureDate": 0,
+            "EstimatedCapacityLostTotal": 0,
+            "CacheUsed": 0,
+            "CacheCapacity": 4294967296,
+            "NumBlocksCached": 0,
+            "NumBlocksFailedToCache": 0,
+            "NumBlocksFailedToUncache": 509262,
+            "NumFailedVolumes": 0,
+            "FailedStorageLocations": [],
+            "StorageInfo": "FSDataset{dirpath='[/mnt/disk0/dfs/dn/current, /mnt/disk1/dfs/dn/current, /mnt/disk2/dfs/dn/current, /mnt/disk3/dfs/dn/current]'}"
+        },
+        {
+            "name": "Hadoop:service=DataNode,name=UgiMetrics",
+            "modelerType": "UgiMetrics",
+            "tag.Context": "ugi",
+            "tag.Hostname": "yh-shhd-cdh01",
+            "LoginSuccessNumOps": 0,
+            "LoginSuccessAvgTime": 0,
+            "LoginFailureNumOps": 0,
+            "LoginFailureAvgTime": 0,
+            "GetGroupsNumOps": 0,
+            "GetGroupsAvgTime": 0,
+            "RenewalFailuresTotal": 0,
+            "RenewalFailures": 0
+        },
+        {
+            "name": "Hadoop:service=DataNode,name=DataNodeInfo",
+            "modelerType": "org.apache.hadoop.hdfs.server.datanode.DataNode",
+            "Version": "2.6.0-cdh5.14.2",
+            "XceiverCount": 26,
+            "DatanodeNetworkCounts": [
+                {
+                    "key": "/10.193.40.4",
+                    "value": [
+                        {
+                            "key": "networkErrors",
+                            "value": 27
+                        }
+                    ]
+                },
+                {
+                    "key": "/10.193.40.9",
+                    "value": [
+                        {
+                            "key": "networkErrors",
+                            "value": 35305
+                        }
+                    ]
+                },
+                {
+                    "key": "/10.193.48.9",
+                    "value": [
+                        {
+                            "key": "networkErrors",
+                            "value": 15
+                        }
+                    ]
+                },
+                {
+                    "key": "/10.193.40.1",
+                    "value": [
+                        {
+                            "key": "networkErrors",
+                            "value": 2500
+                        }
+                    ]
+                },
+                {
+                    "key": "/10.193.40.3",
+                    "value": [
+                        {
+                            "key": "networkErrors",
+                            "value": 2545
+                        }
+                    ]
+                },
+                {
+                    "key": "/10.193.33.1",
+                    "value": [
+                        {
+                            "key": "networkErrors",
+                            "value": 4
+                        }
+                    ]
+                },
+                {
+                    "key": "/10.193.40.10",
+                    "value": [
+                        {
+                            "key": "networkErrors",
+                            "value": 2705
+                        }
+                    ]
+                },
+                {
+                    "key": "/10.193.40.5",
+                    "value": [
+                        {
+                            "key": "networkErrors",
+                            "value": 33
+                        }
+                    ]
+                },
+                {
+                    "key": "/10.193.40.2",
+                    "value": [
+                        {
+                            "key": "networkErrors",
+                            "value": 3658
+                        }
+                    ]
+                },
+                {
+                    "key": "/10.193.48.7",
+                    "value": [
+                        {
+                            "key": "networkErrors",
+                            "value": 41
+                        }
+                    ]
+                }
+            ],
+            "RpcPort": "50020",
+            "HttpPort": null,
+            "NamenodeAddresses": "{\"yh-shhd-cdh05\":\"BP-1654582017-10.193.40.10-1585051030504\",\"yh-shhd-cdh02\":\"BP-1654582017-10.193.40.10-1585051030504\"}",
+            "VolumeInfo": "{\"/mnt/disk3/dfs/dn/current\":{\"usedSpace\":2123832329532,\"freeSpace\":5403410074903,\"reservedSpace\":10737418240,\"reservedSpaceForRBW\":263679405},\"/mnt/disk2/dfs/dn/current\":{\"usedSpace\":2141850634176,\"freeSpace\":5385258770496,\"reservedSpace\":10737418240,\"reservedSpaceForRBW\":396679168},\"/mnt/disk0/dfs/dn/current\":{\"usedSpace\":2185856311266,\"freeSpace\":5341126906910,\"reservedSpace\":10737418240,\"reservedSpaceForRBW\":522865664},\"/mnt/disk1/dfs/dn/current\":{\"usedSpace\":2132307337216,\"freeSpace\":5394803232768,\"reservedSpace\":10737418240,\"reservedSpaceForRBW\":395513856}}",
+            "ClusterId": "cluster7",
+            "DiskBalancerStatus": ""
+        },
+        {
+            "name": "Hadoop:service=DataNode,name=DataNodeActivity-yh-shhd-cdh01-50010",
+            "modelerType": "DataNodeActivity-yh-shhd-cdh01-50010",
+            "tag.SessionId": null,
+            "tag.Context": "dfs",
+            "tag.Hostname": "yh-shhd-cdh01",
+            "BytesWritten": 3930869762859,
+            "TotalWriteTime": 5390318,
+            "BytesRead": 2592902229782,
+            "TotalReadTime": 12910687,
+            "BlocksWritten": 1339342,
+            "BlocksRead": 14341148,
+            "BlocksReplicated": 138907,
+            "BlocksRemoved": 315277,
+            "BlocksVerified": 1241033,
+            "BlockVerificationFailures": 0,
+            "BlocksCached": 0,
+            "BlocksUncached": 0,
+            "ReadsFromLocalClient": 5040940,
+            "ReadsFromRemoteClient": 9300208,
+            "WritesFromLocalClient": 390614,
+            "WritesFromRemoteClient": 814364,
+            "BlocksGetLocalPathInfo": 0,
+            "RemoteBytesRead": 1544540994665,
+            "RemoteBytesWritten": 2445837244412,
+            "RamDiskBlocksWrite": 0,
+            "RamDiskBlocksWriteFallback": 0,
+            "RamDiskBytesWrite": 0,
+            "RamDiskBlocksReadHits": 0,
+            "RamDiskBlocksEvicted": 0,
+            "RamDiskBlocksEvictedWithoutRead": 0,
+            "RamDiskBlocksEvictionWindowMsNumOps": 0,
+            "RamDiskBlocksEvictionWindowMsAvgTime": 0,
+            "RamDiskBlocksLazyPersisted": 0,
+            "RamDiskBlocksDeletedBeforeLazyPersisted": 0,
+            "RamDiskBytesLazyPersisted": 0,
+            "RamDiskBlocksLazyPersistWindowMsNumOps": 0,
+            "RamDiskBlocksLazyPersistWindowMsAvgTime": 0,
+            "FsyncCount": 0,
+            "VolumeFailures": 0,
+            "DatanodeNetworkErrors": 46833,
+            "ReadBlockOpNumOps": 14341148,
+            "ReadBlockOpAvgTime": 2.7777777777777777,
+            "WriteBlockOpNumOps": 1204978,
+            "WriteBlockOpAvgTime": 40067,
+            "BlockChecksumOpNumOps": 51251,
+            "BlockChecksumOpAvgTime": 0.3333333333333333,
+            "CopyBlockOpNumOps": 0,
+            "CopyBlockOpAvgTime": 0,
+            "ReplaceBlockOpNumOps": 0,
+            "ReplaceBlockOpAvgTime": 0,
+            "HeartbeatsNumOps": 1252832,
+            "HeartbeatsAvgTime": 1.2727272727272727,
+            "BlockReportsNumOps": 176,
+            "BlockReportsAvgTime": 985,
+            "IncrementalBlockReportsNumOps": 2551500,
+            "IncrementalBlockReportsAvgTime": 1,
+            "CacheReportsNumOps": 328655,
+            "CacheReportsAvgTime": 0.3333333333333333,
+            "PacketAckRoundTripTimeNanosNumOps": 32064492,
+            "PacketAckRoundTripTimeNanosAvgTime": 389616,
+            "FlushNanosNumOps": 70305363,
+            "FlushNanosAvgTime": 16205.285714285714,
+            "FsyncNanosNumOps": 0,
+            "FsyncNanosAvgTime": 0,
+            "SendDataPacketBlockedOnNetworkNanosNumOps": 95274803,
+            "SendDataPacketBlockedOnNetworkNanosAvgTime": 29429.13888888889,
+            "SendDataPacketTransferNanosNumOps": 95274803,
+            "SendDataPacketTransferNanosAvgTime": 353804.77777777775
+        },
+        {
+            "name": "Hadoop:service=DataNode,name=RpcDetailedActivityForPort50020",
+            "modelerType": "RpcDetailedActivityForPort50020",
+            "tag.port": "50020",
+            "tag.Context": "rpcdetailed",
+            "tag.Hostname": "yh-shhd-cdh01",
+            "InitReplicaRecoveryNumOps": 2,
+            "InitReplicaRecoveryAvgTime": 2,
+            "GetReplicaVisibleLengthNumOps": 62882,
+            "GetReplicaVisibleLengthAvgTime": 0,
+            "UpdateReplicaUnderRecoveryNumOps": 2,
+            "UpdateReplicaUnderRecoveryAvgTime": 3,
+            "ReplicaNotFoundExceptionNumOps": 19,
+            "ReplicaNotFoundExceptionAvgTime": 0
+        },
+        {
+            "name": "Hadoop:service=DataNode,name=RpcActivityForPort50020",
+            "modelerType": "RpcActivityForPort50020",
+            "tag.port": "50020",
+            "tag.Context": "rpc",
+            "tag.NumOpenConnectionsPerUser": "{}",
+            "tag.Hostname": "yh-shhd-cdh01",
+            "ReceivedBytes": 21810967,
+            "SentBytes": 13644420,
+            "RpcQueueTimeNumOps": 62905,
+            "RpcQueueTimeAvgTime": 0,
+            "RpcProcessingTimeNumOps": 62905,
+            "RpcProcessingTimeAvgTime": 0,
+            "RpcAuthenticationFailures": 0,
+            "RpcAuthenticationSuccesses": 0,
+            "RpcAuthorizationFailures": 0,
+            "RpcAuthorizationSuccesses": 62903,
+            "RpcSlowCalls": 0,
+            "RpcClientBackoff": 0,
+            "NumOpenConnections": 0,
+            "CallQueueLength": 0,
+            "NumDroppedConnections": 0
+        },
+        {
+            "name": "Hadoop:service=DataNode,name=MetricsSystem,sub=Stats",
+            "modelerType": "MetricsSystem,sub=Stats",
+            "tag.Context": "metricssystem",
+            "tag.Hostname": "yh-shhd-cdh01",
+            "NumActiveSources": 5,
+            "NumAllSources": 5,
+            "NumActiveSinks": 0,
+            "NumAllSinks": 0,
+            "SnapshotNumOps": 0,
+            "SnapshotAvgTime": 0,
+            "PublishNumOps": 0,
+            "PublishAvgTime": 0,
+            "DroppedPubAll": 0
+        },
+        {
+            "name": "Hadoop:service=DataNode,name=MetricsSystem,sub=Control",
+            "modelerType": "org.apache.hadoop.metrics2.impl.MetricsSystemImpl"
+        }
+    ]
+}

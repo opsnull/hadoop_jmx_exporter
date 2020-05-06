@@ -1,17 +1,17 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
 import time
 from prometheus_client import start_http_server
 from prometheus_client.core import REGISTRY
 
-from cmd import utils
-from cmd.utils import get_module_logger
-from cmd.hdfs_namenode import NameNodeMetricCollector
-from cmd.hdfs_datanode import DataNodeMetricCollector
-from cmd.hdfs_journalnode import JournalNodeMetricCollector
-from cmd.yarn_resourcemanager import ResourceManagerMetricCollector
-from cmd.yarn_nodemanager import NodeManagerMetricCollector
+import utils
+from utils import get_module_logger
+from hdfs_namenode import NameNodeMetricCollector
+from hdfs_datanode import DataNodeMetricCollector
+from hdfs_journalnode import JournalNodeMetricCollector
+from yarn_resourcemanager import ResourceManagerMetricCollector
+from yarn_nodemanager import NodeManagerMetricCollector
 
 logger = get_module_logger(__name__)
 
