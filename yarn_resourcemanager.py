@@ -24,9 +24,10 @@ class ResourceManagerMetricCollector(MetricCollector):
     }
 
     def __init__(self, cluster, urls, queue_regexp):
-        MetricCollector.__init__(self, cluster, urls, "yarn", "resourcemanager")
+        MetricCollector.__init__(self, cluster, "yarn", "resourcemanager")
         self.target = "-"
         self.queue_regexp = queue_regexp
+        self.nms = set()
 
         self.hadoop_resourcemanager_metrics = {}
         for i in range(len(self.file_list)):
@@ -178,8 +179,10 @@ class ResourceManagerMetricCollector(MetricCollector):
 
     def get_rmnminfo_metrics(self, bean):
         for metric in self.metrics['RMNMInfo']:
+            nms = set()
             live_nm_list = yaml.safe_load(bean['LiveNodeManagers'])
             for j in range(len(live_nm_list)):
+                nms.add("http://"+live_nm_list[j]["NodeHTTPAddress"]+"/jmx")
                 host = live_nm_list[j]['HostName']
                 version = live_nm_list[j]['NodeManagerVersion']
                 rack = live_nm_list[j]['Rack']
@@ -189,6 +192,7 @@ class ResourceManagerMetricCollector(MetricCollector):
                 else:
                     value = live_nm_list[j][metric] if metric in live_nm_list[j] else 0.0
                 self.hadoop_resourcemanager_metrics['RMNMInfo'][metric].add_metric(label, value)
+            self.nms = nms
 
     def get_queue_metrics(self, bean):
         for metric in self.metrics['QueueMetrics']:

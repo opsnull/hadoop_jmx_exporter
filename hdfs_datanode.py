@@ -13,9 +13,10 @@ logger = get_module_logger(__name__)
 
 
 class DataNodeMetricCollector(MetricCollector):
-    def __init__(self, cluster, urls):
-        MetricCollector.__init__(self, cluster, urls, "hdfs", "datanode")
+    def __init__(self, cluster, nnc, urls=""):
+        MetricCollector.__init__(self, cluster, "hdfs", "datanode")
         self.target = "-"
+        self.nnc = nnc
 
         self.hadoop_datanode_metrics = {}
         for i in range(len(self.file_list)):
@@ -23,11 +24,11 @@ class DataNodeMetricCollector(MetricCollector):
 
         self.common_metric_collector = CommonMetricCollector(cluster, "hdfs", "datanode")
 
-        self.scrape_metrics = ScrapeMetrics(urls)
-
     def collect(self):
         isSetup = False
-        beans_list = self.scrape_metrics.scrape()
+        if self.nnc.dns == "":
+            return
+        beans_list = ScrapeMetrics(self.nnc.dns).scrape()
         for beans in beans_list:
             if not isSetup:
                 self.common_metric_collector.setup_labels(beans)

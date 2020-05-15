@@ -13,9 +13,10 @@ logger = get_module_logger(__name__)
 
 class NodeManagerMetricCollector(MetricCollector):
 
-    def __init__(self, cluster, urls):
-        MetricCollector.__init__(self, cluster, urls, "yarn", "nodemanager")
+    def __init__(self, cluster, rmc):
+        MetricCollector.__init__(self, cluster, "yarn", "nodemanager")
         self.target = "-"
+        self.rmc = rmc
 
         self.hadoop_nodemanager_metrics = {}
         for i in range(len(self.file_list)):
@@ -23,11 +24,9 @@ class NodeManagerMetricCollector(MetricCollector):
 
         self.common_metric_collector = CommonMetricCollector(cluster, "yarn", "nodemanager")
 
-        self.scrape_metrics = ScrapeMetrics(urls)
-
     def collect(self):
         isSetup = False
-        beans_list = self.scrape_metrics.scrape()
+        beans_list = ScrapeMetrics(self.rmc.nms).scrape()
         for beans in beans_list:
             if not isSetup:
                 self.common_metric_collector.setup_labels(beans)

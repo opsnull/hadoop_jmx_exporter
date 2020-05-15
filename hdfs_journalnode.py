@@ -13,8 +13,9 @@ logger = get_module_logger(__name__)
 
 class JournalNodeMetricCollector(MetricCollector):
     def __init__(self, cluster, urls):
-        MetricCollector.__init__(self, cluster, urls, "hdfs", "journalnode")
+        MetricCollector.__init__(self, cluster, "hdfs", "journalnode")
         self.target = "-"
+        self.urls = urls
 
         self.hadoop_journalnode_metrics = {}
         for i in range(len(self.file_list)):

@@ -11,9 +11,8 @@ logger = utils.get_module_logger(__name__)
 
 
 class MetricCollector(object):
-    def __init__(self, cluster, urls, component, service):
+    def __init__(self, cluster, component, service):
         self.cluster = cluster
-        self.urls = urls
         self.component = component
         self.prefix = 'hadoop_{0}_{1}'.format(component, service)
 

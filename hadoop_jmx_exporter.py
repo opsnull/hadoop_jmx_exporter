@@ -18,16 +18,17 @@ logger = get_module_logger(__name__)
 
 def register_prometheus(cluster, args):
     if args.nns is not None and len(args.nns) > 0:
-        REGISTRY.register(NameNodeMetricCollector(cluster, args.nns))
-    if args.dns is not None and len(args.dns) > 0:
-        REGISTRY.register(DataNodeMetricCollector(cluster, args.dns))
+        nnc = NameNodeMetricCollector(cluster, args.nns)
+        nnc.collect()
+        REGISTRY.register(nnc)
+        REGISTRY.register(DataNodeMetricCollector(cluster, nnc))
+    if args.rms is not None and len(args.rms) > 0:
+        rmc = ResourceManagerMetricCollector(cluster, args.rms, args.queue)
+        rmc.collect()
+        REGISTRY.register(rmc)
+        REGISTRY.register(NodeManagerMetricCollector(cluster, rmc))
     if args.jns is not None and len(args.jns) > 0:
         REGISTRY.register(JournalNodeMetricCollector(cluster, args.jns))
-    if args.rms is not None and len(args.rms) > 0:
-        REGISTRY.register(ResourceManagerMetricCollector(cluster, args.rms, args.queue))
-    if args.nms is not None and len(args.nms) > 0:
-        REGISTRY.register(NodeManagerMetricCollector(cluster, args.nms))
-
 def main():
     args = utils.parse_args()
     host = args.host
