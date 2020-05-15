@@ -13,7 +13,7 @@ logger = get_module_logger(__name__)
 
 
 class DataNodeMetricCollector(MetricCollector):
-    def __init__(self, cluster, nnc, urls=""):
+    def __init__(self, cluster, nnc):
         MetricCollector.__init__(self, cluster, "hdfs", "datanode")
         self.target = "-"
         self.nnc = nnc
