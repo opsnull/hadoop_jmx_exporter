@@ -117,10 +117,11 @@ class DataNodeMetricCollector(MetricCollector):
                     for k, v in volume_info_dict.items():
                         path = k
                         for key, val in v.items():
-                            state = key
-                            label = [self.cluster, version, path, state, self.target]
-                            value = val
-                            self.hadoop_datanode_metrics['DataNodeInfo'][metric].add_metric(label, value)
+                            if key != "storageType":
+                                state = key
+                                label = [self.cluster, version, path, state, self.target]
+                                value = val
+                                self.hadoop_datanode_metrics['DataNodeInfo'][metric].add_metric(label, value)
                 else:
                     continue
             else:
