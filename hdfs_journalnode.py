@@ -126,7 +126,8 @@ class JournalNodeMetricCollector(MetricCollector):
                             a_3600_sum += beans[i][metric]
                     else:
                         key = metric
-                        self.hadoop_journalnode_metrics['JournalNode'][key].add_metric(label, beans[i][metric])
+                        if key in self.hadoop_journalnode_metrics['JournalNode']:
+                            self.hadoop_journalnode_metrics['JournalNode'][key].add_metric(label, beans[i][metric])
                 a_60_bucket = zip(a_60_percentile, a_60_value)
                 a_300_bucket = zip(a_300_percentile, a_300_value)
                 a_3600_bucket = zip(a_3600_percentile, a_3600_value)
