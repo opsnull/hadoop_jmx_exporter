@@ -37,14 +37,14 @@ class JournalNodeMetricCollector(MetricCollector):
                 if 'tag.Hostname' in beans[i]:
                     self.target = beans[i]["tag.Hostname"]
                     break
-            self.hadoop_datanode_metrics.update(self.common_metric_collector.get_metrics(beans, self.target))
+            self.hadoop_journalnode_metrics.update(self.common_metric_collector.get_metrics(beans, self.target))
             self.get_metrics(beans)
 
         for i in range(len(self.merge_list)):
             service = self.merge_list[i]
             if service in self.hadoop_journalnode_metrics:
-                for metric in self.hadoop_datanode_metrics[service]:
-                    yield self.hadoop_datanode_metrics[service][metric]
+                for metric in self.hadoop_journalnode_metrics[service]:
+                    yield self.hadoop_journalnode_metrics[service][metric]
 
     def setup_journalnode_labels(self):
         a_60_latency_flag, a_300_latency_flag, a_3600_latency_flag = 1, 1, 1
@@ -126,7 +126,8 @@ class JournalNodeMetricCollector(MetricCollector):
                             a_3600_sum += beans[i][metric]
                     else:
                         key = metric
-                        self.hadoop_journalnode_metrics['JournalNode'][key].add_metric(label, beans[i][metric])
+                        if key in self.hadoop_journalnode_metrics['JournalNode']:
+                            self.hadoop_journalnode_metrics['JournalNode'][key].add_metric(label, beans[i][metric])
                 a_60_bucket = zip(a_60_percentile, a_60_value)
                 a_300_bucket = zip(a_300_percentile, a_300_value)
                 a_3600_bucket = zip(a_3600_percentile, a_3600_value)
