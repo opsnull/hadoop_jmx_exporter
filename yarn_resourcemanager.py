@@ -247,7 +247,7 @@ class ResourceManagerMetricCollector(MetricCollector):
         for i in range(len(beans)):
             if 'RMNMInfo' in beans[i]['name']:
                 self.get_rmnminfo_metrics(beans[i])
-            if 'QueueMetrics' in beans[i]['name'] and re.match(self.queue_regexp, beans[i]['tag.Queue']):
+            if 'name=QueueMetrics' in beans[i]['name'] and re.match(self.queue_regexp, beans[i]['tag.Queue']):
                 self.get_queue_metrics(beans[i])
             if 'ClusterMetrics' in beans[i]['name']:
                 self.get_cluster_metrics(beans[i])
