@@ -4,6 +4,7 @@
 import threading
 import requests
 
+import utils
 from utils import get_module_logger
 
 
@@ -21,6 +22,8 @@ class Scraper(threading.Thread):
         result = []
         try:
             s = requests.session()
+            s.verify = utils.verify
+            s.trust_env = utils.trust_env
             response = s.get(self.url, timeout=5)
         except Exception as e:
             logger.warning("Get {0} failed, error: {1}.".format(self.url, str(e)))

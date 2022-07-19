@@ -6,6 +6,9 @@ import argparse
 import logging
 import yaml
 
+verify = True
+trust_env = True
+
 
 def get_module_logger(mod_name):
     logger = logging.getLogger(mod_name)
@@ -67,4 +70,10 @@ def parse_args():
     parser.add_argument('-jns', required=False, metavar='journalnode_jmx_url', help='Hadoop journalnode jmx metrics URL.', nargs="*")
     parser.add_argument('-host', required=False, metavar='host', help='Listen on this address. default: 0.0.0.0', default='0.0.0.0')
     parser.add_argument('-port', required=False, metavar='port', type=int, help='Listen to this port. default: 6688', default=6688)
-    return parser.parse_args()
+    parser.add_argument('-verify', required=False, metavar='verify', help='Scrape veirify switch. default: True', default='True')
+    parser.add_argument('-trust', required=False, metavar='trust', help='Scrape trust env switch. default: True', default='True')
+    args = parser.parse_args()
+    global verify, trust_env
+    verify = args.verify == 'True'
+    trust_env = args.trust == 'True'
+    return args
