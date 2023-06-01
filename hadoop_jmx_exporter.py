@@ -5,13 +5,13 @@ import time
 from prometheus_client import start_http_server
 from prometheus_client.core import REGISTRY
 
-import utils
-from utils import get_module_logger
-from hdfs_namenode import NameNodeMetricCollector
-from hdfs_datanode import DataNodeMetricCollector
-from hdfs_journalnode import JournalNodeMetricCollector
-from yarn_resourcemanager import ResourceManagerMetricCollector
-from yarn_nodemanager import NodeManagerMetricCollector
+from cmd import utils
+from cmd.utils import get_module_logger
+from cmd.hdfs_namenode import NameNodeMetricCollector
+from cmd.hdfs_datanode import DataNodeMetricCollector
+from cmd.hdfs_journalnode import JournalNodeMetricCollector
+from cmd.yarn_resourcemanager import ResourceManagerMetricCollector
+from cmd.yarn_nodemanager import NodeManagerMetricCollector
 
 logger = get_module_logger(__name__)
 
@@ -26,9 +26,11 @@ def register_prometheus(cluster, args):
         rmc = ResourceManagerMetricCollector(cluster, args.rms, args.queue)
         rmc.collect()
         REGISTRY.register(rmc)
-        REGISTRY.register(NodeManagerMetricCollector(cluster, rmc))
+        # REGISTRY.register(NodeManagerMetricCollector(cluster, rmc))
     if args.jns is not None and len(args.jns) > 0:
         REGISTRY.register(JournalNodeMetricCollector(cluster, args.jns))
+
+
 def main():
     args = utils.parse_args()
     host = args.host

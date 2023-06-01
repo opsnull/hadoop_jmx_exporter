@@ -6,7 +6,7 @@ import re
 from prometheus_client.core import GaugeMetricFamily
 
 from utils import get_module_logger
-from common import MetricCollector, CommonMetricCollector
+from cmd.common import MetricCollector, CommonMetricCollector
 from scraper import ScrapeMetrics
 
 logger = get_module_logger(__name__)
@@ -172,8 +172,8 @@ class ResourceManagerMetricCollector(MetricCollector):
         for i in range(len(beans)):
             if 'RMNMInfo' in beans[i]['name']:
                 self.setup_rmnminfo_labels()
-            if 'QueueMetrics' in self.metrics:
-                self.setup_queue_labels()
+            # if 'QueueMetrics' in self.metrics:
+            #     self.setup_queue_labels()
             if 'ClusterMetrics' in self.metrics:
                 self.setup_cluster_labels()
 
@@ -247,7 +247,7 @@ class ResourceManagerMetricCollector(MetricCollector):
         for i in range(len(beans)):
             if 'RMNMInfo' in beans[i]['name']:
                 self.get_rmnminfo_metrics(beans[i])
-            if 'QueueMetrics' in beans[i]['name'] and re.match(self.queue_regexp, beans[i]['tag.Queue']):
-                self.get_queue_metrics(beans[i])
+            # if 'QueueMetrics' in beans[i]['name'] and 'tag.Queue' in beans[i] and re.match(self.queue_regexp, beans[i]['tag.Queue']):
+            #     self.get_queue_metrics(beans[i])
             if 'ClusterMetrics' in beans[i]['name']:
                 self.get_cluster_metrics(beans[i])

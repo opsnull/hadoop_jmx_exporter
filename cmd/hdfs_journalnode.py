@@ -5,7 +5,7 @@ import re
 from prometheus_client.core import GaugeMetricFamily, HistogramMetricFamily
 
 from utils import get_module_logger
-from common import MetricCollector, CommonMetricCollector
+from cmd.common import MetricCollector, CommonMetricCollector
 from scraper import ScrapeMetrics
 
 logger = get_module_logger(__name__)

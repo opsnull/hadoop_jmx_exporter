@@ -1,10 +1,11 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
-
+import os
 import threading
 import requests
+import requests_kerberos
 
-from utils import get_module_logger
+from cmd.utils import get_module_logger
 
 
 logger = get_module_logger(__name__)
@@ -16,12 +17,15 @@ class Scraper(threading.Thread):
         self.name = "thread-%s" % url
         self.url = url
         self.result = result
+        krbpath = '/tmp/krb5cc_hdfs'
+        os.environ['KRB5CCNAME'] = krbpath
+        self.auth_kerberos = requests_kerberos.HTTPKerberosAuth(mutual_authentication=requests_kerberos.OPTIONAL)
 
     def run(self):
         result = []
         try:
             s = requests.session()
-            response = s.get(self.url, timeout=5)
+            response = s.get(self.url, timeout=5, auth=self.auth_kerberos)
         except Exception as e:
             logger.warning("Get {0} failed, error: {1}.".format(self.url, str(e)))
         else:

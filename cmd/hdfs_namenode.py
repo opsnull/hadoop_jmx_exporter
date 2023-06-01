@@ -395,7 +395,10 @@ class NameNodeMetricCollector(MetricCollector):
                     label = [self.cluster, node, info["infoAddr"], info["infoSecureAddr"], info["xferaddr"], info["version"], self.target]
                     items = ["lastContact", "usedSpace", "adminState", "nonDfsUsedSpace", "capacity", "numBlocks",
                              "used", "remaining", "blockScheduled", "blockPoolUsed", "blockPoolUsedPercent", "volfails"]
-                    dns.add("http://"+info["infoAddr"]+"/jmx")
+                    # dns.add("http://"+info["infoAddr"]+"/jmx")
+                    dn_port = info["infoAddr"].split(':')[1]
+                    dn_host = node.split(':')[0]
+                    dns.add("http://" + dn_host + ":" + dn_port + "/jmx")
                     for item in items:
                         value = info[item] if item in info else 0
                         if item == "adminState":

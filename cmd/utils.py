@@ -32,7 +32,8 @@ logger = get_module_logger(__name__)
 
 def read_json_file(path_name, file_name):
     path = os.path.dirname(os.path.realpath(__file__))
-    metric_path = os.path.join(path, "metrics", path_name)
+    parent_path = os.path.dirname(path)
+    metric_path = os.path.join(parent_path, "metrics", path_name)
     metric_name = "{0}.json".format(file_name)
     try:
         with open(os.path.join(metric_path, metric_name), 'r') as f:
@@ -45,7 +46,8 @@ def read_json_file(path_name, file_name):
 
 def get_file_list(file_path_name):
     path = os.path.dirname(os.path.abspath(__file__))
-    json_path = os.path.join(path, "metrics", file_path_name)
+    parent_path = os.path.dirname(path)
+    json_path = os.path.join(parent_path, "metrics", file_path_name)
     try:
         files = os.listdir(json_path)
     except OSError:

@@ -1,3 +1,4 @@
 requests
+requests_kerberos
 prometheus_client
 pyyaml
