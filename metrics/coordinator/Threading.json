@@ -1,0 +1,5 @@
+{
+  "ThreadCount": "Number of threads",
+  "PeakThreadCount": "Peak number of threads",
+  "DaemonThreadCount": "Number of backend threads"
+}

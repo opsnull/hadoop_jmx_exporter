@@ -37,6 +37,8 @@ optional arguments:
                         Hadoop resourcemanager metrics jmx URL.
   -jns [journalnode_jmx_url [journalnode_jmx_url ...]]
                         Hadoop journalnode jmx metrics URL.
+  -hss [hiveserver2_jmx_url [hiveserver2_jmx_url ...]]
+                        Hadoop hiveserver2 jmx metrics URL.
   -host host            Listen on this address. default: 0.0.0.0
   -port port            Listen to this port. default: 6688
 ➜  hadoop_exporter git:(master) ✗

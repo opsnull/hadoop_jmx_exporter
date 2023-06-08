@@ -4,6 +4,7 @@ import os
 import threading
 import requests
 import requests_kerberos
+from requests.auth import HTTPBasicAuth
 
 from cmd.utils import get_module_logger
 
@@ -25,7 +26,10 @@ class Scraper(threading.Thread):
         result = []
         try:
             s = requests.session()
-            response = s.get(self.url, timeout=5, auth=self.auth_kerberos)
+            if 'mbean' in self.url:
+                response = s.get(self.url, timeout=5, auth=HTTPBasicAuth('admin',''))
+            else:
+                response = s.get(self.url, timeout=5, auth=self.auth_kerberos)
         except Exception as e:
             logger.warning("Get {0} failed, error: {1}.".format(self.url, str(e)))
         else:
@@ -33,10 +37,13 @@ class Scraper(threading.Thread):
                 logger.warning("Get {0} failed, response code is: {1}.".format(self.url, response.status_code))
             else:
                 rlt = response.json()
-                if rlt and "beans" in rlt:
-                    result = rlt['beans']
+                if 'mbean' in self.url and rlt:
+                    result = rlt
                 else:
-                    logger.warning("No metrics get in the {0}.".format(self.url))
+                    if rlt and "beans" in rlt:
+                        result = rlt['beans']
+                    else:
+                        logger.warning("No metrics get in the {0}.".format(self.url))
             s.close()
             if len(result) > 0:
                 self.result.append(result)

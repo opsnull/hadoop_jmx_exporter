@@ -6,7 +6,6 @@ from prometheus_client.core import GaugeMetricFamily
 
 import utils
 
-
 logger = utils.get_module_logger(__name__)
 
 
@@ -22,7 +21,10 @@ class MetricCollector(object):
             self.metrics.setdefault(self.file_list[i], utils.read_json_file(service, self.file_list[i]))
 
         common_file = utils.get_file_list("common")
-        self.merge_list = self.file_list + common_file
+        if component == "hdfs" or component == "yarn":
+            self.merge_list = self.file_list + common_file
+        else:
+            self.merge_list = self.file_list
 
     def collect(self):
         pass
@@ -130,14 +132,17 @@ class CommonMetricCollector():
                 key = snake_case
                 descriptions = self.tmp_metrics['JvmMetrics'][metric]
             label.append("_target")
-            self.common_metrics['JvmMetrics'][key] = GaugeMetricFamily("_".join([self.prefix, key]), descriptions, labels=label)
+            self.common_metrics['JvmMetrics'][key] = GaugeMetricFamily("_".join([self.prefix, key]), descriptions,
+                                                                       labels=label)
 
     def setup_os_labels(self):
         for metric in self.tmp_metrics['OperatingSystem']:
             label = ["cluster", "_target"]
             snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
             name = "_".join([self.prefix, snake_case])
-            self.common_metrics['OperatingSystem'][metric] = GaugeMetricFamily(name, self.tmp_metrics['OperatingSystem'][metric], labels=label)
+            self.common_metrics['OperatingSystem'][metric] = GaugeMetricFamily(name,
+                                                                               self.tmp_metrics['OperatingSystem'][
+                                                                                   metric], labels=label)
 
     def setup_rpc_labels(self):
         num_rpc_flag, avg_rpc_flag = 1, 1
@@ -170,7 +175,9 @@ class CommonMetricCollector():
                 key = metric
                 label.append("_target")
                 name = "_".join([self.prefix, snake_case])
-                self.common_metrics['RpcActivity'][key] = GaugeMetricFamily(name, self.tmp_metrics['RpcActivity'][metric], labels=label)
+                self.common_metrics['RpcActivity'][key] = GaugeMetricFamily(name,
+                                                                            self.tmp_metrics['RpcActivity'][metric],
+                                                                            labels=label)
 
     def setup_rpc_detailed_labels(self):
         for metric in self.tmp_metrics['RpcDetailedActivity']:
@@ -183,7 +190,9 @@ class CommonMetricCollector():
                 name = "_".join([self.prefix, 'rpc_detailed_method_avg_time_milliseconds'])
             else:
                 continue
-            self.common_metrics['RpcDetailedActivity'][key] = GaugeMetricFamily(name, self.tmp_metrics['RpcDetailedActivity'][metric], labels=label)
+            self.common_metrics['RpcDetailedActivity'][key] = GaugeMetricFamily(name,
+                                                                                self.tmp_metrics['RpcDetailedActivity'][
+                                                                                    metric], labels=label)
         return self.common_metrics
 
     def setup_ugi_labels(self):
@@ -214,7 +223,9 @@ class CommonMetricCollector():
                 label.append("_target")
                 snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
                 name = "_".join([self.prefix, 'ugi', snake_case])
-                self.common_metrics['UgiMetrics'][metric] = GaugeMetricFamily(name, self.tmp_metrics['UgiMetrics'][metric], labels=label)
+                self.common_metrics['UgiMetrics'][metric] = GaugeMetricFamily(name,
+                                                                              self.tmp_metrics['UgiMetrics'][metric],
+                                                                              labels=label)
 
     def setup_metric_system_labels(self):
         metric_num_flag, metric_avg_flag = 1, 1
@@ -226,7 +237,8 @@ class CommonMetricCollector():
                     label.extend(["oper", "_target"])
                     metric_num_flag = 0
                     name = "_".join([self.prefix, 'metricssystem_operations_total'])
-                    self.common_metrics['MetricsSystem'][key] = GaugeMetricFamily(name, "Total number of operations", labels=label)
+                    self.common_metrics['MetricsSystem'][key] = GaugeMetricFamily(name, "Total number of operations",
+                                                                                  labels=label)
                 else:
                     continue
             elif 'AvgTime' in metric:
@@ -243,14 +255,17 @@ class CommonMetricCollector():
                 label.append("_target")
                 snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
                 name = "_".join([self.prefix, 'metricssystem', snake_case])
-                self.common_metrics['MetricsSystem'][metric] = GaugeMetricFamily(name, self.tmp_metrics['MetricsSystem'][metric], labels=label)
+                self.common_metrics['MetricsSystem'][metric] = GaugeMetricFamily(name,
+                                                                                 self.tmp_metrics['MetricsSystem'][
+                                                                                     metric], labels=label)
 
     def setup_runtime_labels(self):
         for metric in self.tmp_metrics['Runtime']:
             label = ["cluster", "host", "_target"]
             snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', metric).lower()
             name = "_".join([self.prefix, snake_case, "milliseconds"])
-            self.common_metrics['Runtime'][metric] = GaugeMetricFamily(name, self.tmp_metrics['Runtime'][metric], labels=label)
+            self.common_metrics['Runtime'][metric] = GaugeMetricFamily(name, self.tmp_metrics['Runtime'][metric],
+                                                                       labels=label)
 
     def get_jvm_metrics(self, bean):
         for metric in self.tmp_metrics['JvmMetrics']:
@@ -373,7 +388,8 @@ class CommonMetricCollector():
                 key = metric
                 label = [self.cluster]
             label.append(self.target)
-            self.common_metrics['UgiMetrics'][key].add_metric(label, bean[metric] if metric in bean and bean[metric] else 0)
+            self.common_metrics['UgiMetrics'][key].add_metric(label,
+                                                              bean[metric] if metric in bean and bean[metric] else 0)
 
     def get_metric_system_metrics(self, bean):
         for metric in self.tmp_metrics['MetricsSystem']:
@@ -389,9 +405,11 @@ class CommonMetricCollector():
                 key = metric
                 label = [self.cluster]
             label.append(self.target)
-            self.common_metrics['MetricsSystem'][key].add_metric(label, bean[metric] if metric in bean and bean[metric] else 0)
+            self.common_metrics['MetricsSystem'][key].add_metric(label,
+                                                                 bean[metric] if metric in bean and bean[metric] else 0)
 
     def get_runtime_metrics(self, bean):
         for metric in self.tmp_metrics['Runtime']:
             label = [self.cluster, bean['Name'].split("@")[1], self.target]
-            self.common_metrics['Runtime'][metric].add_metric(label, bean[metric] if metric in bean and bean[metric] else 0)
+            self.common_metrics['Runtime'][metric].add_metric(label,
+                                                              bean[metric] if metric in bean and bean[metric] else 0)

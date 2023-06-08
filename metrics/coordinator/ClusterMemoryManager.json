@@ -1,0 +1,4 @@
+{
+  "ClusterMemoryBytes": "Cluster memory bytes",
+  "QueriesKilledDueToOutOfMemory": "Cumulative count (since Trino started) of queries that ran out of memory and were killed"
+}

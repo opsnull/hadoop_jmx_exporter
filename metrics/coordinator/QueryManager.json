@@ -1,0 +1,14 @@
+{
+  "RunningQueries": "Total number of running queries",
+  "QueuedQueries": "Total number of waiting queries",
+  "AbandonedQueries.FiveMinute.Count": "Total number of abandoned queries",
+  "CanceledQueries.FiveMinute.Count": "Total number of canceled queries",
+  "CompletedQueries.FiveMinute.Count": "Total number of completed queries",
+  "StartedQueries.FiveMinute.Count": "Queries started",
+  "FailedQueries.FiveMinute.Count": "Failed queries from last 5 min (all)",
+  "InternalFailures.FiveMinute.Count": "Failed queries from last 5 min (internal)",
+  "ExternalFailures.FiveMinute.Count": "Failed queries from last 5 min (external)",
+  "UserErrorFailures.FiveMinute.Count": "Failed queries (user)",
+  "ExecutionTime.FiveMinutes.P50": "Execution latency (P50)",
+  "WallInputBytesRate.FiveMinutes.P90": "Input data rate (P90)"
+}
