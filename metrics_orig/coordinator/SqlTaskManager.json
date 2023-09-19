@@ -1,0 +1,10 @@
+{
+  "InputDataSize.FiveMinute.Count": "Input data bytes count",
+  "InputDataSize.FiveMinute.Rate": "Input data bytes rate",
+  "OutputDataSize.FiveMinute.Count": "Output data bytes count",
+  "OutputDataSize.FiveMinute.Rate": "Output data bytes rate",
+  "InputPositions.FiveMinute.Count": "Input rows count",
+  "InputPositions.FiveMinute.Rate": "Input rows rate",
+  "OutputPositions.FiveMinute.Count": "Output rows count",
+  "OutputPositions.FiveMinute.Rate": "Output rows rate"
+}

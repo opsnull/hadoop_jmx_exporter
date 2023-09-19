@@ -15,5 +15,19 @@
     "AggregateContainersAllocated": "Total number of allocated containers.",
     "AggregateContainersReleased": "Total number of released containers.",
     "AvailableMB": "Current available memory in MB.",
-    "AvailableVCores": "Current available CPU in virtual cores."
+    "AvailableVCores": "Current available CPU in virtual cores.",
+    "PendingMB": "Current pending memory resource requests in MB that are not yet fulfilled by the scheduler.",
+    "PendingVCores": "Current pending CPU allocation requests in virtual cores that are not yet fulfilled by the scheduler.",
+    "PendingContainers": "Current pending resource requests that are not yet fulfilled by the scheduler.",
+    "ReservedMB": "Current reserved memory in MB.",
+    "ReservedVCores": "Current reserved CPU in virtual cores.",
+    "ReservedContainers": "Current number of reserved containers.",
+    "ActiveUsers": "Current number of active users.",
+    "ActiveApplications": "Current number of active applications.",
+    "FairShareMB": "(FairScheduler only) Current fair share of memory in MB.",
+    "FairShareVCores": "(FairScheduler only) Current fair share of CPU in virtual cores.",
+    "MinShareMB": "(FairScheduler only) Minimum share of memory in MB.",
+    "MinShareVCores": "(FairScheduler only) Minimum share of CPU in virtual cores.",
+    "MaxShareMB": "(FairScheduler only) Maximum share of memory in MB.",
+    "MaxShareVCores": "(FairScheduler only) Maximum share of CPU in virtual cores."
 }

@@ -1,0 +1,14 @@
+{
+  "LastGcInfo.memoryUsageBeforeGc.G1 Old Gen": "",
+  "LastGcInfo.memoryUsageBeforeGc.G1 Survivor Space": "",
+  "LastGcInfo.memoryUsageBeforeGc.Compressed Class Space": "",
+  "LastGcInfo.memoryUsageBeforeGc.Metaspace": "",
+  "LastGcInfo.memoryUsageBeforeGc.G1 Eden Space": "",
+  "LastGcInfo.memoryUsageAfterGc.G1 Old Gen": "",
+  "LastGcInfo.memoryUsageAfterGc.G1 Survivor Space": "",
+  "LastGcInfo.memoryUsageAfterGc.Compressed Class Space": "",
+  "LastGcInfo.memoryUsageAfterGc.Metaspace": "",
+  "LastGcInfo.memoryUsageAfterGc.G1 Eden Space": "",
+  "CollectionCount": "FGC",
+  "CollectionTime": "FGCT"
+}

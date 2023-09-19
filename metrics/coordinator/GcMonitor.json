@@ -1,0 +1,8 @@
+{
+  "MajorGc.AllTime.Count": "FGC",
+  "MajorGc.AllTime.Avg": "FGCT_avg",
+  "MajorGc.AllTime.Max": "YGCT_max",
+  "MinorGc.AllTime.Count": "YGC",
+  "MinorGc.AllTime.Avg": "YGCT_avg",
+  "MinorGc.AllTime.Max": "YGCT_max"
+}

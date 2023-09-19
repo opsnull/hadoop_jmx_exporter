@@ -1,0 +1,19 @@
+{
+    "ContainersLaunched": "Count of launched container",
+    "ContainersCompleted": "Count of completed container",
+    "ContainersFailed": "Count of failed container",
+    "ContainersKilled": "Count of killed container",
+    "ContainersIniting": "Count of initing container",
+    "ContainersRunning": "Count of running container",
+    "AllocatedGB": "Memory size of allocated (in GB)",
+    "AllocatedContainers": "Count of allocated container",
+    "AvailableGB": "Memory size of available (in GB)",
+    "AllocatedVCores": "Count of allocated VCores",
+    "AvailableVCores": "Count of available VCores",
+    "ContainerLaunchDurationNumOps": "Count of launched container",
+    "ContainerLaunchDurationAvgTime": "Average time of launching container (in ms)",
+    "BadLocalDirs": "Count of bad local directory",
+    "BadLogDirs": "Count of bad log directory",
+    "GoodLocalDirsDiskUtilizationPerc": "Percent of good local directory disk utilization",
+    "GoodLogDirsDiskUtilizationPerc": "Percent of good local log directory disk utilization"
+}
